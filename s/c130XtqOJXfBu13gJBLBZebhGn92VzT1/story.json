@@ -1,0 +1,1894 @@
+{
+ "title": "Evelyn and the TimeBand: Apollo 11",
+ "version": "1.0",
+ "start": "s01",
+ "flags": {
+  "charges": 3,
+  "hive_test": false,
+  "patch": false,
+  "june_invite": false,
+  "press_pass": false,
+  "suit_check": false,
+  "saw_launch": false,
+  "knows_germs": false,
+  "read_list": false,
+  "oxygen_min": 60,
+  "via": null,
+  "recording_saved": false
+ },
+ "notes": "Second-person time-travel adventure. Tokens {variant} and {bonus} are filled by the player from state.via and flags.",
+ "scenes": {
+  "s01": {
+   "id": "s01",
+   "page": 1,
+   "title": "The TimeBand",
+   "place": "Your kitchen, Saturday morning",
+   "image": "img/s01.jpg",
+   "paragraphs": [
+    "On Saturday morning, Dr. Ada Finch knocks on your kitchen door. She works at the science museum, and she is Mom's friend. She carries a metal case.",
+    "She sets the case on the table and opens it. Inside is a band, like a big watch. \"This is the TimeBand,\" she says. \"I built it. It can take a person back in time.\"",
+    "You look at Mom. Mom nods.",
+    "\"In 1969, three astronauts flew to the Moon on Apollo 11,\" Dr. Finch says. \"Some of the first films and tapes from that trip are lost. The museum needs a new recording. The band only fits a small wrist. Will you go, Evelyn?\"",
+    "She snaps the band on your wrist. Three green dots light up.",
+    "\"Each dot is a charge,\" she says. \"Each trip into the past uses one. Coming home is free. Here are the rules. Watch, but don't touch. Never try to change what happened. If you do, the band brings you home. For the Moon, you get a little pressure suit with one hour of air. For spacecraft, the band opens a window, so you can look in without going in. And this button records.\"",
+    "You think of the bee that landed on your hand last summer. You kept still, and it flew away. You can keep still.",
+    "\"You could try a short test trip first,\" Dr. Finch says. \"But a test uses a charge.\""
+   ],
+   "choices": [
+    {
+     "label": "Try a test trip",
+     "prompt": "If you want to try a short test trip to Mom's beehive, one hour back in time, tap 'Try a test trip.'",
+     "target": "s02",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    },
+    {
+     "label": "Open the mission map",
+     "prompt": "If you are ready to pick a day in 1969, tap 'Open the mission map.'",
+     "target": "s16",
+     "hop": false
+    }
+   ]
+  },
+  "s02": {
+   "id": "s02",
+   "page": 2,
+   "title": "The Hive Test",
+   "place": "Your backyard, one hour ago",
+   "image": "img/s02.jpg",
+   "paragraphs": [
+    "You press the band. The kitchen goes white, then quiet.",
+    "You are standing behind the beehive in your own backyard. The grass is wet. It is one hour ago.",
+    "Mom is there in her white bee suit. She lifts a wooden frame out of the hive. It is heavy with honey. Bees crawl over the wax cells. One bee lands on the frame with yellow dust on its legs. That's pollen, from the flowers by the fence.",
+    "You keep still. You hold your breath. Mom doesn't look up.",
+    "Then the band hums, and you are back in the kitchen. Mom is at the sink, washing honey off her gloves.",
+    "\"How did it go?\" she asks.",
+    "\"I saw you,\" you say. \"You didn't see me.\"",
+    "Dr. Finch taps the band. Now only two dots glow green. \"It works,\" she says. \"But now you have one less charge. Choose with care.\"",
+    "A map lights up on the band's screen."
+   ],
+   "choices": [
+    {
+     "label": "Open the mission map",
+     "prompt": "To pick a day in 1969, tap 'Open the mission map.'",
+     "target": "s16",
+     "hop": false
+    }
+   ],
+   "on_enter": {
+    "set": {
+     "hive_test": true
+    }
+   }
+  },
+  "s03": {
+   "id": "s03",
+   "page": 3,
+   "title": "The Beach by the Cape",
+   "place": "Beach near Cape Kennedy, Florida - July 16, 1969, about 9:00 a.m.",
+   "image": "img/s03.jpg",
+   "paragraphs": [
+    "You step out onto the sand. It's hot already. People are everywhere: on blankets, on car roofs, under beach umbrellas. Some of them camped here all night. About a million people came to watch.",
+    "Far across the water stands the Saturn V. From here, it looks as small as a pencil.",
+    "Next to you is a girl with brown braids and a red checked dress. \"I'm June,\" she says. \"I'm six. We drove all the way from Ohio.\" Her grandpa holds a small radio, so they can hear the countdown.",
+    "A gust of wind blows by. June's cloth mission patch flies out of her hand. It tumbles down the beach toward the waves.",
+    "\"My patch!\" June cries.",
+    "Up the road, you see a fence and a guard. The rocket is that way. From there, you might see it up close."
+   ],
+   "choices": [
+    {
+     "label": "Chase the patch",
+     "prompt": "If you help June chase her patch, tap 'Chase the patch.'",
+     "target": "s04",
+     "hop": false
+    },
+    {
+     "label": "See the rocket up close",
+     "prompt": "If you walk up the road to see the rocket up close, tap 'See the rocket up close.'",
+     "target": "s05",
+     "hop": false
+    }
+   ]
+  },
+  "s04": {
+   "id": "s04",
+   "page": 4,
+   "title": "June's Patch",
+   "place": "The beach",
+   "image": "img/s04.jpg",
+   "paragraphs": [
+    "You run. The patch rolls and flips in the wind. Your feet splash in the foam. You grab it just before a wave does.",
+    "It's round, with an eagle on it. The eagle holds an olive branch, and the Moon is under its feet.",
+    "You give it back to June. She hugs it. Then she hugs you.",
+    "\"Thank you,\" her grandpa says. He digs in his pocket. \"I bought two. Here. This one is for you.\" Now you have a patch of your own.",
+    "June whispers, \"On Sunday they land on the Moon. Come watch at our house. Grandma makes honey toast. She keeps bees.\"",
+    "\"My mom keeps bees too!\" you say.",
+    "Grandpa turns up the radio. \"T minus two minutes,\" says the voice.",
+    "June grabs your hand. \"Let's count down together!\""
+   ],
+   "choices": [
+    {
+     "label": "Count down with June",
+     "prompt": "To count down with June and Grandpa, tap 'Count down with June.'",
+     "target": "s06",
+     "hop": false,
+     "sets": {
+      "via": "june"
+     }
+    }
+   ],
+   "on_enter": {
+    "gain": [
+     "patch"
+    ],
+    "set": {
+     "june_invite": true
+    }
+   }
+  },
+  "s05": {
+   "id": "s05",
+   "page": 5,
+   "title": "The Fence",
+   "place": "A fence on the road to the pad",
+   "image": "img/s05.jpg",
+   "paragraphs": [
+    "You walk up the road until a fence stops you. A guard in a hat stands by the gate. He hasn't seen you yet.",
+    "Now the rocket looks much bigger. It's as tall as a building with 36 floors. White frost covers its sides, and fog spills off it. The fuel inside is so cold that it freezes the wet air on the outside of the rocket.",
+    "At the very top is a small cone. That is the spacecraft. It has room for just three people: Neil, Buzz, and Michael. They're in there right now, strapped into their seats.",
+    "There's a gap under the fence. You are small enough to crawl through.",
+    "\"T minus five minutes,\" crackles a radio on the guard's belt."
+   ],
+   "choices": [
+    {
+     "label": "Sneak under the fence",
+     "prompt": "If you slip under the fence to try to ride the rocket, tap 'Sneak under the fence.'",
+     "target": "e_safety_return",
+     "hop": false,
+     "sets": {
+      "via": "rocket"
+     }
+    },
+    {
+     "label": "Go back to the beach",
+     "prompt": "If you go back and watch with the crowd, tap 'Go back to the beach.'",
+     "target": "s06",
+     "hop": false,
+     "sets": {
+      "via": "beach"
+     }
+    }
+   ]
+  },
+  "s06": {
+   "id": "s06",
+   "page": 6,
+   "title": "Liftoff",
+   "place": "Florida - 9:32 a.m.",
+   "image": "img/s06.jpg",
+   "paragraphs": [
+    "\"Ten, nine, eight...\" Everyone counts. \"Ignition sequence start.\" Fire bursts out under the rocket. \"Three, two, one, zero. All engines running. Liftoff!\"",
+    "At 9:32 a.m., the Saturn V rises. It goes slowly at first, then faster, on a long tail of fire.",
+    "You see it before you hear it. Then the sound reaches you: a deep crackle and boom. You feel it in your chest.",
+    "{variant}",
+    "In a few minutes, the rocket is just a dot of light. Then it's gone. Neil, Buzz, and Michael are on their way. The trip to the Moon takes four days.",
+    "You look at your band. Where should you go next, Evelyn?"
+   ],
+   "choices": [
+    {
+     "label": "Go to Mission Control",
+     "prompt": "If you jump to Mission Control on July 20, tap 'Go to Mission Control.'",
+     "target": "s07",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    },
+    {
+     "label": "Look into the spacecraft",
+     "prompt": "If you open a window into Columbia near the Moon on July 20, tap 'Look into the spacecraft.'",
+     "target": "s11",
+     "hop": true,
+     "mode": "window",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    },
+    {
+     "label": "Go to June's house",
+     "prompt": "If June asked you to visit, you can go to her house on July 20. Tap 'Go to June's house.'",
+     "target": "s13",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges",
+     "requires": {
+      "june_invite": true
+     }
+    },
+    {
+     "label": "Jump to splashdown",
+     "prompt": "If you jump to July 24, to the ship that will meet them when they come home, tap 'Jump to splashdown.'",
+     "target": "s26",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    }
+   ],
+   "on_enter": {
+    "set": {
+     "saw_launch": true
+    }
+   },
+   "variants": {
+    "june": "June squeezes your hand and jumps up and down. Her grandpa shouts, \"Go! Go! Go!\"",
+    "beach": "All along the beach, people cheer and wave. A man lifts his little boy onto his shoulders to see.",
+    "press": "The reporter waves her notebook at the sky. Then she hangs a press card on a string around your neck. \"You saved my story,\" she says. \"Keep it.\"",
+    "firing": "Through the big windows, you watch it climb. The glass rattles. JoAnn Morgan stays at her console and keeps watching her numbers.",
+    "_default": "All around you, people cheer."
+   }
+  },
+  "s07": {
+   "id": "s07",
+   "page": 7,
+   "title": "The Door in Houston",
+   "place": "Mission Control building, Houston, Texas - July 20, 1969, about 2:45 p.m.",
+   "image": "img/s07.jpg",
+   "paragraphs": [
+    "You land in a long hallway. It smells like coffee and paper. This is Mission Control in Houston, Texas. It's July 20, 1969, about 2:45 in the afternoon.",
+    "In about half an hour, the lander Eagle will go down to the Moon.",
+    "A guard sits by a door. Behind it is the viewing room, where guests watch Mission Control through a big glass window. \"Only people with a pass,\" the guard tells a man.",
+    "{bonus}",
+    "A radio call from Houston takes more than a second to reach the Moon. The answer takes more than a second to come back. Everyone here has to wait for every answer.",
+    "A man carrying a box of papers hurries past you and through a side door.",
+    "The band has a window too. With it, you could look right into the spacecraft."
+   ],
+   "choices": [
+    {
+     "label": "Show your patch",
+     "prompt": "If you have a mission patch, show it to the guard. Tap 'Show your patch.'",
+     "target": "s08",
+     "hop": false,
+     "requires": {
+      "patch": true
+     }
+    },
+    {
+     "label": "Show your press pass",
+     "prompt": "If you have a press pass, show it to the guard. Tap 'Show your press pass.'",
+     "target": "s08",
+     "hop": false,
+     "requires": {
+      "press_pass": true
+     }
+    },
+    {
+     "label": "Follow the man",
+     "prompt": "If you follow the man with the box through the side door, tap 'Follow the man.'",
+     "target": "s09",
+     "hop": false
+    },
+    {
+     "label": "Look into the spacecraft",
+     "prompt": "If you open a window into Columbia near the Moon, tap 'Look into the spacecraft.'",
+     "target": "s11",
+     "hop": true,
+     "mode": "window",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    }
+   ],
+   "bonus": [
+    {
+     "if": {
+      "patch": true
+     },
+     "text": "You feel the patch in your pocket. The guard has one just like it pinned to his shirt."
+    },
+    {
+     "if": {
+      "press_pass": true
+     },
+     "text": "The press card swings on its string around your neck."
+    }
+   ]
+  },
+  "s08": {
+   "id": "s08",
+   "page": 8,
+   "title": "The Viewing Room",
+   "place": "Behind the glass, Mission Control",
+   "image": "img/s08.jpg",
+   "paragraphs": [
+    "The guard smiles and opens the door. You sit in the back row of the viewing room. In front of you, behind thick glass, is Mission Control.",
+    "You see rows of consoles, and men in white shirts with headsets. Gene Kranz, the flight director, wears a white vest. Charlie Duke sits at the CAPCOM console. He is the one who talks to the astronauts by radio.",
+    "A speaker in the ceiling plays the radio calls. Everyone in the room is quiet.",
+    "Then Neil's voice says, \"Program alarm.\" A moment later: \"It's a 1202.\"",
+    "Nobody in the viewing room knows what that means. A man next to you grips his chair. You want to bang on the glass and ask what's wrong.",
+    "In the front row of Mission Control, a young man named Steve Bales leans close to his screen. His job is to watch Eagle's computer. He's thinking fast."
+   ],
+   "choices": [
+    {
+     "label": "Bang on the glass",
+     "prompt": "If you bang on the glass and shout to help, tap 'Bang on the glass.'",
+     "target": "e_too_loud",
+     "hop": false
+    },
+    {
+     "label": "Watch Steve Bales",
+     "prompt": "If you sit still and watch Steve Bales, the young man in charge of the guidance computer, tap 'Watch Steve Bales.'",
+     "target": "s10",
+     "hop": false
+    }
+   ]
+  },
+  "s09": {
+   "id": "s09",
+   "page": 9,
+   "title": "The Back Room",
+   "place": "A back room of experts, Mission Control",
+   "image": "img/s09.jpg",
+   "paragraphs": [
+    "You follow the man through the side door into a small room. It's full of desks, phones, and people with headsets. These experts help the people in Mission Control.",
+    "A speaker on the wall plays the radio calls. Neil's voice says, \"Program alarm. It's a 1202.\"",
+    "Everyone freezes. Then a young man named Jack Garman grabs a sheet of paper. It's a list, written in pencil, of every alarm Eagle's computer can make.",
+    "You stand on tiptoe. You can see the list over his shoulder.",
+    "On the desk next to you is a phone with a red light. You could call someone and tell them it's going to be okay."
+   ],
+   "choices": [
+    {
+     "label": "Grab a phone",
+     "prompt": "If you grab a phone to call the astronauts yourself, tap 'Grab a phone.'",
+     "target": "e_safety_return",
+     "hop": false,
+     "sets": {
+      "via": "phone"
+     }
+    },
+    {
+     "label": "Read the list",
+     "prompt": "If you stand by Jack and read his list with him, tap 'Read the list.'",
+     "target": "s10",
+     "hop": false,
+     "sets": {
+      "read_list": true
+     }
+    }
+   ]
+  },
+  "s10": {
+   "id": "s10",
+   "page": 10,
+   "title": "Sixty Seconds",
+   "place": "Mission Control - about 3:15 p.m. (Houston time)",
+   "image": "img/s10.jpg",
+   "paragraphs": [
+    "Steve Bales turns to the flight director. \"We're go on that alarm!\" Charlie Duke tells the crew. Eagle keeps going down.",
+    "{bonus}",
+    "Then a new problem. Out his window, Neil sees that the computer is taking them to a spot full of big rocks. He takes over and flies Eagle himself. He steers past the boulders, looking for a flat place to land.",
+    "Eagle's fuel is running low. A voice calls, \"Sixty seconds.\" That means sixty seconds of fuel left.",
+    "Nobody moves. Nobody talks. You can hear the air fans hum.",
+    "\"Thirty seconds.\"",
+    "Your heart thumps. You know how this ends. The people here don't know yet."
+   ],
+   "choices": [
+    {
+     "label": "Stay and record",
+     "prompt": "If you stay right here, press record, and hold the band still, tap 'Stay and record.'",
+     "target": "g_mission_control",
+     "hop": false
+    },
+    {
+     "label": "Go to the Moon",
+     "prompt": "If you put on the suit and go to the Moon to see Eagle land, tap 'Go to the Moon.'",
+     "target": "s15",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    },
+    {
+     "label": "Go to June's house",
+     "prompt": "If June asked you to visit, you can go to her house to see it on TV. Tap 'Go to June's house.'",
+     "target": "s13",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges",
+     "requires": {
+      "june_invite": true
+     }
+    }
+   ],
+   "bonus": [
+    {
+     "if": {
+      "read_list": true
+     },
+     "text": "You know why. You read it on Jack's list: the computer has too much to do, so it drops the small jobs and keeps doing the big ones."
+    }
+   ]
+  },
+  "s11": {
+   "id": "s11",
+   "page": 11,
+   "title": "A Window into Columbia",
+   "place": "Window mode: spacecraft Columbia, flying around the Moon - July 20, 1969, about 12:45 p.m. (Houston time)",
+   "image": "img/s11.jpg",
+   "paragraphs": [
+    "You press the band. A round window opens on its screen, like a porthole. You can see inside a spacecraft. This is Columbia. It is going around the Moon, about seventy miles up. It's July 20, about 12:45 p.m. in Houston.",
+    "Michael Collins floats by a small window. There is no up or down in here. A pencil drifts past his ear.",
+    "Outside, Eagle drifts away. It looks like a gold and gray bug with long legs. Neil and Buzz are inside it.",
+    "\"You cats take it easy on the lunar surface,\" Michael says on the radio.",
+    "Eagle gets smaller and smaller. Michael is alone now. He will keep Columbia ready, so all three of them can ride home.",
+    "Every two hours, Columbia goes around the far side of the Moon. Then the radio goes quiet, and Michael can't talk to anyone at all.",
+    "You can stay here with Michael. You can switch the window to Eagle. Or you can follow Columbia ahead to the trip home."
+   ],
+   "choices": [
+    {
+     "label": "Stay with Michael",
+     "prompt": "If you keep the window on Michael Collins in Columbia, tap 'Stay with Michael.'",
+     "target": "g_columbia",
+     "hop": false
+    },
+    {
+     "label": "Switch to Eagle",
+     "prompt": "If you move the window into Eagle with Neil and Buzz, tap 'Switch to Eagle.' (Same window, no new charge.)",
+     "target": "s12",
+     "hop": false
+    },
+    {
+     "label": "Follow Columbia home",
+     "prompt": "If you keep the window on Columbia and follow it ahead to July 24, when it comes home to Earth, tap 'Follow Columbia home.' (Same window, no new charge.)",
+     "target": "s25",
+     "hop": false
+    }
+   ]
+  },
+  "s12": {
+   "id": "s12",
+   "page": 12,
+   "title": "A Window into Eagle",
+   "place": "Window mode: the lander Eagle, going down to the Moon",
+   "image": "img/s12.jpg",
+   "paragraphs": [
+    "The window flips. Now you look inside Eagle. It's tight in here, like a closet. There are no seats. Neil and Buzz stand, held in place by straps.",
+    "The window jumps ahead to the landing. Out the small triangle windows, the gray ground gets closer. Neil holds a stick and steers. Buzz reads the numbers out loud.",
+    "\"Forty feet, down two and a half,\" Buzz says. \"Picking up some dust.\"",
+    "The engine blasts the gray dust sideways. It flies out flat and fast, because there is no air to slow it down.",
+    "Your finger drifts to the band's talk button. You want to shout, \"You can do it!\"",
+    "You could record from here. Or you could use a charge, put on your little pressure suit, and stand on the Moon yourself."
+   ],
+   "choices": [
+    {
+     "label": "Press the talk button",
+     "prompt": "If you press the talk button to tell Neil where to land, tap 'Press the talk button.'",
+     "target": "e_safety_return",
+     "hop": false,
+     "sets": {
+      "via": "talk"
+     }
+    },
+    {
+     "label": "Record from here",
+     "prompt": "If you press record and hold the band still as Eagle lands, tap 'Record from here.'",
+     "target": "g_eagle",
+     "hop": false
+    },
+    {
+     "label": "Go to the Moon yourself",
+     "prompt": "If you close the window, put on the suit, and go to the Moon for the first step, tap 'Go to the Moon yourself.'",
+     "target": "s14",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    }
+   ]
+  },
+  "s13": {
+   "id": "s13",
+   "page": 13,
+   "title": "June's Living Room",
+   "place": "June's house, Ohio - July 20, 1969, 4:00 p.m. (Eastern time)",
+   "image": "img/s13.jpg",
+   "paragraphs": [
+    "You land on June's back porch in Ohio. It's July 20, 4:00 in the afternoon. Bees hum around white hive boxes in the yard.",
+    "June runs out and hugs you. \"You came!\" Inside, the TV is on. Walter Cronkite is talking about the landing. Grandma brings honey toast on a plate.",
+    "You all sit close to the TV. The picture is black and white. There's no video from the Moon yet, only drawings and voices.",
+    "At 4:17, a voice crackles: \"Houston, Tranquility Base here. The Eagle has landed.\"",
+    "Grandpa claps. Grandma wipes her eyes. Walter Cronkite takes off his glasses and rubs his face. \"Man on the Moon!\" he says.",
+    "But the first step won't happen until almost eleven at night. That's a long wait. The rug is soft and warm. Your eyes feel heavy.",
+    "Out the window, the Moon is up, pale in the blue sky.",
+    "\"Want to go look at it?\" June asks."
+   ],
+   "choices": [
+    {
+     "label": "Rest on the rug",
+     "prompt": "If you lie down on the rug for a short rest, tap 'Rest on the rug.'",
+     "target": "e_fast_asleep",
+     "hop": false
+    },
+    {
+     "label": "Go out to the porch",
+     "prompt": "If you go out on the porch with June to look at the real Moon, then come back in, tap 'Go out to the porch.'",
+     "target": "g_living_room",
+     "hop": false
+    },
+    {
+     "label": "Go see the dish",
+     "prompt": "If you want to see the big dish that will send tonight's TV picture, tap 'Go see the dish.'",
+     "target": "s23",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    }
+   ]
+  },
+  "s14": {
+   "id": "s14",
+   "page": 14,
+   "title": "Tranquility Base",
+   "place": "The Sea of Tranquility, on the Moon - July 20, 1969, 9:50 p.m. (Houston time)",
+   "image": "img/s14.jpg",
+   "paragraphs": [
+    "It's 9:50 at night in Houston. Here on the Moon, the Sun is low, and the shadows are long and black.",
+    "You crouch behind a rock near Eagle. Your helmet hisses. Your meter says sixty minutes.",
+    "High in the black sky hangs the Earth, blue and white. Mom is down there somewhere. So is everybody else.",
+    "Eagle's hatch is open. Neil backs out, slowly, in his big white suit and backpack. He climbs down the ladder. A TV camera on Eagle's side points at him, so people on Earth can watch.",
+    "The ground is gray powder, as fine as flour. Nobody has ever stepped on it.",
+    "Your finger finds the record button. Next to you, the dust is smooth and flat. You could write your name in it.",
+    "Or you could wait. Buzz will come down soon too."
+   ],
+   "choices": [
+    {
+     "label": "Write your name",
+     "prompt": "If you write your name in the Moon dust, tap 'Write your name.'",
+     "target": "e_safety_return",
+     "hop": false,
+     "sets": {
+      "via": "dust"
+     }
+    },
+    {
+     "label": "Record the step",
+     "prompt": "If you stay behind the rock, press record, and hold the band still as Neil steps down, tap 'Record the step.'",
+     "target": "g_moon",
+     "hop": false
+    },
+    {
+     "label": "Wait for Buzz",
+     "prompt": "If you wait for Buzz to come down too, tap 'Wait for Buzz.'",
+     "target": "s21",
+     "hop": false
+    }
+   ],
+   "on_enter": {
+    "set": {
+     "oxygen_min": 60
+    }
+   },
+   "oxygen": 60
+  },
+  "s15": {
+   "id": "s15",
+   "page": 15,
+   "title": "Behind the Rock",
+   "place": "The Sea of Tranquility, on the Moon - July 20, 1969, 3:17 p.m. (Houston time)",
+   "image": "img/s15.jpg",
+   "paragraphs": [
+    "You click your helmet shut. The suit fills with air with a soft hiss. The meter on your wrist says sixty minutes of oxygen.",
+    "Then you're on the Moon. The sky is black, even though the Sun is shining. There's no air up here to spread the sunlight around and make the sky blue.",
+    "You crouch behind a big gray rock. Above you, Eagle comes down. Its engine blows the dust out in long, flat streaks. Then the legs touch, and the engine stops.",
+    "There's no sound. None at all. Sound needs air to travel, and there is no air here.",
+    "It's 3:17 p.m. in Houston. Eagle has landed.",
+    "But the hatch stays shut. Neil and Buzz have lots to do first: check Eagle, eat, and put on their backpacks. The first step won't happen for more than six hours.",
+    "You look at your meter. Sixty minutes of air. You can't wait six hours."
+   ],
+   "choices": [
+    {
+     "label": "Wait for the step",
+     "prompt": "If you sit behind the rock and wait for the first step, tap 'Wait for the step.'",
+     "target": "e_low_oxygen",
+     "hop": false,
+     "sets": {
+      "via": "wait"
+     }
+    },
+    {
+     "label": "Jump ahead",
+     "prompt": "If you use a charge to jump ahead six and a half hours to the first step, tap 'Jump ahead.'",
+     "target": "s14",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    }
+   ],
+   "on_enter": {
+    "set": {
+     "oxygen_min": 60
+    }
+   },
+   "oxygen": 60
+  },
+  "s16": {
+   "id": "s16",
+   "page": 16,
+   "title": "The Mission Map",
+   "place": "The TimeBand screen, in your kitchen",
+   "image": "img/s16.jpg",
+   "paragraphs": [
+    "Dr. Finch taps the band, and a map opens on its screen. It is a line with four bright stops, like beads on a string.",
+    "\"This is the Apollo 11 trip,\" she says. \"Eight days, from launch to splashdown.\"",
+    "The first stop is a rocket. July 16, 1969: launch day in Florida.",
+    "The second stop is a little gold lander. July 20: landing day, when the lander Eagle went down to the Moon.",
+    "The third stop is a boot print. The night of July 20, when Neil Armstrong took the first step. \"This stop is a viewer,\" Dr. Finch says. \"It shows you the whole Earth that night, and you can pick a place from there. Opening it is free.\"",
+    "The last stop is a ship on the ocean. July 24: splashdown day, when the crew came home.",
+    "\"Each day you visit costs a charge,\" she says. \"You can't see it all. Pick the moments you want most.\"",
+    "You look at the green dots on your band, and you think."
+   ],
+   "choices": [
+    {
+     "label": "Launch day",
+     "prompt": "If you want to go to Florida on launch morning, July 16, tap 'Launch day.'",
+     "target": "s17",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    },
+    {
+     "label": "Landing day",
+     "prompt": "If you want to go to Mission Control in Houston on July 20, tap 'Landing day.'",
+     "target": "s07",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    },
+    {
+     "label": "First-step night",
+     "prompt": "If you want to look at the globe for the night of the first step, tap 'First-step night.' (Looking is free.)",
+     "target": "s22",
+     "hop": false
+    },
+    {
+     "label": "Splashdown day",
+     "prompt": "If you want to go to the ship in the Pacific Ocean on July 24, tap 'Splashdown day.'",
+     "target": "s26",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    }
+   ]
+  },
+  "s17": {
+   "id": "s17",
+   "page": 17,
+   "title": "The Suit-Up Room",
+   "place": "Kennedy Space Center, Florida - July 16, 1969, about 5:35 a.m.",
+   "image": "img/s17.jpg",
+   "paragraphs": [
+    "You land in a hallway. The air smells like coffee. It is 5:35 in the morning on July 16, 1969, at Kennedy Space Center in Florida.",
+    "Through a small window in a door, you see the suit-up room. Three men sit in big chairs: Neil Armstrong, Buzz Aldrin, and Michael Collins. A team helps them into white suits.",
+    "The suit team pulls on the gloves and locks them at the wrists. They lock each helmet onto a metal ring at the neck. Then a man hooks a hose to a suit and watches a gauge. The needle holds still. That means no air is leaking out. In space there is no air to breathe, so a suit must not leak.",
+    "On a shelf by the door sits a spare helmet. It's shiny and round. It looks almost your size.",
+    "Down the hall, a bus is getting ready to take guests to the beach to watch the launch."
+   ],
+   "choices": [
+    {
+     "label": "Try on a helmet",
+     "prompt": "If you slip in and try on a spare helmet, tap 'Try on a helmet.'",
+     "target": "e_safety_return",
+     "hop": false,
+     "sets": {
+      "via": "helmet"
+     }
+    },
+    {
+     "label": "Watch the leak check",
+     "prompt": "If you stay at the window and watch the suit team check for leaks, tap 'Watch the leak check.'",
+     "target": "s19",
+     "hop": false,
+     "sets": {
+      "suit_check": true
+     }
+    },
+    {
+     "label": "Take the bus to the beach",
+     "prompt": "If you take a bus to the beach where the crowds wait, tap 'Take the bus to the beach.'",
+     "target": "s03",
+     "hop": false
+    }
+   ]
+  },
+  "s18": {
+   "id": "s18",
+   "page": 18,
+   "title": "The Press Site",
+   "place": "Press site, about 3 miles from the rocket - about 9:00 a.m.",
+   "image": "img/s18.jpg",
+   "paragraphs": [
+    "The press bus stops at a field near the water. This is the press site, about three miles from the rocket. There are rows of benches, tall TV towers, and lots of reporters. Up in a booth, Walter Cronkite talks to a TV camera.",
+    "It is 9:00 a.m. A big clock counts down: 32 minutes to go.",
+    "A reporter next to you needs to phone her newspaper. But the wind keeps flipping her notebook open, and pages tear loose. \"Oh no!\" she says. \"My notes!\"",
+    "You remember what Dr. Finch told you. Light is fast, but sound is slow. You will see the fire first. The roar will take about fourteen seconds to get here, and it will shake the ground.",
+    "You think about the shot you want. If you hold the band up high, you will see over everyone. But your arm might shake. There's a metal rail in front of you. If you rest the band on it, it will stay still.",
+    "The reporter is still grabbing for her pages, with the phone in her other hand."
+   ],
+   "choices": [
+    {
+     "label": "Hold her notebook",
+     "prompt": "If you hold the reporter's notebook while she phones her paper, tap 'Hold her notebook.' (She will thank you with a spare press pass, but you won't be at the rail when the rocket goes.)",
+     "target": "s06",
+     "hop": false,
+     "sets": {
+      "press_pass": true,
+      "via": "press"
+     }
+    },
+    {
+     "label": "Rest the band on the rail",
+     "prompt": "If you rest the band on the metal rail and record the launch, tap 'Rest the band on the rail.'",
+     "target": "g_launch",
+     "hop": false
+    },
+    {
+     "label": "Hold the band up high",
+     "prompt": "If you hold the band up high over your head and record the launch, tap 'Hold the band up high.'",
+     "target": "e_too_shaky",
+     "hop": false
+    }
+   ]
+  },
+  "s19": {
+   "id": "s19",
+   "page": 19,
+   "title": "The Van",
+   "place": "Outside the crew building - 6:27 a.m.",
+   "image": "img/s19.jpg",
+   "paragraphs": [
+    "At 6:27 a.m., the door opens. Neil, Buzz, and Michael walk out in their white suits and helmets.",
+    "Each man carries a small box with a hose. The box pumps cool air into his suit, like a fan he can carry.",
+    "People clap and cheer. The three men wave and climb into a silver van. The van drives off toward the rocket, about eight miles away.",
+    "You can see the Saturn V from here, white in the morning light. Clouds of steam drift off its sides.",
+    "A man with a clipboard calls out, \"Press bus! Last call for the press site!\"",
+    "Another man in a white shirt walks fast toward a big square building. That's the Launch Control Center. Inside is the Firing Room, where the launch team works.",
+    "And a road with a long line of cars leads to the beach."
+   ],
+   "choices": [
+    {
+     "label": "Ride the press bus",
+     "prompt": "If you ride the bus to the press site, where the reporters are, tap 'Ride the press bus.'",
+     "target": "s18",
+     "hop": false
+    },
+    {
+     "label": "Go to the Firing Room",
+     "prompt": "If you go to the Firing Room, where the team runs the countdown, tap 'Go to the Firing Room.'",
+     "target": "s20",
+     "hop": false
+    },
+    {
+     "label": "Go to the beach",
+     "prompt": "If you go to the beach with the crowds, tap 'Go to the beach.'",
+     "target": "s03",
+     "hop": false
+    }
+   ]
+  },
+  "s20": {
+   "id": "s20",
+   "page": 20,
+   "title": "The Firing Room",
+   "place": "Launch Control Center - about 9:20 a.m.",
+   "image": "img/s20.jpg",
+   "paragraphs": [
+    "You slip inside behind the man in the white shirt and follow him upstairs. This is the Firing Room. It is huge. Rows and rows of consoles fill it, with small screens and hundreds of buttons. Hundreds of people work here.",
+    "Big windows at the front face the rocket, three and a half miles away.",
+    "At one console sits JoAnn Morgan. She is the only woman working in the room today. Her job is to watch the numbers that show how the rocket is doing. She keeps her eyes on her screen.",
+    "\"The rocket is full of fuel now,\" a man near you says. \"It weighs about as much as 400 elephants.\"",
+    "To lift that much, the engines must push down harder than the whole rocket weighs.",
+    "Right by your hand, a button has a red cover over it. You wonder what it does.",
+    "It is 9:20. \"T minus twelve minutes,\" says a voice."
+   ],
+   "choices": [
+    {
+     "label": "Press a button",
+     "prompt": "If you press a button to help with the countdown, tap 'Press a button.'",
+     "target": "e_safety_return",
+     "hop": false,
+     "sets": {
+      "via": "button"
+     }
+    },
+    {
+     "label": "Stand at the window",
+     "prompt": "If you stand at the big window and watch, tap 'Stand at the window.'",
+     "target": "s06",
+     "hop": false,
+     "sets": {
+      "via": "firing"
+     }
+    }
+   ]
+  },
+  "s21": {
+   "id": "s21",
+   "page": 21,
+   "title": "Buzz Comes Down",
+   "place": "Tranquility Base - about 20 minutes later",
+   "image": "img/s21.jpg",
+   "paragraphs": [
+    "Neil is walking around now. He takes pictures and scoops a little Moon dirt into a bag. About twenty minutes after Neil, Buzz comes down the ladder.",
+    "\"Beautiful view,\" Buzz says.",
+    "\"Isn't that something?\" Neil says.",
+    "\"Magnificent desolation,\" Buzz says. That means grand, and empty, and very far from everything.",
+    "Buzz tries hopping like a kangaroo. On the Moon, everything weighs only one sixth as much as on Earth, so a big jump is easy. When he kicks, the dust flies in smooth arcs and falls straight back down. No wind blows it away.",
+    "They plant a flag. It has a rod across the top, so it stays open with no wind.",
+    "Your meter says forty minutes. The astronauts will be out here for more than two hours.",
+    "You'd love to walk closer and see them better."
+   ],
+   "choices": [
+    {
+     "label": "Record Buzz",
+     "prompt": "If you stay behind the rock and record Buzz, tap 'Record Buzz.'",
+     "target": "g_buzz",
+     "hop": false
+    },
+    {
+     "label": "Walk closer",
+     "prompt": "If you walk out from the rock to get a better shot, tap 'Walk closer.'",
+     "target": "e_safety_return",
+     "hop": false,
+     "sets": {
+      "via": "closer"
+     }
+    },
+    {
+     "label": "Stay to the end",
+     "prompt": "If you stay until they go back inside Eagle, more than two hours from now, tap 'Stay to the end.'",
+     "target": "e_low_oxygen",
+     "hop": false,
+     "sets": {
+      "via": "end"
+     }
+    }
+   ],
+   "oxygen": 40
+  },
+  "s22": {
+   "id": "s22",
+   "page": 22,
+   "title": "The Turning Earth",
+   "place": "The TimeBand screen - the night of the first step",
+   "image": "img/s22.jpg",
+   "paragraphs": [
+    "Dr. Finch taps the boot print, and the band shows the whole Earth, turning slowly in space. It's the night of July 20, 1969. On the dark side, little lights glow where the cities are.",
+    "A small gray dot sits off to the side. That's the Moon.",
+    "\"The Earth spins,\" Dr. Finch says. \"So the Moon rises and sets, like the Sun. When Neil steps out, the Moon will be high over the Pacific Ocean.\"",
+    "On the map, big radio dishes light up: one in California, two in Australia, and one in Spain. NASA put dishes far apart, so one of them could always face the Moon while the Earth turns.",
+    "\"To see the first step, you need to be somewhere the Moon is up,\" she says.",
+    "The band glows. You can go to the Moon itself. You can go to the dishes in Australia. Or you can go to the dish in Spain."
+   ],
+   "choices": [
+    {
+     "label": "Go to the Moon",
+     "prompt": "If you put on the suit and go to the Moon for the first step, tap 'Go to the Moon.'",
+     "target": "s14",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    },
+    {
+     "label": "Go to Australia",
+     "prompt": "If you go to the Honeysuckle Creek dish in Australia, tap 'Go to Australia.'",
+     "target": "s23",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    },
+    {
+     "label": "Go to Spain",
+     "prompt": "If you go to the dish in Spain, tap 'Go to Spain.'",
+     "target": "e_moon_set",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    }
+   ]
+  },
+  "s23": {
+   "id": "s23",
+   "page": 23,
+   "title": "The Dish at Honeysuckle Creek",
+   "place": "Honeysuckle Creek, near Canberra, Australia - July 21, 1969, about 12:50 p.m. (local time)",
+   "image": "img/s23.jpg",
+   "paragraphs": [
+    "You land on a hill in Australia. It's July 21 here, about 12:50 in the afternoon. It's winter, and the air is cool. The gum trees smell like cough drops.",
+    "On the hill stands a big white dish, tipped up at the Moon. The Moon is out, pale in the daytime sky. This is Honeysuckle Creek.",
+    "Inside, the control room is busy. Men in sweaters sit at rows of switches and tape machines. A TV shows a gray, fuzzy picture: a boot on a ladder.",
+    "The dish catches a weak radio signal from the Moon and makes it strong again. Then the picture goes all the way to Houston, and from there to TVs all over the world.",
+    "At first, Houston shows the picture from the dish in California. But that picture is dark and hard to see. Then word comes from Houston: use the picture from Honeysuckle.",
+    "Now the whole world sees this picture. It's Neil, coming down the ladder.",
+    "A row of switches is right by your hand. The men here are very careful with them.",
+    "A few hours' drive away, a bigger dish at Parkes is waiting for the Moon to climb higher."
+   ],
+   "choices": [
+    {
+     "label": "Flip a switch",
+     "prompt": "If you flip a switch to help, tap 'Flip a switch.'",
+     "target": "e_safety_return",
+     "hop": false,
+     "sets": {
+      "via": "switch"
+     }
+    },
+    {
+     "label": "Record the screen",
+     "prompt": "If you stand back and record the first picture on the screen, tap 'Record the screen.'",
+     "target": "g_dish",
+     "hop": false,
+     "sets": {
+      "via": "honeysuckle"
+     }
+    },
+    {
+     "label": "Go to Parkes",
+     "prompt": "If you go to Parkes, where a much bigger dish is listening too, tap 'Go to Parkes.'",
+     "target": "s24",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    }
+   ]
+  },
+  "s24": {
+   "id": "s24",
+   "page": 24,
+   "title": "The Dish at Parkes",
+   "place": "Parkes, Australia - a few minutes later",
+   "image": "img/s24.jpg",
+   "paragraphs": [
+    "You land in a field with sheep. In front of you stands the Parkes dish. It's even bigger than the one at Honeysuckle. It's as wide as five school buses parked end to end.",
+    "A strong wind blows. The dish creaks and shakes. It's tipped down low, aimed at the Moon. The wind is stronger than the safe limit. The team inside decides to keep going.",
+    "The bigger a dish is, the more of the weak signal it can catch, like a big bucket catching more rain. So the picture from Parkes is clearer. A few minutes later, Houston switches to it. Now the world watches the Moon through Parkes.",
+    "On the tower, a ladder goes up toward the dish. From up there, you'd see so far.",
+    "Inside, the TV shows Buzz on the ladder, coming down to join Neil."
+   ],
+   "choices": [
+    {
+     "label": "Record the screen",
+     "prompt": "If you stay inside and record the screen, tap 'Record the screen.'",
+     "target": "g_dish",
+     "hop": false,
+     "sets": {
+      "via": "parkes"
+     }
+    },
+    {
+     "label": "Climb up to the dish",
+     "prompt": "If you climb the ladder up to the dish to see, tap 'Climb up to the dish.'",
+     "target": "e_safety_return",
+     "hop": false,
+     "sets": {
+      "via": "climb"
+     }
+    }
+   ]
+  },
+  "s25": {
+   "id": "s25",
+   "page": 25,
+   "title": "A Window into Reentry",
+   "place": "Window mode: Columbia, falling into Earth's air - July 24, 1969",
+   "image": "img/s25.jpg",
+   "paragraphs": [
+    "The window jumps ahead four days. Now it's July 24, and Columbia is coming home. Neil and Buzz are back on board with Michael.",
+    "They let go of the long back part of the spacecraft. Only the small cone comes home. Its wide bottom faces forward. It is covered with a heat shield.",
+    "Columbia drops into Earth's air very fast. The air can't get out of the way. It gets squeezed, and it gets hot, hotter than any fire. Out the window, everything glows orange.",
+    "Then the radio goes quiet. The hot air around Columbia blocks the radio for a few minutes. This is called blackout. In Houston, people wait and listen.",
+    "Your hand finds the talk button. You want to tell them, \"They're fine! I know they're fine!\""
+   ],
+   "choices": [
+    {
+     "label": "Press the talk button",
+     "prompt": "If you press the talk button to ask if they are OK, tap 'Press the talk button.'",
+     "target": "e_safety_return",
+     "hop": false,
+     "sets": {
+      "via": "talk_home"
+     }
+    },
+    {
+     "label": "Close the window",
+     "prompt": "If the quiet worries you and you close the window, tap 'Close the window.'",
+     "target": "e_gave_up",
+     "hop": false
+    },
+    {
+     "label": "Wait, then go to the ship",
+     "prompt": "If you wait out the quiet, then go to the ship that will meet them, tap 'Wait, then go to the ship.'",
+     "target": "s26",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    }
+   ]
+  },
+  "s26": {
+   "id": "s26",
+   "page": 26,
+   "title": "The USS Hornet",
+   "place": "USS Hornet, Pacific Ocean - July 24, 1969, before sunrise",
+   "image": "img/s26.jpg",
+   "paragraphs": [
+    "You land on a ship in the middle of the Pacific Ocean. It's July 24, before sunrise. This is the USS Hornet, an aircraft carrier. It's almost as long as three football fields, and it's made of steel.",
+    "Steel is heavy, but the ship floats. Its wide bottom pushes aside a lot of water, and the water pushes back up and holds it.",
+    "You're on the hangar deck, under the main deck. Sailors hurry past. A shiny silver trailer with small windows sits on the deck. The sailors call it the quarantine van.",
+    "The President of the United States, Richard Nixon, is on this ship. He came to welcome the crew home.",
+    "A metal stairway leads up to the flight deck. A sailor guards it. \"Press and crew only,\" he says.",
+    "Up on deck, a helicopter is getting ready to fly out and pick up the astronauts. Its door is open."
+   ],
+   "choices": [
+    {
+     "label": "Show your press pass",
+     "prompt": "If you have a press pass, show it and go up to the flight deck. Tap 'Show your press pass.'",
+     "target": "s27",
+     "hop": false,
+     "requires": {
+      "press_pass": true
+     }
+    },
+    {
+     "label": "Wait by the silver van",
+     "prompt": "If you wait on the lower deck by the silver van, tap 'Wait by the silver van.'",
+     "target": "s29",
+     "hop": false
+    },
+    {
+     "label": "Climb into a helicopter",
+     "prompt": "If you climb into a helicopter to fly out to the spacecraft, tap 'Climb into a helicopter.'",
+     "target": "e_safety_return",
+     "hop": false,
+     "sets": {
+      "via": "helicopter"
+     }
+    }
+   ]
+  },
+  "s27": {
+   "id": "s27",
+   "page": 27,
+   "title": "Watch the Sky",
+   "place": "The Hornet's flight deck",
+   "image": "img/s27.jpg",
+   "paragraphs": [
+    "The guard looks at your press card and waves you up. The flight deck is wide and flat and windy. Reporters line the edge with cameras.",
+    "Columbia will splash down about thirteen miles away. Your band has a zoom camera, so you can see far. But you have to point it at the right spot.",
+    "A sailor points at the water. \"They'll land out there.\"",
+    "A reporter looks up instead. \"Before it splashes, it has to come down,\" she says.",
+    "Think about it, Evelyn. Coming home, Columbia has no engine to slow it down the way Eagle did. What does it use instead?"
+   ],
+   "choices": [
+    {
+     "label": "Point it at the sky",
+     "prompt": "If you point the camera at the sky, to look for parachutes, tap 'Point it at the sky.'",
+     "target": "s28",
+     "hop": false
+    },
+    {
+     "label": "Point it at the water",
+     "prompt": "If you point the camera at the water, to look for a rocket flame like Eagle's, tap 'Point it at the water.'",
+     "target": "e_wrong_way",
+     "hop": false
+    }
+   ]
+  },
+  "s28": {
+   "id": "s28",
+   "page": 28,
+   "title": "Upside Down",
+   "place": "The Hornet's flight deck, with the band's zoom camera",
+   "image": "img/s28.jpg",
+   "paragraphs": [
+    "You point the band at the sky and zoom in. There! Three big orange and white parachutes, with Columbia hanging under them. The parachutes catch the air and slow it down.",
+    "Splash! At 5:50 a.m., Columbia lands in the waves. It tips over and floats upside down, nose in the water.",
+    "Then three balloons on its top fill with air. Slowly, Columbia flips right side up.",
+    "Navy swimmers jump from a helicopter. They clip a big float ring around Columbia. One swimmer opens the hatch and hands in three gray suits with masks. The astronauts put them on before they climb out.",
+    "Then the swimmer wipes them down with a germ-killing wash. Nobody knows yet if there are germs on the Moon. So the crew must stay sealed away from other people for 21 days, just in case.",
+    "Germs are too small to see. That's why the rules are so careful."
+   ],
+   "choices": [
+    {
+     "label": "Record from the deck",
+     "prompt": "If you record the swimmers and the capsule from the deck, tap 'Record from the deck.'",
+     "target": "g_hornet",
+     "hop": false,
+     "sets": {
+      "via": "deck"
+     }
+    },
+    {
+     "label": "Go to the silver van",
+     "prompt": "If you go down to see the crew come aboard, tap 'Go to the silver van.'",
+     "target": "s29",
+     "hop": false
+    }
+   ],
+   "on_enter": {
+    "set": {
+     "knows_germs": true
+    }
+   }
+  },
+  "s29": {
+   "id": "s29",
+   "page": 29,
+   "title": "The Quarantine Van",
+   "place": "The Hornet's hangar deck",
+   "image": "img/s29.jpg",
+   "paragraphs": [
+    "A helicopter lands on the Hornet and rides an elevator down to the hangar deck. Out step the three astronauts in their gray suits and masks. They walk straight into the silver van. The door shuts behind them.",
+    "The van keeps its air apart from everyone else's. Fans pull the air through filters, so no germs can get out.",
+    "A Navy band plays. Sailors cheer and wave their caps. President Nixon walks to the van's back window. Through the glass, he tells Neil, Buzz, and Michael that the whole world is proud of them.",
+    "The crew will stay in the van as it rides the ship, then a plane, all the way to Houston.",
+    "The van door is right there. You could knock and say hi.",
+    "Then you see sailors carry two metal boxes away. They're full of Moon rocks."
+   ],
+   "choices": [
+    {
+     "label": "Knock on the door",
+     "prompt": "If you knock on the van door to say hi, tap 'Knock on the door.'",
+     "target": "e_quarantine",
+     "hop": false,
+     "sets": {
+      "via": "knock"
+     }
+    },
+    {
+     "label": "Record the welcome",
+     "prompt": "If you stand back and record the welcome at the window, tap 'Record the welcome.'",
+     "target": "g_hornet",
+     "hop": false,
+     "sets": {
+      "via": "van"
+     }
+    },
+    {
+     "label": "Follow the Moon rocks",
+     "prompt": "If you know the germ rules, you can follow the Moon rocks to the lab in Houston. Tap 'Follow the Moon rocks.'",
+     "target": "s30",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges",
+     "requires": {
+      "knows_germs": true
+     }
+    }
+   ]
+  },
+  "s30": {
+   "id": "s30",
+   "page": 30,
+   "title": "The Moon Rock Lab",
+   "place": "Lunar Receiving Laboratory, Houston - late July 1969",
+   "image": "img/s30.jpg",
+   "paragraphs": [
+    "You land in a long, bright room in Houston. It's late July 1969, and this is the Lunar Receiving Laboratory.",
+    "Rows of steel cabinets with glass fronts fill the room. Thick black rubber gloves stick into each one.",
+    "A scientist slides his hands into a pair of gloves. Now he can work inside the cabinet without ever touching what's in it. Nothing gets in, and nothing gets out.",
+    "Inside the cabinet sits a square metal box. It's the first box of Moon rocks, and it's about to be opened.",
+    "The gloves undo the latches. The lid comes up. Inside are dark gray rocks and black powder, like dust from a fireplace.",
+    "On the side of one cabinet, a small hatch is open a crack. You could reach in. You could touch a real piece of the Moon."
+   ],
+   "choices": [
+    {
+     "label": "Reach in to touch a rock",
+     "prompt": "If you reach in to touch a Moon rock, tap 'Reach in to touch a rock.'",
+     "target": "e_quarantine",
+     "hop": false,
+     "sets": {
+      "via": "touch"
+     }
+    },
+    {
+     "label": "Record the first box",
+     "prompt": "If you stand back and record the first box being opened, tap 'Record the first box.'",
+     "target": "g_rock_lab",
+     "hop": false
+    }
+   ]
+  }
+ },
+ "endings": {
+  "g_launch": {
+   "id": "g_launch",
+   "page": 31,
+   "type": "GOOD",
+   "title": "We Have Liftoff",
+   "image": "img/g_launch.jpg",
+   "paragraphs": [
+    "You rest the band on the rail. You press record. You hold still, the way you did with the bee.",
+    "At 9:32, fire bursts out under the rocket. White smoke rolls out to the sides. The Saturn V lifts off, slowly at first.",
+    "You count in your head. One, two, three... At about fourteen, the sound gets here. It crackles and booms. The rail shakes. The benches shake. Your teeth buzz.",
+    "But the band sits on the rail, and the picture stays steady and clear.",
+    "Up in his booth, Walter Cronkite leans forward to watch it go. The rocket climbs until it's just a dot of light. All the reporters cheer.",
+    "The band beeps twice. Recording saved.",
+    "Back home, Dr. Finch plays it on her laptop. The rocket rises, steady and clear. \"Evelyn,\" she says, \"that's the best launch film I've ever seen.\""
+   ],
+   "on_enter": {
+    "set": {
+     "recording_saved": true
+    }
+   },
+   "really_there": {
+    "title": "You were really there",
+    "text": "Apollo 11 really lifted off at 9:32 a.m. on July 16, 1969. About a million people watched from beaches and roads nearby. The roar took about fourteen seconds to reach the press site, three miles away.",
+    "photos": [
+     {
+      "src": "img/nasa/6901001.jpg",
+      "nasa_id": "6901001",
+      "caption": "The Saturn V lifts off from Launch Complex 39A, July 16, 1969.",
+      "credit": "NASA"
+     },
+     {
+      "src": "img/nasa/6900588.jpg",
+      "nasa_id": "6900588",
+      "caption": "People camped on the beaches and roads to watch the launch.",
+      "credit": "NASA"
+     }
+    ]
+   }
+  },
+  "g_mission_control": {
+   "id": "g_mission_control",
+   "page": 32,
+   "type": "GOOD",
+   "title": "We're Breathing Again",
+   "image": "img/g_mission_control.jpg",
+   "paragraphs": [
+    "You stay at the back and press record.",
+    "\"Thirty seconds...\"",
+    "Then Buzz's voice: \"Contact light.\" A long probe under Eagle's foot has touched the ground. \"Shutdown,\" Neil says. The engine stops.",
+    "Then: \"Houston, Tranquility Base here. The Eagle has landed.\"",
+    "For a second, nobody breathes. Then Charlie Duke says, \"Roger, Twan... Tranquility, we copy you on the ground. You got a bunch of guys about to turn blue. We're breathing again. Thanks a lot.\"",
+    "The whole room cheers. People clap and shake hands. Some of them wipe their eyes.",
+    "{bonus}",
+    "Then Gene Kranz tells everyone to settle down. There is still a lot of work to do.",
+    "The band beeps twice. Recording saved.",
+    "You saved the sound of the moment the whole world was waiting for, from the room that helped make it happen."
+   ],
+   "bonus": [
+    {
+     "if": {
+      "read_list": true
+     },
+     "text": "You smile. You know what 1202 meant. You read it on Jack's list."
+    }
+   ],
+   "on_enter": {
+    "set": {
+     "recording_saved": true
+    }
+   },
+   "really_there": {
+    "title": "You were really there",
+    "text": "Eagle landed at 3:17 p.m. Houston time on July 20, 1969, with less than a minute of landing fuel left. The 1202 alarm meant the computer was busy, but still doing its most important jobs.",
+    "photos": [
+     {
+      "src": "img/nasa/s69-39590.jpg",
+      "nasa_id": "S69-39590",
+      "caption": "Mission Control in Houston during the Apollo 11 landing.",
+      "credit": "NASA"
+     },
+     {
+      "src": "img/nasa/s69-40023.jpg",
+      "nasa_id": "S69-40023",
+      "caption": "The flight controllers celebrate when the crew is home safe, July 24, 1969.",
+      "credit": "NASA"
+     }
+    ]
+   }
+  },
+  "g_eagle": {
+   "id": "g_eagle",
+   "page": 33,
+   "type": "GOOD",
+   "title": "The Eagle Has Landed",
+   "image": "img/g_eagle.jpg",
+   "paragraphs": [
+    "You press record and hold still. You look out the window, just where Neil is looking.",
+    "\"Thirty feet, two and a half down,\" Buzz says. \"Faint shadow.\"",
+    "Then: \"Contact light.\" The engine stops.",
+    "The dust that was flying settles all at once. With no air, it doesn't float or hang. It just drops.",
+    "Neil and Buzz look at each other and shake hands.",
+    "\"Houston, Tranquility Base here. The Eagle has landed.\"",
+    "Out the window, the gray ground is quiet and still. Rocks. Little craters. Long shadows. Nobody has ever seen this place up close.",
+    "The band beeps twice. Recording saved.",
+    "At home, Dr. Finch watches it three times. \"This is just how it looked to them,\" she says."
+   ],
+   "on_enter": {
+    "set": {
+     "recording_saved": true
+    }
+   },
+   "really_there": {
+    "title": "You were really there",
+    "text": "Neil Armstrong flew Eagle past a field of boulders and landed on flat ground in the Sea of Tranquility. Later, the top half of Eagle flew back up to meet Columbia.",
+    "photos": [
+     {
+      "src": "img/nasa/as11-40-5927.jpg",
+      "nasa_id": "AS11-40-5927",
+      "caption": "Eagle on the Moon, photographed by Neil Armstrong.",
+      "credit": "NASA"
+     },
+     {
+      "src": "img/nasa/as11-44-6642.jpg",
+      "nasa_id": "AS11-44-6642",
+      "caption": "Eagle flying back up to Columbia, with the Earth behind it.",
+      "credit": "NASA"
+     }
+    ]
+   }
+  },
+  "g_columbia": {
+   "id": "g_columbia",
+   "page": 34,
+   "type": "GOOD",
+   "title": "Earth in the Window",
+   "image": "img/g_columbia.jpg",
+   "paragraphs": [
+    "You stay with Michael. You press record.",
+    "Through the window, you hear the radio from Eagle, far below. \"Contact light... The Eagle has landed.\"",
+    "Michael grins. \"Yes, I heard the whole thing,\" he says. \"Fantastic.\"",
+    "Later, Columbia slides around the far side of the Moon. The radio goes quiet. No Houston. No Neil and Buzz. Michael is farther from other people than anyone has ever been.",
+    "But he isn't scared. He drinks hot coffee. He looks out at the stars. Back here, with no Earth in the sky, there are so many.",
+    "Then Columbia comes back around. Over the edge of the Moon, the Earth rises, blue and white.",
+    "The band beeps twice. Recording saved.",
+    "Back home, Dr. Finch smiles. \"Everyone remembers Neil and Buzz,\" she says. \"You remembered Michael.\""
+   ],
+   "on_enter": {
+    "set": {
+     "recording_saved": true
+    }
+   },
+   "really_there": {
+    "title": "You were really there",
+    "text": "Michael Collins flew Columbia around the Moon while Neil and Buzz were on the surface. Each time he went around the far side, he was out of radio contact for about 48 minutes.",
+    "photos": [
+     {
+      "src": "img/nasa/as11-44-6550.jpg",
+      "nasa_id": "AS11-44-6550",
+      "caption": "The Earth rising over the Moon, seen from Apollo 11.",
+      "credit": "NASA"
+     },
+     {
+      "src": "img/nasa/as11-37-5445.jpg",
+      "nasa_id": "AS11-37-5445",
+      "caption": "Columbia over the Moon, photographed from Eagle.",
+      "credit": "NASA"
+     }
+    ]
+   }
+  },
+  "g_moon": {
+   "id": "g_moon",
+   "page": 35,
+   "type": "GOOD",
+   "title": "One Small Step",
+   "image": "img/g_moon.jpg",
+   "paragraphs": [
+    "You press record. You don't move. You barely breathe.",
+    "Neil steps off the ladder onto Eagle's round footpad. He waits a moment. Then he puts his left boot down on the Moon.",
+    "It's 9:56 p.m. in Houston. \"That's one small step for man,\" he says, \"one giant leap for mankind.\"",
+    "His boot sinks in a little. The print it leaves is sharp and clear. There's no wind or rain up here, so that print could stay for a very long time.",
+    "About 600 million people on Earth are watching this on TV. And you are right here.",
+    "{bonus}",
+    "The band beeps twice. Recording saved. You press the button that takes you home.",
+    "Back in the kitchen, Mom pulls off your helmet and hugs you. Your curls are sweaty and tangled. You don't care one bit."
+   ],
+   "bonus": [
+    {
+     "if": {
+      "suit_check": true
+     },
+     "text": "Before you go, you check your suit seals, just like the suit team did."
+    }
+   ],
+   "on_enter": {
+    "set": {
+     "recording_saved": true
+    }
+   },
+   "really_there": {
+    "title": "You were really there",
+    "text": "Neil Armstrong stepped onto the Moon at 9:56 p.m. Houston time on July 20, 1969. About 600 million people watched on TV.",
+    "photos": [
+     {
+      "src": "img/nasa/s69-42583.jpg",
+      "nasa_id": "S69-42583",
+      "caption": "The real TV picture of Neil on Eagle's ladder, just before the first step.",
+      "credit": "NASA"
+     },
+     {
+      "src": "img/nasa/as11-40-5878.jpg",
+      "nasa_id": "AS11-40-5878",
+      "caption": "A bootprint in the Moon's dust.",
+      "credit": "NASA"
+     }
+    ]
+   }
+  },
+  "g_buzz": {
+   "id": "g_buzz",
+   "page": 36,
+   "type": "GOOD",
+   "title": "Magnificent Desolation",
+   "image": "img/g_buzz.jpg",
+   "paragraphs": [
+    "You press record. Buzz hops past like a kangaroo. His boots kick up dust that sails in a smooth arc and drops straight down.",
+    "You try a hop too. You push off, and up you go, slow and high. On the Moon, you weigh about as much as a bag of flour. You float back down and land with a soft puff of dust. You laugh inside your helmet.",
+    "Buzz stands by the flag. Neil takes his picture.",
+    "{bonus}",
+    "The band beeps twice. Recording saved.",
+    "At home, you show Dr. Finch how the dust flew. \"On Earth, air pushes the dust around,\" she says. \"On the Moon, nothing gets in its way.\""
+   ],
+   "bonus": [
+    {
+     "if": {
+      "suit_check": true
+     },
+     "text": "You check your suit seals, just like the suit team did, and head home with air to spare."
+    }
+   ],
+   "on_enter": {
+    "set": {
+     "recording_saved": true
+    }
+   },
+   "really_there": {
+    "title": "You were really there",
+    "text": "Buzz Aldrin came down the ladder about 20 minutes after Neil. Together they walked on the Moon for about two and a half hours. Almost all the photos of an astronaut on the Moon from that day are of Buzz, because Neil had the camera.",
+    "photos": [
+     {
+      "src": "img/nasa/as11-40-5903.jpg",
+      "nasa_id": "AS11-40-5903",
+      "caption": "Buzz Aldrin walks next to Eagle's leg. Neil took this photo.",
+      "credit": "NASA"
+     },
+     {
+      "src": "img/nasa/as11-40-5875.jpg",
+      "nasa_id": "AS11-40-5875",
+      "caption": "Buzz Aldrin beside the flag.",
+      "credit": "NASA"
+     }
+    ]
+   }
+  },
+  "g_living_room": {
+   "id": "g_living_room",
+   "page": 37,
+   "type": "GOOD",
+   "title": "On TV in Ohio",
+   "image": "img/g_living_room.jpg",
+   "paragraphs": [
+    "You and June step out onto the porch. The air smells like cut grass. The bees have gone in for the night. Low over the trees, the Moon is almost half lit.",
+    "\"They're up there right now,\" June whispers. You both wave.",
+    "The fresh air wakes you up. Back inside, you stay awake. At 10:56 p.m., the TV shows a gray, fuzzy picture: a boot on a ladder. Neil steps onto the Moon. \"That's one small step for man...\"",
+    "June squeezes your hand. Grandpa takes off his hat. Grandma says, \"All over the world, people are watching this right now.\"",
+    "You press record. You film the TV, and June, and Grandpa, and the honey toast.",
+    "{bonus}",
+    "The band beeps twice. Recording saved.",
+    "\"Families watched it just like this,\" Dr. Finch says at home. \"You saved what it felt like.\""
+   ],
+   "bonus": [
+    {
+     "if": {
+      "hive_test": true
+     },
+     "text": "Grandma gives you a jar of honey for your mom, from one beekeeper to another."
+    }
+   ],
+   "on_enter": {
+    "set": {
+     "recording_saved": true
+    }
+   },
+   "really_there": {
+    "title": "You were really there",
+    "text": "On July 20, 1969, families all over the world gathered around TVs. The first step came at 10:56 p.m. on the East Coast. The picture was black and white and fuzzy, but people watched every second.",
+    "photos": [
+     {
+      "src": "img/nasa/s69-42583.jpg",
+      "nasa_id": "S69-42583",
+      "caption": "This is what people saw on TV: Neil on the ladder.",
+      "credit": "NASA"
+     },
+     {
+      "src": "img/nasa/s69-39563.jpg",
+      "nasa_id": "S69-39563",
+      "caption": "Neil and Buzz on TV, standing by Eagle.",
+      "credit": "NASA"
+     }
+    ]
+   }
+  },
+  "g_dish": {
+   "id": "g_dish",
+   "page": 38,
+   "type": "GOOD",
+   "title": "Pictures from the Moon",
+   "image": "img/g_dish.jpg",
+   "paragraphs": [
+    "You hold the band up to the TV screen and press record.",
+    "{variant}",
+    "Around you, the men stay at their switches. Nobody cheers out loud. They have a job to do: keep the dish pointed at the Moon, so the picture doesn't drop.",
+    "The signal travels about 240,000 miles from the Moon to this dish. Then it goes on to Houston, and out to TVs all over the world.",
+    "The band beeps twice. Recording saved.",
+    "At home, Dr. Finch watches it. \"Everybody thinks about the astronauts,\" she says. \"But without these dishes, nobody would have seen a thing.\""
+   ],
+   "variants": {
+    "honeysuckle": "On the screen, Neil climbs down the ladder. He steps onto the Moon. \"That's one small step for man, one giant leap for mankind.\" Every TV in the world is showing this picture, the one from this dish.",
+    "parkes": "Outside, the wind roars and the giant dish shakes. But the picture on the screen is clear. Buzz climbs down and joins Neil. Every TV in the world is showing this picture, the one from Parkes."
+   },
+   "on_enter": {
+    "set": {
+     "recording_saved": true
+    }
+   },
+   "really_there": {
+    "title": "You were really there",
+    "text": "The first step reached the world through the Honeysuckle Creek dish in Australia. A few minutes later, Houston switched to the bigger dish at Parkes, which kept the picture going in strong wind.",
+    "photos": [
+     {
+      "src": "img/nasa/pia13277.jpg",
+      "nasa_id": "PIA13277",
+      "caption": "A giant NASA radio dish in California. Dishes like this one caught the Moon's faint signal. (This photo is from 2009.)",
+      "credit": "NASA"
+     },
+     {
+      "src": "img/nasa/s69-39563.jpg",
+      "nasa_id": "S69-39563",
+      "caption": "The picture the dishes sent: Neil and Buzz by Eagle.",
+      "credit": "NASA"
+     }
+    ]
+   }
+  },
+  "g_hornet": {
+   "id": "g_hornet",
+   "page": 39,
+   "type": "GOOD",
+   "title": "Welcome Home",
+   "image": "img/g_hornet.jpg",
+   "paragraphs": [
+    "{variant}",
+    "The trip took eight days. Neil, Buzz, and Michael traveled almost a million miles, and they all came home.",
+    "{bonus}",
+    "The band beeps twice. Recording saved.",
+    "At home, Dr. Finch says, \"Going to the Moon was only half the job. They had to come home safe too. And you saw them do it.\""
+   ],
+   "variants": {
+    "deck": "You hold the band steady and press record. A helicopter lifts the astronauts one by one from a raft. It flies back and lands on the Hornet. The sailors cheer so loud you feel it in your feet.",
+    "van": "You stand by the silver van and press record. The Navy band plays. Through the back window, Neil, Buzz, and Michael grin and lean close to the glass to hear the President."
+   },
+   "bonus": [
+    {
+     "if": {
+      "saw_launch": true
+     },
+     "text": "You saw them go up eight days ago. Now you see them come home."
+    }
+   ],
+   "on_enter": {
+    "set": {
+     "recording_saved": true
+    }
+   },
+   "really_there": {
+    "title": "You were really there",
+    "text": "Columbia splashed down in the Pacific Ocean at 5:50 a.m. local time on July 24, 1969, about thirteen miles from the USS Hornet. The crew stayed sealed away for 21 days, just in case of Moon germs.",
+    "photos": [
+     {
+      "src": "img/nasa/s69-21698.jpg",
+      "nasa_id": "S69-21698",
+      "caption": "The crew in their gray suits on a raft, waiting for the helicopter.",
+      "credit": "NASA"
+     },
+     {
+      "src": "img/nasa/s69-21365.jpg",
+      "nasa_id": "S69-21365",
+      "caption": "President Nixon welcomes the crew, who are inside the silver quarantine van.",
+      "credit": "NASA"
+     },
+     {
+      "src": "img/nasa/s69-21294.jpg",
+      "nasa_id": "S69-21294",
+      "caption": "Columbia is lifted onto the Hornet's deck.",
+      "credit": "NASA"
+     }
+    ]
+   }
+  },
+  "g_rock_lab": {
+   "id": "g_rock_lab",
+   "page": 40,
+   "type": "GOOD",
+   "title": "The First Box",
+   "image": "img/g_rock_lab.jpg",
+   "paragraphs": [
+    "You keep your hands behind your back. You lean close to the glass and press record.",
+    "The black gloves lift a rock and turn it slowly. It's dark gray, with tiny shiny bits that wink in the light. Some rocks have little holes, like a sponge. Bubbles of gas made them long ago, when the rock was hot lava.",
+    "These rocks are older than any dinosaur. Some are more than three billion years old.",
+    "The scientists write notes. They don't say much. They just look and look.",
+    "The band beeps twice. Recording saved.",
+    "At home, Dr. Finch plays it slowly. \"Scientists are still studying these rocks today,\" she says. \"And you saw their very first look.\""
+   ],
+   "on_enter": {
+    "set": {
+     "recording_saved": true
+    }
+   },
+   "really_there": {
+    "title": "You were really there",
+    "text": "Apollo 11 brought back about 47 pounds of Moon rocks and dust. The first box was opened on July 26, 1969, inside a sealed cabinet. Scientists still study these samples today.",
+    "photos": [
+     {
+      "src": "img/nasa/s69-45002.jpg",
+      "nasa_id": "S69-45002",
+      "caption": "The first box of Moon rocks, opened for the first time.",
+      "credit": "NASA"
+     },
+     {
+      "src": "img/nasa/s69-40749.jpg",
+      "nasa_id": "S69-40749",
+      "caption": "A scientist sifts Moon dirt inside a glove cabinet.",
+      "credit": "NASA"
+     }
+    ]
+   }
+  },
+  "e_safety_return": {
+   "id": "e_safety_return",
+   "page": 41,
+   "type": "BAD",
+   "title": "Safety Return",
+   "image": "img/e_safety_return.jpg",
+   "paragraphs": [
+    "The band buzzes three times. Then everything goes white.",
+    "You're back with Dr. Finch. The light on the band is amber now. It's locked for the night.",
+    "{variant}",
+    "Dr. Finch kneels beside you. \"You're safe,\" she says. \"And history is safe too. That's what the safety rule is for.\"",
+    "There's no recording this time.",
+    "What could you try differently? Next time, watch and keep your hands still. The band can only record a moment you leave just as it was."
+   ],
+   "variants": {
+    "helmet": "You put on the spare helmet. Each helmet was made to fit one astronaut, and it had to be ready for him.",
+    "rocket": "You crawled under the fence toward the rocket. The rocket had just three seats, and they belonged to Neil, Buzz, and Michael.",
+    "button": "You lifted the red cover. Each button in the Firing Room had a person in charge of it.",
+    "phone": "You picked up the phone. Only Charlie Duke talked to the astronauts. The back room helped him.",
+    "talk": "You pressed the talk button. Neil was flying Eagle down, and he needed to hear only Houston and Buzz.",
+    "talk_home": "You pressed the talk button. The quiet was normal. A girl's voice on the radio would have been a big surprise in 1969.",
+    "dust": "You wrote your name in the dust. A name on the Moon would show up in the real Moon photos. What is on the Moon has to stay just as it was.",
+    "closer": "You walked out from behind your rock. If you walked closer, you would show up in Neil's photos.",
+    "switch": "You flipped a switch. Each switch at the dish was set just right to catch the weak signal.",
+    "climb": "You started up the ladder. The dish was moving to follow the Moon. Only the dish crew went up there.",
+    "helicopter": "You climbed into the helicopter. Each helicopter had its own crew and its own job.",
+    "_default": "You tried to change what really happened."
+   }
+  },
+  "e_too_loud": {
+   "id": "e_too_loud",
+   "page": 42,
+   "type": "BAD",
+   "title": "Too Loud",
+   "image": "img/e_too_loud.jpg",
+   "paragraphs": [
+    "Bang, bang, bang! You knock on the glass. Everyone in the viewing room turns and stares. \"Shh!\" A guard hurries over.",
+    "Down in Mission Control, the controllers need quiet to think. They have only seconds to decide.",
+    "The band buzzes. Too many people noticed you, so it brings you home.",
+    "Dr. Finch hands you a cup of cocoa. \"They figured out the alarm,\" she says. \"They didn't need us to help. They needed quiet.\"",
+    "What could you try differently? When people are working hard, watching quietly can be the best help."
+   ]
+  },
+  "e_out_of_charges": {
+   "id": "e_out_of_charges",
+   "page": 43,
+   "type": "BAD",
+   "title": "Out of Charges",
+   "image": "img/e_out_of_charges.jpg",
+   "paragraphs": [
+    "You press the band. Nothing happens. You press it again. The screen shows three empty dots.",
+    "All three charges are used up. The band brings you home on its backup power, the way it always does. But it can't take you anywhere new.",
+    "Dr. Finch plugs the band in. \"It needs a whole day to charge,\" she says. \"A battery stores energy. Each trip uses some up.\"",
+    "You didn't get a recording this time.",
+    "What could you try differently? Each charge is precious. Next time, think about which trips matter most, and maybe skip one."
+   ]
+  },
+  "e_low_oxygen": {
+   "id": "e_low_oxygen",
+   "page": 44,
+   "type": "BAD",
+   "title": "Low Oxygen",
+   "image": "img/e_low_oxygen.jpg",
+   "paragraphs": [
+    "{variant}",
+    "Your meter beeps. Ten minutes left. Then five. A soft voice in your helmet says, \"Low oxygen. Going home.\"",
+    "The band brings you back. Dr. Finch pops your helmet off. You take a big, deep breath. Air!",
+    "\"On the Moon, there's no air to breathe,\" she says. \"You only have what your suit holds.\"",
+    "No recording this time.",
+    "What could you try differently? Watch your oxygen meter. Pick a moment that comes soon, before your air runs low."
+   ],
+   "variants": {
+    "wait": "You wait behind the rock. Eagle sits still. The hatch stays shut. There are hours to go, and the minutes on your meter tick down.",
+    "end": "You stay and watch. Neil and Buzz keep working. They set up experiments, take pictures, and pick up rocks. They'll be out for more than two hours. The minutes on your meter tick down.",
+    "_default": "You wait and wait. The minutes on your meter tick down."
+   }
+  },
+  "e_fast_asleep": {
+   "id": "e_fast_asleep",
+   "page": 45,
+   "type": "BAD",
+   "title": "Fast Asleep",
+   "image": "img/e_fast_asleep.jpg",
+   "paragraphs": [
+    "You lie down on the rug. Just for a minute. It's so soft...",
+    "\"Evelyn! Wake up!\" June shakes your shoulder. On the TV, Neil and Buzz are already walking on the Moon. You missed the first step!",
+    "The band buzzes softly and brings you home.",
+    "Dr. Finch smiles. \"Big days make sleepy kids,\" she says. \"Lots of children fell asleep that night. The first step came very late.\"",
+    "No recording this time.",
+    "What could you try differently? A long wait is hard. Fresh air, or something to do, can help you stay awake."
+   ]
+  },
+  "e_too_shaky": {
+   "id": "e_too_shaky",
+   "page": 46,
+   "type": "BAD",
+   "title": "Too Shaky",
+   "image": "img/e_too_shaky.jpg",
+   "paragraphs": [
+    "You hold the band up high, as high as you can reach. The rocket rises.",
+    "About fourteen seconds later, the sound hits. Boom! Crackle! Roar! The ground shakes. Your arm shakes. The band shakes.",
+    "The band beeps once. That means the recording is too blurry to save.",
+    "At home, you and Dr. Finch watch it anyway. The rocket is an orange smear, jumping all over the screen. You both giggle.",
+    "\"Sound is a wave,\" Dr. Finch says. \"A sound that big can shake the ground, and you too.\"",
+    "What could you try differently? Find something steady to rest the band on, so it can't shake."
+   ]
+  },
+  "e_moon_set": {
+   "id": "e_moon_set",
+   "page": 47,
+   "type": "BAD",
+   "title": "The Moon Has Set",
+   "image": "img/e_moon_set.jpg",
+   "paragraphs": [
+    "You land on a dark hill in Spain. It's almost four in the morning. Crickets chirp. A big white dish stands nearby, tipped down toward the hills.",
+    "You look for the Moon. You look and look. It isn't there. It set hours ago. The Earth turned, and Spain turned away from the Moon.",
+    "With no Moon in the sky, the dish can't catch the signal. There's no picture to see.",
+    "The band brings you home.",
+    "Dr. Finch spins her globe slowly. \"The Moon was up somewhere that night,\" she says. \"Just not in Spain.\"",
+    "What could you try differently? The Moon has to be in the sky for a dish to see it. Where on Earth was the Moon up that night?"
+   ]
+  },
+  "e_wrong_way": {
+   "id": "e_wrong_way",
+   "page": 48,
+   "type": "BAD",
+   "title": "Looking the Wrong Way",
+   "image": "img/e_wrong_way.jpg",
+   "paragraphs": [
+    "You point the band at the water and zoom in. Waves. More waves. You wait.",
+    "Then everyone on deck shouts and points up. You spin around. High in the sky, parachutes are floating down. Splash! Columbia hits the water. You missed it coming down.",
+    "The band beeps once. It's not the shot the museum needs.",
+    "At home, Dr. Finch says, \"Coming home, the capsule can't use an engine to slow down. Its parachutes catch the air instead. So it comes from the sky first.\"",
+    "What could you try differently? Think about how something comes down before it lands. Where should you look first?"
+   ]
+  },
+  "e_quarantine": {
+   "id": "e_quarantine",
+   "page": 49,
+   "type": "BAD",
+   "title": "Germ Rules",
+   "image": "img/e_quarantine.jpg",
+   "paragraphs": [
+    "{variant}",
+    "The band buzzes and brings you home. Dr. Finch sends you straight to the sink. You wash your hands with lots of soap and bubbles.",
+    "\"Nobody knew if there were germs on the Moon,\" she says. \"It turned out there weren't. But they had to be careful. Germs are too small to see.\"",
+    "No recording this time.",
+    "What could you try differently? When a place has germ rules, follow them, even if you can't see why."
+   ],
+   "variants": {
+    "knock": "You knock on the silver door. Knock, knock. A sailor takes your hand and steps you back. \"Nobody goes near that door,\" he says kindly. \"Not for 21 days. Just in case of Moon germs.\" Now you have to be checked too.",
+    "touch": "You reach through the hatch and touch a Moon rock with your bare finger. It feels like sandpaper. A scientist gasps. Now the rock isn't clean anymore, and you might carry Moon germs out. You have to be checked too.",
+    "_default": "You got too close to the germ rules."
+   }
+  },
+  "e_gave_up": {
+   "id": "e_gave_up",
+   "page": 50,
+   "type": "BAD",
+   "title": "Too Soon",
+   "image": "img/e_gave_up.jpg",
+   "paragraphs": [
+    "You close the window. You can't stand the quiet. What if something goes wrong?",
+    "The band goes dark. You never see the parachutes open. You never see the splash.",
+    "Dr. Finch sits with you by the window. \"That quiet was normal,\" she says. \"During blackout, the hot air around the spacecraft blocks the radio. After a few minutes, the radio comes back.\"",
+    "She points up at the Moon. \"They made it home. All three of them.\"",
+    "No recording this time.",
+    "What could you try differently? Sometimes the hardest part is the waiting. Hang on through the quiet, and see what comes next."
+   ]
+  }
+ }
+}

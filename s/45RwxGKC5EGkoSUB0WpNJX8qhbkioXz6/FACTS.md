@@ -1,6 +1,6 @@
 # The Golden Spike: facts, sources, and open questions
 
-Draft for Chance's review, Nov 2026. "Fact" means at least one solid source supports it. "Story choice" means I made it up or simplified it on purpose.
+Draft for Chance's review, Nov 2026 (v2 rewrite, Nov 5). "Fact" means at least one solid source supports it. "Story choice" means I made it up or simplified it on purpose.
 
 ## Core facts used in the story
 
@@ -16,7 +16,7 @@ Draft for Chance's review, Nov 2026. "Fact" means at least one solid source supp
 - Telegraph operator: W. N. (Watson) Shilling. (NPS CLR; NYT)
 - Messages, from the NYT of May 11, 1869 (Washington times): 2:27 p.m. "Almost ready. Hats off; prayer is being offered." 2:40 p.m. "We have got done praying. The spike is about to be presented." Then: "All ready now; the spike will soon be driven. The signal will be three dots for the commencement of the blows." DONE arrived at 2:47 p.m. In Washington, operator Tinker at the Western Union office (14th St & Pennsylvania Ave) had a magnetic ball (bell) wired to sound the blows. Sherman and others listened at the War Department office. New York fired 100 guns and rang Trinity Church's chimes.
 - Prayer: Rev. Dr. John Todd. Grenville Dodge spoke for the UP because Durant was ill. Engines touched noses, the engineers broke champagne bottles, and No. 119 crossed the joint first, then Jupiter. A. J. Russell's photo "East and West Shaking Hands at Laying Last Rail" shows Montague and Dodge.
-- Bands: the 21st Infantry band, and the Tenth Ward Band from Ogden (Latter-day Saint). (NPS CLR)
+- Bands: the 21st Infantry band, and the Tenth Ward Band from Salt Lake City (Latter-day Saint), in new uniforms. (NPS CLR; Utah Historical Quarterly v49 n4, 1981; NPS reenactment script 2001; Church News 1994. v1 of this file said "from Ogden"; that was wrong and is fixed.)
 - Crowd estimates run from 500 to 3,000. Photos suggest 500–600. The story just says "hundreds."
 - Strobridge invited the Chinese crew to dine in his car, and the guests cheered them. (SF Newsletter / Sacramento Bee, May 12, 1869, via CPRR.org)
 - Distances: UP built 1,086 mi, CP 690 mi.
@@ -48,7 +48,12 @@ Draft for Chance's review, Nov 2026. "Fact" means at least one solid source supp
 - These people are fictional or unnamed composites: the SLC woman telegraph operator, the old woman in SLC who walked with a handcart, the handcart repair man, the friendly firemen, the tea carrier, and the young bandsman.
 - Dialogue lines for historical people are invented but in character. Exception: the telegraph messages are quoted from the NYT.
 - "Just after noon" is used for DONE. Exact local times differ between sources: 12:47 p.m. at Promontory; SLC reported about 12:32 by its own clocks.
-- The Tenth Ward Band playing at the exact moment of DONE is plausible but not confirmed.
+- The Tenth Ward Band playing at the exact moment of DONE is plausible but not confirmed. (UHQ 1981 says both bands entertained after the formal remarks.)
+- v2: The telegraph man in the wire wagon on Ten-Mile Day who teaches Evelyn D-O-N-E is fictional. The telegraph crew keeping pace with the track on Ten-Mile Day is fact (NPS; CPRR.org).
+- v2: The "old grade" Evelyn climbs at the back of the crowd (s29) is a story choice. Parallel grades really ran for miles near Promontory, and some are still visible at the park, but no source places a usable bank of extra grade right beside the ceremony crowd.
+- v2: Landing at 11 a.m. (s12) uses the fact that Jupiter arrived a few minutes after 11 with Stanford's train. With a one-hour clock, Evelyn is pulled home about 12:05, roughly forty minutes before DONE. The story says the laurel tie is out and Shilling is at his table by then; the exact order of those set-up steps is not documented to the minute.
+- v2: "Three dots for the start of the blows" is quoted from the NYT messages. The "Too Soon!" ending, where Evelyn stops at three dots, is built on that real signal.
+- v2: Jim Campbell's run over the new Ten-Mile track is described as "faster than a galloping horse" (sources say about 40 mph).
 
 ## Open questions / uncertainties
 1. LDS presence: NPS CLR names John Sharp, Lorin Farr, and the Tenth Ward Band as present. A 1994 Church News piece suggested few or no Latter-day Saints were present. The story follows NPS.

@@ -7,10 +7,11 @@ flowchart TD
   s06["s06: Two Grades<br/><small>Promontory Mountains, Utah Territory</small>"]
   s07["s07: The Big Fill<br/><small>Spring Creek ravine, Promontory Mountains</small>"]
   s08["s08: Ten-Mile Day<br/><small>Near Victory camp, Utah Territory</small>"]
+  s23["s23: The Wire Wagon<br/><small>Ten-Mile Day</small>"]
   s09["s09: Iron and Tea<br/><small>Ten-Mile Day</small>"]
   s10["s10: Ten Miles!<br/><small>Ten-Mile Day</small>"]
   s11["s11: Two Promontories<br/><small>The TimeBand screen</small>"]
-  s12["s12: Sunrise at the Summit<br/><small>Promontory Summit</small>"]
+  s12["s12: Jupiter Rolls In<br/><small>Promontory Summit</small>"]
   s13["s13: Promontory Summit<br/><small>Promontory Summit</small>"]
   s14["s14: Two Engines<br/><small>Promontory Summit</small>"]
   s15["s15: Jupiter's Cab<br/><small>Inside Jupiter's cab</small>"]
@@ -21,7 +22,6 @@ flowchart TD
   s20["s20: The Telegraph Table<br/><small>By the telegraph pole</small>"]
   s21["s21: Hats Off<br/><small>By the telegraph table</small>"]
   s22["s22: The Photographer<br/><small>Near the engines</small>"]
-  s23["s23: Charles Savage<br/><small>Near the tracks</small>"]
   s24["s24: The Tenth Ward Band<br/><small>Near the crowd</small>"]
   s25["s25: The Wire Map<br/><small>The TimeBand screen</small>"]
   s26["s26: Salt Lake City<br/><small>Salt Lake City, Utah Territory</small>"]
@@ -29,12 +29,12 @@ flowchart TD
   s28["s28: Washington, D.C.<br/><small>Western Union office, Washington, D.C.</small>"]
   s29["s29: The Back of the Crowd<br/><small>Promontory Summit</small>"]
   s30["s30: The Telegraph Office<br/><small>Telegraph office, Salt Lake City</small>"]
-  g_telegraph(["GOOD: D-O-N-E<br/><small>At the telegraph table with W. N. Shilling</small>"])
+  g_telegraph(["GOOD: D-O-N-E<br/><small>At the telegraph table with W. N. Shilling (needs the code OR the old grade)</small>"])
   g_jupiter(["GOOD: From Jupiter's Cab<br/><small>Central Pacific engine Jupiter</small>"])
   g_119(["GOOD: From No. 119's Cab<br/><small>Union Pacific engine No. 119</small>"])
-  g_crew(["GOOD: The Crew Who Laid It<br/><small>The Central Pacific's Chinese track crew</small>"])
+  g_crew(["GOOD: The Crew Who Laid It<br/><small>The Central Pacific's Chinese track crew (needs the Ten-Mile finish)</small>"])
   g_irish(["GOOD: Mauls Up!<br/><small>The Union Pacific's Irish track crew</small>"])
-  g_camera(["GOOD: Hold Still!<br/><small>Behind Andrew J. Russell's camera</small>"])
+  g_camera(["GOOD: Hold Still!<br/><small>Behind A. J. Russell's camera</small>"])
   g_band(["GOOD: Music at Promontory<br/><small>With the Tenth Ward Band from Salt Lake City</small>"])
   g_salt_lake(["GOOD: Salt Lake City Hears<br/><small>A street in Salt Lake City</small>"])
   g_deseret(["GOOD: The Operator<br/><small>A young woman telegraph operator in Salt Lake City</small>"])
@@ -44,11 +44,12 @@ flowchart TD
   e_in_photo(["BAD: In the Picture<br/><small>Ran in front of the camera</small>"])
   e_wrong_day(["BAD: The Wrong Day<br/><small>Went on May 8, the planned day</small>"])
   e_wrong_place(["BAD: The Wrong Promontory<br/><small>Went to Promontory Point instead of Promontory Summit</small>"])
-  e_steam(["BAD: Lost in the Steam<br/><small>Stood by the engine's cylinder cocks</small>"])
+  e_steam(["BAD: Lost in the Steam<br/><small>Got too close to an engine's steam valves</small>"])
   e_time_up(["BAD: Time's Up<br/><small>Waited longer than the one-hour trip clock</small>"])
   e_too_early(["BAD: Too Early in Washington<br/><small>Went to Washington at 12:47 Washington time</small>"])
-  e_too_far(["BAD: Too Far Away<br/><small>Watched from the hill, too far away to hear</small>"])
-  e_blast(["BAD: Stand Clear!<br/><small>Ran toward the blasting</small>"])
+  e_too_far(["BAD: Too Far Away<br/><small>Watched from the far hill, too far away to hear</small>"])
+  e_blast(["BAD: Stand Clear!<br/><small>Ran toward the lit fuse</small>"])
+  e_too_soon(["BAD: Too Soon!<br/><small>Stopped recording at the three-dot start signal</small>"])
   s01 -->|"Visit the handcart trail (-1 charge)"| s02
   s01 -->|"Open the mission map"| s05
   s02 -->|"Ride in a cart"| e_safety_return
@@ -62,23 +63,27 @@ flowchart TD
   s05 -->|"May 8 (-1 charge)"| e_wrong_day
   s05 -->|"May 10"| s11
   s05 -->|"Look at the wires"| s25
-  s06 -->|"Run up to the rock cut"| e_blast
-  s06 -->|"Go to the Big Fill"| s07
+  s06 -->|"Run up to see the fuse"| e_blast
+  s06 -->|"Dive behind the wagon"| s07
   s07 -->|"Ride the dump cart"| e_safety_return
   s07 -->|"Go to Ten-Mile Day (-1 charge)"| s08
   s07 -->|"Open May 10"| s11
   s08 -->|"Push the rails together"| e_safety_return
-  s08 -->|"Watch the rail team"| s09
-  s08 -->|"Follow the telegraph crew"| s09
-  s09 -->|"Wait for the end"| e_time_up
-  s09 -->|"Jump to sunset (-1 charge)"| s10
+  s08 -->|"Race with the rail crew"| s09
+  s08 -->|"Follow the wire wagon"| s23
+  s23 -->|"Take a turn on the key"| e_safety_return
+  s23 -->|"Run back to the race"| s09
+  s23 -->|"Jump to the finish (-1 charge)"| s10
+  s09 -->|"Wait for the finish"| e_time_up
+  s09 -->|"Jump to the finish (-1 charge)"| s10
   s09 -->|"Open May 10"| s11
   s10 -->|"Open May 10"| s11
   s10 -->|"Look at the wires"| s25
   s11 -->|"Promontory Point (-1 charge)"| e_wrong_place
-  s11 -->|"The Summit at sunrise (-1 charge)"| s12
+  s11 -->|"The Summit at eleven (-1 charge)"| s12
   s11 -->|"The Summit at noon (-1 charge)"| s13
-  s12 -->|"Wait for the spike"| e_time_up
+  s12 -->|"Stay for the spike"| e_time_up
+  s12 -->|"Run up to Jupiter"| e_steam
   s12 -->|"Jump ahead to noon (-1 charge)"| s13
   s13 -->|"Go see the engines"| s14
   s13 -->|"Go to the last rail"| s17
@@ -102,16 +107,14 @@ flowchart TD
   s19 -->|"Swing the spare maul"| e_safety_return
   s19 -->|"Record with the crew"| g_irish
   s20 -->|"Tap the key"| e_safety_return
-  s20 -->|"Listen for the code (needs knows_code)"| s21
+  s20 -->|"Stay and read the clicks (needs knows_code)"| s21
   s20 -->|"Look at the wires"| s25
   s21 -->|"Record the clicks"| g_telegraph
-  s21 -->|"Climb on the table"| e_safety_return
+  s21 -->|"Stop at three dots"| e_too_soon
   s21 -->|"Jump to Washington (-1 charge)"| s28
   s22 -->|"Run in front and wave"| e_in_photo
   s22 -->|"Stand behind the camera"| g_camera
-  s22 -->|"Meet the other photographer"| s23
-  s23 -->|"Carry his glass plates"| e_safety_return
-  s23 -->|"Go to Salt Lake City (-1 charge)"| s26
+  s22 -->|"Go to the band"| s24
   s24 -->|"Play the drum"| e_safety_return
   s24 -->|"Record with the band"| g_band
   s24 -->|"Go to Salt Lake City (-1 charge)"| s26
@@ -124,9 +127,11 @@ flowchart TD
   s27 -->|"Tell her you walked too"| e_safety_return
   s27 -->|"Record with the crowd"| g_salt_lake
   s28 -->|"Ring the bell yourself"| e_safety_return
+  s28 -->|"Stop at three dings"| e_too_soon
   s28 -->|"Record the bell"| g_washington
-  s29 -->|"Climb the hill"| e_too_far
-  s29 -->|"Squeeze to the front"| s21
+  s29 -->|"Climb the far hill"| e_too_far
+  s29 -->|"Climb the old grade (needs saw_grades)"| s21
+  s29 -->|"Squeeze to the front"| s20
   s29 -->|"Follow the music"| s24
   s30 -->|"Tap the key"| e_safety_return
   s30 -->|"Record with her"| g_deseret
@@ -135,5 +140,5 @@ flowchart TD
   classDef bad fill:#fde2e2,stroke:#c62828,color:#4a1010
   classDef note fill:#fff8d6,stroke:#b59b00,color:#333
   class g_telegraph,g_jupiter,g_119,g_crew,g_irish,g_camera,g_band,g_salt_lake,g_deseret,g_washington good
-  class e_safety_return,e_out_of_charges,e_in_photo,e_wrong_day,e_wrong_place,e_steam,e_time_up,e_too_early,e_too_far,e_blast bad
+  class e_safety_return,e_out_of_charges,e_in_photo,e_wrong_day,e_wrong_place,e_steam,e_time_up,e_too_early,e_too_far,e_blast,e_too_soon bad
   class hopnote note

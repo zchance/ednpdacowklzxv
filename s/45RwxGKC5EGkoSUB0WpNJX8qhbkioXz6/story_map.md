@@ -1,36 +1,38 @@
-# Evelyn and the TimeBand: The Golden Spike (v1)
+# Evelyn and the TimeBand: The Golden Spike (v2)
 
 Reader: Evelyn, age 5  
-Status: full draft for parent review: decision tree, narration, and illustrations done. No recorded narration yet (browser voice / text-only).
+Status: v2 draft for parent review (Nov 5, 2026): punchier rewrite, riskier branches, new scenes s12 Jupiter Rolls In and s23 The Wire Wagon, new ending e_too_soon. No recorded narration yet (browser voice / text-only).
 
 ## Premise
 
-Dr. Ada Finch is an inventor at the museum who buys honey from your mom, a beekeeper. Your Apollo 11 recording now plays at the museum every day. Her new mission: on May 10, 1869, the first railroad across America was finished at Promontory Summit, Utah Territory, when the last spike went in and the telegraph sent the word DONE. The museum has photos of that day, but no sound: no one could record sound until Edison's phonograph in 1877. Your mission: bring home a recording of the moment the railroad was finished (the last spike and the telegraph word DONE). Mom says many of your great-great-grandparents walked to Utah as Latter-day Saint pioneers, some pulling handcarts, so a side trip to an 1856 handcart company is offered. TimeBand rules (same band as the Moon trip): (1) Three charges: each trip into the past uses one; the trip home is free (backup power); a trip tapped at 0 charges sends you home (Out of Charges). (2) Safety rule: watch and record, but never change what happened; if you touch, move, or say something that could change history, the band brings you home and locks. It also pulls you home from danger. (3) Record: press the red button and hold still; when it saves a big moment it beeps twice and brings you home. (4) Trip clock: the band can hold you in the past for one hour per trip (like the Moon suit's one hour of air); when the clock runs out, it brings you home. (5) Blend in: Dr. Finch brings 1869-style clothes (calico dress, apron, bonnet, boots) so nobody notices you.
+Dr. Ada Finch is an inventor at the museum who buys honey from your mom, a beekeeper. Your Apollo 11 recording now plays at the museum every day. On May 10, 1869, the first railroad across America was finished at Promontory Summit, Utah Territory. The museum has photos of that day, but no sound: nobody could record sound until Edison's phonograph in 1877. Dr. Finch's briefing (a countdown, not a lecture): "Your mission is to record the moment the railroad was finished: the last spike, and the telegraphed word DONE." Mom says many of your great-great-grandparents walked to Utah as Latter-day Saint pioneers, some pulling handcarts, so a side trip to an 1856 handcart company is offered, at the cost of a charge. TimeBand rules (same band as the Moon trip, worn on the left wrist): (1) Three charges: each trip into the past uses one; the trip home is free (backup power); a trip tapped at 0 charges sends you home (Out of Charges). (2) Safety rule: watch and record, but never change what happened; if you touch, move, or say something that could change history, the band brings you home and locks. It also pulls you home from danger. (3) Record: press the red button and hold still; when it saves a big moment it beeps twice and brings you home. Let go too soon and it stops. (4) Trip clock: the band can hold you in the past for one hour per trip; when the clock runs out, it brings you home. (5) Blend in: Dr. Finch brings 1869-style clothes (calico dress, apron, bonnet, boots) so nobody notices you. v2 design: what you learn on one trip unlocks better viewpoints on another (the code from Ten-Mile Day, the old grade from March, the crew from the Ten-Mile finish, the handcart pioneers in Salt Lake City), and charges are tight enough that you cannot have everything in one play-through.
 
 ## Tracked items and flags
 
 | Id | Type | Starts | What it does |
 |---|---|---|---|
-| `charges` | counter | 3 | **TimeBand charges.** Each trip costs 1. Home is free. A trip tapped at 0 goes to Out of Charges. Shown as 3 dots. |
-| `walked_trail` | flag | False | **Walked with the handcart company.** Set on arrival at s03. Unlocks 'Find the handcart pioneers' in Salt Lake City (s26 -> s27) and adds lines at good endings. |
-| `ten_mile` | flag | False | **Saw Ten-Mile Day.** Set on arrival at s09. Unlocks 'Stand with the Chinese crew' at the last rail (s17 -> s18): you know who they are. Adds lines at endings. |
-| `knows_code` | flag | False | **Knows the dot-dash code.** Set by following the telegraph crew on Ten-Mile Day (s08) or by asking Dr. Finch on the wire map (s25 shows it free). Unlocks 'Listen for the code' at the telegraph table (s20 -> s21) and adds a line at DONE endings. |
-| `saw_grades` | flag | False | **Saw the Latter-day Saint grade crews.** Set on arrival at s06. Adds lines at Salt Lake City / band endings (these were the people who built the grade). |
-| `clock_min` | counter | 60 | **Trip clock (minutes).** Shown in past scenes. Choices that wait for hours lead to Time's Up. |
-| `via` | note | None | **Route note.** Picks the variant line for endings reached from more than one scene (safety, time_up, salt_lake, telegraph). |
+| `charges` | counter | 3 | **TimeBand charges.** Each trip costs 1. Home is free. A trip tapped at 0 goes to Out of Charges. Shown as 3 dots. Seeing all of Ten-Mile Day costs 2, so the handcart trip + full Ten-Mile Day leaves nothing for May 10. |
+| `walked_trail` | flag | False | **Walked with the handcart company.** Set on arrival at s03 (1856 trip, 1 charge). Unlocks 'Find the handcart pioneers' in Salt Lake City (s26 -> s27) and adds lines at good endings. |
+| `saw_grades` | flag | False | **Saw the two grades (Latter-day Saint crews).** Set on arrival at s06 (March trip, 1 charge). UNLOCKS 'Climb the old grade' at the back of the crowd (s29 -> s21): one of two ways to reach the telegraph-table ending. Adds lines at band/Salt Lake/telegraph endings. |
+| `knows_code` | flag | False | **Learned the dot-dash code.** Set on arrival at s23, the wire wagon on Ten-Mile Day (no longer free on the wire map). UNLOCKS 'Stay and read the clicks' at the telegraph table (s20 -> s21): the other way to the telegraph-table ending. Adds lines in Washington and at DONE endings. |
+| `ten_mile` | flag | False | **Saw the Ten-Mile Day finish.** Set on arrival at s10 (sunset, a second Ten-Mile charge). UNLOCKS 'Stand with the Chinese crew' at the last rail (s17 -> s18 -> g_crew). Adds lines at endings. |
+| `clock_min` | counter | 60 | **Trip clock (minutes).** Shown in past scenes. Choices that wait for hours (camp nap, waiting all of Ten-Mile Day, landing at 11 a.m. and staying) lead to Time's Up. |
+| `via` | note | None | **Route note.** Picks the variant line for scenes/endings reached from more than one place (s21, safety, time_up, steam, too_soon, salt_lake). |
 | `recording_saved` | flag | False | **Mission done.** Set at every GOOD ending. The band beeps twice and saves the recording for the museum. |
 
 Any choice marked **(trip, -1 charge)** costs one charge. With 0 charges, it goes to **Out of Charges**.
-With three charges, one play-through can visit at most three of: the handcart trail, the grades, Ten-Mile Day (a 2nd charge to see sunset), Promontory Summit (sunrise costs a 2nd charge to reach noon), Salt Lake City, Washington. Every path has to give something up.
+With three charges, one play-through can visit at most three of: the handcart trail, the grades, Ten-Mile Day (a 2nd charge to see the finish), Promontory Summit (landing at eleven costs a 2nd charge to reach noon), Salt Lake City, Washington. Every path has to give something up.
+
+**Carried-item stakes (v2):** the telegraph-table ending (g_telegraph) needs `knows_code` (wire wagon, Ten-Mile Day) OR `saw_grades` (March trip); the Chinese-crew ending needs `ten_mile` (Ten-Mile finish, 2 charges); the handcart pioneers in Salt Lake City need `walked_trail` (1856 trip).
 
 ## Scenes
 
 ### s01 · p.1 · The Second Mission
 *Your kitchen, Saturday morning*
 
-Dr. Finch comes for honey and brings the TimeBand. Your Moon recording plays at the museum. New mission: bring home the sound of the moment the first railroad across America was finished, May 10, 1869. Nobody could record sound then. Mom says many of your great-great-grandparents walked to Utah, some pulling handcarts. Dr. Finch gives you 1869 clothes and repeats the rules, plus the one-hour trip clock.
+Countdown briefing. Dr. Finch snaps the TimeBand on (left wrist, three green dots). May 10, 1869, Promontory Summit: photos exist, no sound. Mission line (approved): "Your mission is to record the moment the railroad was finished: the last spike, and the telegraphed word DONE." Rules in one breath: three charges, home is free, one hour per trip, don't change anything, hold still to record. 1869 clothes. Mom: ancestors pulled handcarts. The handcart trip costs a charge: 'Spend them wisely.'
 
-**Science:** Sound is air shaking. In 1869 no machine could save it; the first one came in 1877.
+**Science:** Sound is air shaking. In 1869 no machine could save it.
 
 **Choices:**
 - If you want to visit a handcart company on the trail in 1856, tap 'Visit the handcart trail.' → **s02 The Handcart Trail** *(trip, -1 charge)*
@@ -39,9 +41,9 @@ Dr. Finch comes for honey and brings the TimeBand. Your Moon recording plays at 
 ### s02 · p.2 · The Handcart Trail
 *Beside the Platte River, Nebraska Territory - August 1856, late afternoon* · trip clock 60 min
 
-You land by the Platte River beside the first handcart company (Captain Edmund Ellsworth). People pull and push two-wheeled carts. Four-year-old Annie walks beside the captain; she was promised bread and butter in the valley. One wheel squeaks.
+You land by the Platte beside the first handcart company (Captain Edmund Ellsworth), Latter-day Saints walking to Salt Lake City. Four-year-old Annie walks beside the captain for the promise of bread and butter. One wheel squeaks.
 
-**Science:** Wheels make heavy loads easier to move: they roll instead of drag.
+**Science:** Wheels roll instead of drag.
 
 **Choices:**
 - If you climb up and ride in a handcart, tap 'Ride in a cart.' → **e_safety_return Safety Return** *(sets via=cart)*
@@ -50,9 +52,9 @@ You land by the Platte River beside the first handcart company (Captain Edmund E
 ### s03 · p.3 · The Squeaky Wheel
 *Camp by the Platte River - before sunset* · trip clock 40 min
 
-The company stops to camp. A man turns the squeaky cart over: the wooden hub has rubbed the wooden axle thin and hot. He wraps it with a strip of tin. Dr. Finch: walking 15 miles a day, they need all summer; a train will do it in days.
+Camp. The squeaky axle is hot and worn; a man wraps it in tin. Fifteen miles a day, all summer; a train will do it in days. The hammer is right by your hand.
 
-**Science:** Friction: things that rub slow down, get hot, and wear away. Smooth metal rubs less than rough wood.
+**Science:** Friction: rubbing makes heat and wear. Smooth metal rubs less than rough wood.
 
 **On arrival:** set walked_trail=True
 
@@ -63,9 +65,9 @@ The company stops to camp. A man turns the squeaky cart over: the wooden hub has
 ### s04 · p.4 · Songs at Camp
 *Camp by the Platte River - sunset* · trip clock 10 min
 
-Supper cooks on fires of dried buffalo chips. The camp sings the handcart song: 'Some must push and some must pull.' The trip clock is low.
+Buffalo-chip fires. The camp sings the handcart song. Annie claps. The fire is warm, your eyes are heavy, and the clock says 10 minutes.
 
-**Science:** Fire turns stored energy in fuel into heat and light. Out here there are few trees, so they burn dried buffalo dung.
+**Science:** Fire turns stored energy in fuel into heat and light.
 
 **Choices:**
 - If you curl up by the warm fire for a little nap, tap 'Sleep by the fire.' → **e_time_up Time's Up** *(sets via=camp)*
@@ -74,13 +76,13 @@ Supper cooks on fires of dried buffalo chips. The camp sings the handcart song: 
 ### s05 · p.5 · The Mission Map
 *The TimeBand screen, in your kitchen*
 
-A line crosses America. The Central Pacific built east from California; the Union Pacific built west from Nebraska. Stops: March 1869 (two grades side by side), April 28 (Ten-Mile Day), May 8 (the date engraved on the golden spike), May 10 (the real day; opens a free place picker). The wire map is free.
+A glowing line across America: Central Pacific from California, Union Pacific from Nebraska. Four stops: March 1869 (two grades and blasting), April 28 (Ten-Mile Day, a record race), May 8 (the date on the golden spike), May 10 (free place picker). Wire map is free. 'What you learn on one trip can help you on another.'
 
 **Science:** A map is a small picture of a big place.
 
 **Choices:**
 - If you want to see the workers building the grade in March 1869, tap 'The two grades.' → **s06 Two Grades** *(trip, -1 charge)*
-- If you want to see the record day, April 28, 1869, tap 'Ten-Mile Day.' → **s08 Ten-Mile Day** *(trip, -1 charge)*
+- If you want to see the record race, April 28, 1869, tap 'Ten-Mile Day.' → **s08 Ten-Mile Day** *(trip, -1 charge)*
 - If you want to go on May 8, 1869, the date on the golden spike, tap 'May 8.' → **e_wrong_day The Wrong Day** *(trip, -1 charge)*
 - If you want to pick a place for May 10, 1869, tap 'May 10.' (Picking is free.) → **s11 Two Promontories**
 - If you want to look at the telegraph wires, tap 'Look at the wires.' (Looking is free.) → **s25 The Wire Map**
@@ -88,22 +90,22 @@ A line crosses America. The Central Pacific built east from California; the Unio
 ### s06 · p.6 · Two Grades
 *Promontory Mountains, Utah Territory - late March 1869* · trip clock 60 min
 
-Crews, many of them Latter-day Saints from nearby towns, build grade under contracts Brigham Young signed in 1868. Two grades run side by side, one for each company, because nobody has picked the meeting place. Up the hill a crew is blasting: 'Blast! Stand clear!'
+Latter-day Saint farm crews build grade under the contract Brigham Young signed. Two grades run side by side because both companies are paid by the mile. Up the hill a fuse is lit: 'BLAST! STAND CLEAR!' Men run.
 
 **Science:** A grade is a long ramp of dirt and rock that holds the track.
 
 **On arrival:** set saw_grades=True
 
 **Choices:**
-- If you run up the hill to watch the blasting, tap 'Run up to the rock cut.' → **e_blast Stand Clear!**
-- If you walk down to the ravine where the crews are filling it in, tap 'Go to the Big Fill.' → **s07 The Big Fill**
+- If you run up the hill to get a close look at the fuse, tap 'Run up to see the fuse.' → **e_blast Stand Clear!**
+- If you dive behind the wagon and cover your ears, tap 'Dive behind the wagon.' → **s07 The Big Fill**
 
 ### s07 · p.7 · The Big Fill
 *Spring Creek ravine, Promontory Mountains - late March 1869* · trip clock 45 min
 
-Mule teams dump cart after cart into the ravine: the Big Fill, built for the Central Pacific by Benson, Farr and West, Latter-day Saint contractors. Beside it, the Union Pacific builds the wooden Big Trestle. Iron wheels on iron rails roll easily but slip on steep hills, so track must stay almost flat.
+BOOM: the ground jumps, pebbles rattle (black powder makes a huge push of gas). Then the Big Fill, built by Benson, Farr and West, and the UP's Big Trestle beside it. Iron wheels slip on steep hills, so the track stays almost flat.
 
-**Science:** Slopes and gravity: iron on iron has little friction, great for pulling heavy loads, but wheels spin on steep hills. So builders cut hills and fill low places.
+**Science:** Gas pressure breaks rock. Iron on iron has little friction, so track must be nearly flat.
 
 **Choices:**
 - If you jump on an empty dump cart for a ride, tap 'Ride the dump cart.' → **e_safety_return Safety Return** *(sets via=dumpcart)*
@@ -113,67 +115,80 @@ Mule teams dump cart after cart into the ravine: the Big Fill, built for the Cen
 ### s08 · p.8 · Ten-Mile Day
 *Near Victory camp, Utah Territory - April 28, 1869, 7:15 a.m.* · trip clock 60 min
 
-Charles Crocker bet his crews could lay ten miles in a day. Horses pull iron cars of rails; eight Irish rail handlers set each rail; Chinese crews lay ties, spike, and bolt. A good spiker drives a spike in three blows. A telegraph crew hangs wire right behind. Rails get small gaps at the ends.
+Crocker's bet: ten miles in ONE day. Whistle. GO! Rails CLANG down, the ground shakes, Chinese crews spike (three blows). Rails get small gaps for heat. A wagon with a telegraph key rolls right behind the crews.
 
-**Science:** Heat makes iron grow a tiny bit, so rails need small gaps or they would push and bend on hot days.
+**Science:** Heat makes iron grow a tiny bit, so rails need small gaps.
 
 **Choices:**
 - If you push two rails tight together to close the gap, tap 'Push the rails together.' → **e_safety_return Safety Return** *(sets via=gap)*
-- If you watch the rail team up close, tap 'Watch the rail team.' → **s09 Iron and Tea**
-- If you follow the crew that hangs the telegraph wire, tap 'Follow the telegraph crew.' → **s09 Iron and Tea** *(sets knows_code=True)*
+- If you run along with the rail crew, tap 'Race with the rail crew.' → **s09 Iron and Tea**
+- If you run after the wagon with the telegraph key, tap 'Follow the wire wagon.' → **s23 The Wire Wagon**
 
-### s09 · p.9 · Iron and Tea
-*Ten-Mile Day - about 8:15 a.m.* · trip clock 35 min
+### s23 · p.9 · The Wire Wagon
+*Ten-Mile Day - about 7:45 a.m.* · trip clock 50 min
 
-Track moves as fast as you walk. Each rail weighs about 560 pounds. Chinese tea carriers bring tea made with boiled water. By 7 p.m. they will have laid 10 miles and 56 feet, a record that still stands. The day is long, and your clock is short.
+NEW in v2. The telegraph man in the wagon sends news of the race and teaches D-O-N-E in American Morse (dash dot dot / dot dot / dash dot / dot). Evelyn 'tucks it away for later.' He jokingly offers her a turn on the key.
+
+**Science:** Telegraph code: short clicks are dots, long clicks are dashes.
+
+**On arrival:** set knows_code=True
+
+**Choices:**
+- If you take a turn and tap the key, tap 'Take a turn on the key.' → **e_safety_return Safety Return** *(sets via=wirekey)*
+- If you say no thank you and run back to the race, tap 'Run back to the race.' → **s09 Iron and Tea**
+- If you jump ahead to tonight, when the race ends, tap 'Jump to the finish.' → **s10 Ten Miles!** *(trip, -1 charge)*
+
+### s09 · p.10 · Iron and Tea
+*Ten-Mile Day - about 8:30 a.m.* · trip clock 35 min
+
+The track grows as fast as you walk; the ground thumps like a heartbeat. Rails weigh as much as three grown-ups. Tea from boiled water. 'The finish is twelve hours away. Your clock has thirty-five minutes.'
 
 **Science:** Boiling water kills many germs.
 
-**On arrival:** set ten_mile=True
-
 **Choices:**
-- If you wait here to see the end of the day, tap 'Wait for the end.' → **e_time_up Time's Up** *(sets via=tenmile)*
-- If you jump ahead to 7 o'clock tonight, tap 'Jump to sunset.' → **s10 Ten Miles!** *(trip, -1 charge)*
+- If you stay here and wait for the end of the race, tap 'Wait for the finish.' → **e_time_up Time's Up** *(sets via=tenmile)*
+- If you jump ahead to tonight, when the race ends, tap 'Jump to the finish.' → **s10 Ten Miles!** *(trip, -1 charge)*
 - If you want to pick a place for May 10, tap 'Open May 10.' (Picking is free.) → **s11 Two Promontories**
 
-### s10 · p.10 · Ten Miles!
-*Ten-Mile Day - 7:00 p.m.* · trip clock 60 min
+### s10 · p.11 · Ten Miles!
+*Ten-Mile Day - about 6:30 p.m.* · trip clock 60 min
 
-The last spike of the day goes in and the crews cheer: ten miles and 56 feet. Jim Campbell runs an engine fast over the new track to show it is solid. The railhead is only a few miles from Promontory Summit.
+'Nine miles!' The crews push faster; then TEN MILES AND FIFTY-SIX FEET. Hats fly; the record still stands. Jim Campbell races an engine over the new track: not one wobble. 'Remember these faces.'
 
 **Science:** A heavy hammer moving fast hits hard. Three blows drive a spike.
+
+**On arrival:** set ten_mile=True
 
 **Choices:**
 - If you want to pick a place for May 10, tap 'Open May 10.' (Picking is free.) → **s11 Two Promontories**
 - If you want to look at the telegraph wires, tap 'Look at the wires.' (Looking is free.) → **s25 The Wire Map**
 
-### s11 · p.11 · Two Promontories
+### s11 · p.12 · Two Promontories
 *The TimeBand screen - May 10, 1869*
 
-A free place picker. The Promontory is a long finger of land in the Great Salt Lake. Promontory Point is at its tip by the water; Promontory Summit is up in the hills to the north, where the railroad climbs. Even 1869 newspapers mixed them up. Times offered: sunrise or noon.
+Free place picker. Promontory Point (tip, by the lake) vs Promontory Summit (top of the climb). Two times for the Summit: eleven o'clock, when Jupiter rolls in, or noon. 'You only get one hour.'
 
 **Science:** A summit is the top of a climb.
 
 **Choices:**
 - If you go to Promontory Point, at the tip of the land by the lake, tap 'Promontory Point.' → **e_wrong_place The Wrong Promontory** *(trip, -1 charge)*
-- If you go to Promontory Summit at sunrise, tap 'The Summit at sunrise.' → **s12 Sunrise at the Summit** *(trip, -1 charge)*
+- If you go to Promontory Summit at eleven o'clock, to see Jupiter roll in, tap 'The Summit at eleven.' → **s12 Jupiter Rolls In** *(trip, -1 charge)*
 - If you go to Promontory Summit at noon, tap 'The Summit at noon.' → **s13 Promontory Summit** *(trip, -1 charge)*
 
-### s12 · p.12 · Sunrise at the Summit
-*Promontory Summit - May 10, 1869, sunrise* · trip clock 60 min
+### s12 · p.13 · Jupiter Rolls In
+*Promontory Summit - May 10, 1869, a few minutes after 11 a.m.* · trip clock 60 min
 
-Cold morning. A street of tents and shacks. At the end of the track there is a gap just long enough for two rails, one per company. The ceremony is about six hours away.
-
-**Science:** Cold air makes your breath into a little cloud: the water in it turns into tiny drops.
+NEW in v2 (replaces Sunrise). WHOOOO: Jupiter steams in with Stanford's car; No. 119 waits across the gap. Exciting, but the spike is nearly two hours away and the clock has one.
 
 **Choices:**
-- If you sit by the ties and wait for the spike, tap 'Wait for the spike.' → **e_time_up Time's Up** *(sets via=morning)*
+- If you stay right here and wait for the spike, tap 'Stay for the spike.' → **e_time_up Time's Up** *(sets via=jupiter)*
+- If you run right up to Jupiter as it hisses to a stop, tap 'Run up to Jupiter.' → **e_steam Lost in the Steam** *(sets via=arrive)*
 - If you jump ahead to noon, tap 'Jump ahead to noon.' → **s13 Promontory Summit** *(trip, -1 charge)*
 
-### s13 · p.13 · Promontory Summit
+### s13 · p.14 · Promontory Summit
 *Promontory Summit - May 10, 1869, about noon* · trip clock 60 min
 
-Jupiter (Central Pacific, wood, funnel stack) and No. 119 (Union Pacific, coal, straight stack) stand a short gap apart. Hundreds of people: workers, soldiers, bosses, a few women, an army band and the Tenth Ward Band from Salt Lake City. Brigham Young is in southern Utah; Bishop John Sharp and Ogden's mayor Lorin Farr came for him. A telegraph table, a photographer.
+Jupiter (funnel stack) and No. 119 (straight stack) face each other across the gap. Hundreds of people, two bands (army; Tenth Ward Band from Salt Lake City). Brigham Young is in southern Utah; Bishop John Sharp and Mayor Lorin Farr came. A telegraph table, a big camera. 'The spike goes in at 12:47. Where will you be?'
 
 **Choices:**
 - If you go see the two engines, tap 'Go see the engines.' → **s14 Two Engines**
@@ -181,22 +196,22 @@ Jupiter (Central Pacific, wood, funnel stack) and No. 119 (Union Pacific, coal, 
 - If you go to the man with the big camera, tap 'Go to the photographer.' → **s22 The Photographer**
 - If you stay at the back of the crowd, tap 'Stay at the back.' → **s29 The Back of the Crowd**
 
-### s14 · p.14 · Two Engines
+### s14 · p.15 · Two Engines
 *Promontory Summit - about 12:10 p.m.* · trip clock 50 min
 
-The engines hiss. A steam engine is a giant kettle: fire boils water, steam pushes pistons, pistons turn wheels. Jupiter burns wood and its funnel stack catches sparks; No. 119 burns coal. Engineers George Booth (Jupiter) and Sam Bradford (No. 119). Pipes drip by Jupiter's front wheels.
+HUGE, hissing, ticking engines. A steam engine is a teakettle on wheels. Wood (Jupiter) vs coal (No. 119). Pipes by Jupiter's front wheels spit steam.
 
-**Science:** Steam power and pressure: steam takes up much more room than water, so it pushes hard.
+**Science:** Steam takes up much more room than water, so it pushes hard.
 
 **Choices:**
-- If you stand by Jupiter's big front wheels to record, tap 'Stand by the front wheels.' → **e_steam Lost in the Steam**
+- If you stand by Jupiter's big front wheels to record, tap 'Stand by the front wheels.' → **e_steam Lost in the Steam** *(sets via=wheels)*
 - If you climb up into Jupiter's cab, tap 'Climb into Jupiter.' → **s15 Jupiter's Cab**
 - If you climb up into No. 119's cab, tap 'Climb into No. 119.' → **s16 No. 119's Cab**
 
-### s15 · p.15 · Jupiter's Cab
+### s15 · p.16 · Jupiter's Cab
 *Inside Jupiter's cab - about 12:20 p.m.* · trip clock 40 min
 
-The fireman feeds the firebox with wood. A glass tube shows the water; a gauge shows steam pressure. The whistle cord hangs overhead. You can see the gap and the telegraph pole.
+Fire roars; the gauge needle points high; the whistle cord swings overhead. You can see the gap and the telegraph pole.
 
 **Science:** A pressure gauge shows how hard the steam is pushing.
 
@@ -205,10 +220,10 @@ The fireman feeds the firebox with wood. A glass tube shows the water; a gauge s
 - If you rest your arm on the cab window and record from here, tap 'Record from the cab.' → **g_jupiter From Jupiter's Cab**
 - If you climb down and go to the last rail, tap 'Go to the last rail.' → **s17 The Last Rail**
 
-### s16 · p.16 · No. 119's Cab
+### s16 · p.17 · No. 119's Cab
 *Inside No. 119's cab - about 12:20 p.m.* · trip clock 40 min
 
-The fireman shovels coal. No. 119 came by surprise: a flood in Weber Canyon damaged a bridge, the first engine could not cross, and No. 119 came to the rescue from Ogden.
+CLANG: the firebox blasts orange heat. No. 119 came to the rescue after a flood hurt a bridge in Weber Canyon. A lump of coal lies by your boot.
 
 **Science:** Coal packs more heat into a small pile than wood.
 
@@ -217,88 +232,77 @@ The fireman shovels coal. No. 119 came by surprise: a flood in Weber Canyon dama
 - If you hold still in the cab and record from here, tap 'Record from the cab.' → **g_119 From No. 119's Cab**
 - If you climb down and go to the photographer, tap 'Go to the photographer.' → **s22 The Photographer**
 
-### s17 · p.17 · The Last Rail
+### s17 · p.18 · The Last Rail
 *At the gap - about 12:20 p.m.* · trip clock 35 min
 
-An Irish Union Pacific squad carries one last rail; a Chinese Central Pacific squad in clean blue shirts carries the other. Under them is the polished laurel tie with a silver plate and drilled holes. Gold is soft, so the golden spike just drops in the hole and gets a tap; a plain iron spike, wired to the telegraph like the hammer, does the real job.
+'Make way!' Irish UP crew and Chinese CP crew drop the last rails: CLANG, dust. Laurel tie, silver plate, drilled holes. Gold is soft, so the golden spike gets a tap; the wired iron spike and wired hammer do the real job. The golden spike glints right by your hand.
 
 **Science:** Gold is soft. A hard hit would bend it.
 
 **Choices:**
 - If you reach out and touch the golden spike, tap 'Touch the golden spike.' → **e_safety_return Safety Return** *(sets via=spike)*
-- If you saw Ten-Mile Day, you may know some of these workers. Stand with the Chinese crew. Tap 'Stand with the Chinese crew.' → **s18 The Chinese Crew** *(needs ten_mile)*
+- If you saw Ten-Mile Day end, you know these workers. Tap 'Stand with the Chinese crew.' → **s18 The Chinese Crew** *(needs ten_mile)*
 - If you stand with the Union Pacific's Irish crew, tap 'Stand with the Irish crew.' → **s19 The Irish Crew**
 - If you go to the telegraph table, tap 'Go to the telegraph table.' → **s20 The Telegraph Table**
 
-### s18 · p.18 · The Chinese Crew
+### s18 · p.19 · The Chinese Crew
 *Beside the last rail* · trip clock 30 min
 
-The crew came from Victory camp this morning; their boss is H. H. Minkler. Thousands of Chinese workers built the Central Pacific through the Sierra Nevada snow and the desert. The speeches and most photos will leave them out.
+You know these faces from Ten-Mile Day. Thousands of Chinese workers built the Central Pacific. The speeches and most photos will leave them out.
 
 **Choices:**
 - If you stand still with the crew and record, tap 'Record with the crew.' → **g_crew The Crew Who Laid It**
 - If you go to the telegraph table, tap 'Go to the telegraph table.' → **s20 The Telegraph Table**
 
-### s19 · p.19 · The Irish Crew
+### s19 · p.20 · The Irish Crew
 *Beside the last rail* · trip clock 30 min
 
-The Union Pacific track crew, many born in Ireland, under foreman Guilford. They laid track from Nebraska. A spare maul leans on the ties; a worker explains the long handle.
+The Union Pacific crew under foreman Guilford. 'Long handle, fast head. Fast head, hard hit.' A spare maul almost as tall as you.
 
-**Science:** A long handle makes the hammer head move fast. A fast, heavy head hits hard (a lever).
+**Science:** A long handle makes the hammer head move fast (a lever).
 
 **Choices:**
 - If you pick up the spare maul and swing it, tap 'Swing the spare maul.' → **e_safety_return Safety Return** *(sets via=maul)*
 - If you stand still with the crew and record, tap 'Record with the crew.' → **g_irish Mauls Up!**
 
-### s20 · p.20 · The Telegraph Table
+### s20 · p.21 · The Telegraph Table
 *By the telegraph pole - about 12:27 p.m.* · trip clock 25 min
 
-W. N. Shilling sits at the key. Pressing the key lets electricity flow down the wire; the clicks reach Omaha, Chicago, Washington, New York, and San Francisco almost at once. He taps 'Almost ready. Hats off. Prayer is being offered.'
+Shilling taps 'Almost ready. Hats off. Prayer is being offered.' The whole country is listening. WITHOUT the code the clicks are a blur and a soldier waves kids back: you cannot stay. WITH the code you can read every letter.
 
-**Science:** Telegraph: electricity in a wire carries a signal almost instantly. On, off, on: dots and dashes.
+**Science:** Telegraph: electricity in a wire carries a signal almost instantly.
 
 **Choices:**
 - If you reach over and tap the telegraph key, tap 'Tap the key.' → **e_safety_return Safety Return** *(sets via=key)*
-- If you learned the dot-dash code, stay close and listen. Tap 'Listen for the code.' → **s21 Hats Off** *(needs knows_code)*
+- If you learned the code, stay close and read the clicks. Tap 'Stay and read the clicks.' → **s21 Hats Off** *(needs knows_code; sets via=code)*
 - If you want to hear the news arrive somewhere far away, tap 'Look at the wires.' (Looking is free.) → **s25 The Wire Map**
 
-### s21 · p.21 · Hats Off
+### s21 · p.22 · Hats Off
 *By the telegraph table - about 12:45 p.m.* · trip clock 15 min
 
-The prayer by Reverend John Todd. Speeches. Spikes presented. Shilling taps: 'All ready now. The spike will soon be driven. The signal will be three dots for the start of the blows.' Leland Stanford lifts the wired hammer.
+Reached only with the code (s20) or from the old grade (s29). Prayer, speeches, special spikes. 'The signal will be three dots for the start of the blows.' Stanford lifts the hammer. 'Three dots are coming. Then the blows. Then DONE.'
 
 **Choices:**
-- If you press record and hold the band near the key, tap 'Record the clicks.' → **g_telegraph D-O-N-E**
-- If you climb on the table to see better, tap 'Climb on the table.' → **e_safety_return Safety Return** *(sets via=table)*
+- If you press record and hold the band still until the very end, tap 'Record the clicks.' → **g_telegraph D-O-N-E**
+- If you stop recording as soon as you hear three dots, tap 'Stop at three dots.' → **e_too_soon Too Soon!** *(sets via=table)*
 - If you jump to Washington, D.C., to hear the same clicks arrive there, tap 'Jump to Washington.' → **s28 Washington, D.C.** *(trip, -1 charge)*
 
-### s22 · p.22 · The Photographer
+### s22 · p.23 · The Photographer
 *Near the engines - about 12:15 p.m.* · trip clock 45 min
 
-Andrew J. Russell, the Union Pacific's photographer, with a big wooden camera and a darkroom wagon. Each picture is made on a sheet of glass. The camera needs a few seconds of light, so people must hold still or they blur. A second photographer is from Salt Lake City.
+Andrew J. Russell under his black cloth; wet glass plates; the lens stays open for seconds so anything moving blurs. 'After the spike, the engines come together. That's my picture.' You are standing right in front of his lens.
 
-**Science:** A camera collects light. Dim light needs more time, so anything that moves turns into a blur.
+**Science:** A camera collects light. Dim light needs more time, so moving things blur.
 
 **Choices:**
 - If you run in front of the camera and wave, tap 'Run in front and wave.' → **e_in_photo In the Picture**
 - If you stand behind the camera and record, tap 'Stand behind the camera.' → **g_camera Hold Still!**
-- If you meet the photographer from Salt Lake City, tap 'Meet the other photographer.' → **s23 Charles Savage**
-
-### s23 · p.23 · Charles Savage
-*Near the tracks* · trip clock 40 min
-
-Charles R. Savage came from England and has a studio in Salt Lake City. He is a Latter-day Saint. His glass plates are heavy and break easily. He says Salt Lake City will hear the news by telegraph at the same moment.
-
-**Science:** Glass is hard but brittle: it doesn't bend, it breaks.
-
-**Choices:**
-- If you offer to carry his box of glass plates, tap 'Carry his glass plates.' → **e_safety_return Safety Return** *(sets via=plate)*
-- If you jump to Salt Lake City to hear the news arrive there, tap 'Go to Salt Lake City.' → **s26 Salt Lake City** *(trip, -1 charge)*
+- If you follow the music to the band, tap 'Go to the band.' → **s24 The Tenth Ward Band**
 
 ### s24 · p.24 · The Tenth Ward Band
-*Near the crowd* · trip clock 25 min
+*Near the crowd* · trip clock 35 min
 
-The Tenth Ward Band from Salt Lake City in bright uniforms (a ward is a Latter-day Saint congregation). Horns are long, curled tubes; buzzing lips shake the air inside. A drummer sets his drum down.
+The Tenth Ward Band from Salt Lake City (a ward is a Latter-day Saint congregation) in new uniforms. How a horn makes sound. Charles R. Savage, the Latter-day Saint photographer from Salt Lake City, sets up nearby (folded in from the old s23). The drum sticks lie right on top.
 
 **Science:** Sound is shaking air. A longer tube makes a lower note.
 
@@ -310,11 +314,9 @@ The Tenth Ward Band from Salt Lake City in bright uniforms (a ward is a Latter-d
 ### s25 · p.25 · The Wire Map
 *The TimeBand screen*
 
-Telegraph wires spread across the country like a web. The clicks reach everywhere almost at once. But in 1869 every town sets its clocks by its own sun, so when it is 12:47 at Promontory it is about 2:47 in Washington. Dr. Finch also shows how DONE looks in dots and dashes.
+The telegraph race: clicks hit every city at once. Sun time: 12:47 in Utah is 2:47 in Washington (time zones come in 1883). The code is NOT given here any more; without it Dr. Finch hints 'Somebody on Ten-Mile Day could teach you.'
 
-**Science:** Sun time: the Sun reaches the East first. (Railroads later made time zones, in 1883.)
-
-**On arrival:** set knows_code=True
+**Science:** Sun time: the sun reaches the East first.
 
 **Choices:**
 - If you go to Salt Lake City, about 90 miles from Promontory, tap 'Salt Lake City.' → **s26 Salt Lake City** *(trip, -1 charge)*
@@ -324,7 +326,7 @@ Telegraph wires spread across the country like a web. The clicks reach everywher
 ### s26 · p.26 · Salt Lake City
 *Salt Lake City, Utah Territory - May 10, 1869, just after noon* · trip clock 60 min
 
-Flags, bands on corners, cannons ready on Arsenal Hill. The city has no railroad yet; the line comes to Ogden. Dr. Finch: they will build the Utah Central to Ogden and finish it in January 1870. The big new Tabernacle stands nearby.
+Flags, bands, cannons ready on Arsenal Hill. No railroad yet; they'll build their own to Ogden by January. The new Tabernacle. Everyone watches the telegraph office.
 
 **Choices:**
 - If you wait on the street for the signal, tap 'Wait for the signal.' → **g_salt_lake Salt Lake City Hears**
@@ -334,7 +336,7 @@ Flags, bands on corners, cannons ready on Arsenal Hill. The city has no railroad
 ### s27 · p.27 · People Who Walked
 *A street corner in Salt Lake City* · trip clock 50 min
 
-An old woman tells her grandson she pulled a handcart in 1856; it took all summer, and now people can come by train in days. Annie would be seventeen now. You can't tell if she is here.
+An old woman who pulled a handcart in 1856 tells her grandson it took all summer. Annie would be seventeen. You want to tell her you walked too.
 
 **Choices:**
 - If you tell her you walked with a handcart company too, tap 'Tell her you walked too.' → **e_safety_return Safety Return** *(sets via=tell)*
@@ -343,30 +345,32 @@ An old woman tells her grandson she pulled a handcart in 1856; it took all summe
 ### s28 · p.28 · Washington, D.C.
 *Western Union office, Washington, D.C. - 2:40 p.m. (Washington clocks)* · trip clock 60 min
 
-A crowd in the telegraph office. The manager, Mr. Tinker, hooked a bell to the wire so every click rings it. 'We have got done praying. The spike is about to be presented.' Chicago answers: 'We understand; all are ready in the East.'
+Mr. Tinker's bell rings with every click. 'We have got done praying...' Chicago: 'All are ready in the East.' 'The signal will be three dots for the start of the blows.' The bell is right by your hand.
 
 **Science:** A bell-sounder: electricity pulls a little hammer to ring a bell.
 
 **Choices:**
 - If you ring the bell yourself to hurry things up, tap 'Ring the bell yourself.' → **e_safety_return Safety Return** *(sets via=bell)*
-- If you hold still by the bell and record, tap 'Record the bell.' → **g_washington Washington Hears**
+- If you stop recording as soon as the bell rings three times, tap 'Stop at three dings.' → **e_too_soon Too Soon!** *(sets via=bell)*
+- If you hold still by the bell and record until the very end, tap 'Record the bell.' → **g_washington Washington Hears**
 
 ### s29 · p.29 · The Back of the Crowd
-*Promontory Summit - about 12:30 p.m.* · trip clock 40 min
+*Promontory Summit - about 12:20 p.m.* · trip clock 40 min
 
-All you see are coats and hats. Sound spreads out and gets quieter with distance; the wind carries the speeches away. A hill would show everything, but it is far. The band is warming up.
+Coats, hats, elbows. Sound gets quieter with distance. A far hill would show everything. IF you saw the grades in March, you spot the extra grade running right past the track: close and high.
 
 **Science:** Sound spreads out as it travels, so it gets quieter far away.
 
 **Choices:**
-- If you climb the hill to see everything from far away, tap 'Climb the hill.' → **e_too_far Too Far Away**
-- If you say 'excuse me' and squeeze to the front by the telegraph table, tap 'Squeeze to the front.' → **s21 Hats Off** *(sets via=squeeze)*
+- If you climb the far hill to see everything, tap 'Climb the far hill.' → **e_too_far Too Far Away**
+- If you saw the grades in March, climb the old grade by the track. Tap 'Climb the old grade.' → **s21 Hats Off** *(needs saw_grades; sets via=grade)*
+- If you say 'excuse me' and squeeze to the front by the telegraph table, tap 'Squeeze to the front.' → **s20 The Telegraph Table**
 - If you follow the sound of the band, tap 'Follow the music.' → **s24 The Tenth Ward Band**
 
 ### s30 · p.30 · The Telegraph Office
 *Telegraph office, Salt Lake City* · trip clock 55 min
 
-A young woman sits at a telegraph desk. In Utah, many young women learned the code and ran offices on the Deseret Telegraph, a line built by Latter-day Saints. She listens to the sounder, pencil ready.
+A young woman operator on the Deseret Telegraph (built by Latter-day Saints) listens to the sounder, pencil ready.
 
 **Science:** A telegraph sounder clicks when electricity pulls its little arm.
 
@@ -378,59 +382,59 @@ A young woman sits at a telegraph desk. In Utah, many young women learned the co
 
 Every ending has **Start over** and **Back to my last choice**. Every GOOD ending sets `recording_saved` and is followed by a **You were really there** page of real 1869 photos.
 
-### g_telegraph · p.31 · GOOD: D-O-N-E · viewpoint: At the telegraph table with W. N. Shilling
+### g_telegraph · p.31 · GOOD: D-O-N-E · viewpoint: At the telegraph table with W. N. Shilling (needs the code OR the old grade)
 
-Stanford swings and hits the tie; Durant misses. Shilling taps the dots anyway. A worker drives the spike, and at 12:47 Shilling sends D-O-N-E. You record the clicks and the roar.
+Stanford misses and hits the tie; Durant misses. Three dots. CLANG, CLANG, CLANG. At 12:47 Shilling sends D-O-N-E. You held on through the dots and recorded the clicks and the roar.
 
 ### g_jupiter · p.32 · GOOD: From Jupiter's Cab · viewpoint: Central Pacific engine Jupiter
 
-From the cab you see the hammer swing and hear the cheer. George Booth pulls the whistle; No. 119 answers. The engines roll nose to nose and the engineers christen each other's engine.
+Whistle duel (WHOOOO / WHOO-WHOO), then the engines creep nose to nose and the engineers christen each other's engine.
 
 ### g_119 · p.33 · GOOD: From No. 119's Cab · viewpoint: Union Pacific engine No. 119
 
-You record the whistles and cheers from No. 119, then feel it roll across the joined rails, the first engine to cross, before Jupiter crosses too.
+Whistles and cheers from No. 119, then it rolls across the joined rails, the first engine to cross, before Jupiter.
 
-### g_crew · p.34 · GOOD: The Crew Who Laid It · viewpoint: The Central Pacific's Chinese track crew
+### g_crew · p.34 · GOOD: The Crew Who Laid It · viewpoint: The Central Pacific's Chinese track crew (needs the Ten-Mile finish)
 
-You record with the crew who laid the last rail. Afterward J. H. Strobridge invites them to dinner, and the guests stand and cheer them.
+You record with the crew who laid the last rail. Afterward Strobridge invites them to dinner, and the guests stand and cheer them.
 
 ### g_irish · p.35 · GOOD: Mauls Up! · viewpoint: The Union Pacific's Irish track crew
 
-The crew that laid track from Nebraska lifts their mauls and cheers at DONE. 1,086 miles from Omaha, 690 from Sacramento.
+The crew that laid track from Nebraska throws up mauls and hats at DONE. 1,086 miles from Omaha, 690 from Sacramento.
 
-### g_camera · p.36 · GOOD: Hold Still! · viewpoint: Behind Andrew J. Russell's camera
+### g_camera · p.36 · GOOD: Hold Still! · viewpoint: Behind A. J. Russell's camera
 
-After DONE, the engines meet, Montague and Dodge shake hands, and Russell calls 'Hold still!' You record the making of 'East and West Shaking Hands.'
+DONE, then the engines nose to nose, Montague and Dodge shake hands, and 'HOLD STILL!': one, two, three. The champagne photo is made.
 
 ### g_band · p.37 · GOOD: Music at Promontory · viewpoint: With the Tenth Ward Band from Salt Lake City
 
-You record the spike, the cheer, and the band's music, feeling the drum in your chest.
+DONE, and the band blasts out a song; the big drum booms in your chest.
 
 ### g_salt_lake · p.38 · GOOD: Salt Lake City Hears · viewpoint: A street in Salt Lake City
 
-The signal arrives: flags, bands, and cannons from Arsenal Hill (smoke first, boom after). Thousands will gather in the new Tabernacle. Eight months later, Brigham Young drives the Utah Central's last spike.
+'It's DONE!' Flags, bands, a cannon (smoke first, then BOOM: light is faster than sound). Thousands will fill the Tabernacle.
 
 Variant line (by route):
-- handcart: The old woman who pulled a handcart wipes her eyes.
-- _default: A man next to you says his family came by wagon. It took them months.
+- handcart: The old woman who pulled a handcart: 'In a few days. Not a whole summer.'
+- _default: A man whose family came by wagon: 'Now it will take days.'
 
 ### g_deseret · p.39 · GOOD: The Operator · viewpoint: A young woman telegraph operator in Salt Lake City
 
-The sounder clicks D-O-N-E. The operator writes it down and calls out the news, and the room cheers.
+Three dots, the blows, then D-O-N-E under her pencil. The office cheers; she sends it on down the Deseret Telegraph.
 
 ### g_washington · p.40 · GOOD: Washington Hears · viewpoint: The Western Union office in Washington, D.C.
 
-Three dots ring the bell, then the blows, then DONE at 2:47 Washington time. The crowd cheers; in New York, cannons fire 100 times.
+You hold on past the three dots and the blows; at 2:47 Washington time the bell spells DONE. In New York, cannons fire 100 times.
 
 ### e_safety_return · p.41 · BAD: Safety Return · cause: Tried to change what happened
 
-The band buzzes and takes you home, and locks. Each variant line explains why that thing had to stay as it was.
+Bzz, bzz, bzz: the band takes you home and locks. Each variant line explains why that thing had to stay as it was.
 
 *What could you try differently? Watch, and keep your hands still. The band can only record a moment you leave just as it was.*
 
 ### e_out_of_charges · p.42 · BAD: Out of Charges · cause: Tried a trip with no charges left
 
-The dots are dark. The band uses its backup power to take you home.
+Press. Nothing. The band uses backup power to take you home. (Handcart + full Ten-Mile Day + May 10 = one trip too many.)
 
 *What could you try differently? Every trip used a charge. Which trips mattered most?*
 
@@ -442,50 +446,64 @@ You'd be a blur in a famous photo, a girl who was never there. The band pulls yo
 
 ### e_wrong_day · p.44 · BAD: The Wrong Day · cause: Went on May 8, the planned day
 
-Nothing happens on May 8: the Union Pacific train is stuck (unpaid workers chained Durant's car at Piedmont, Wyoming; rain hurt a bridge). Your clock runs out.
+Nothing happens on May 8: the Union Pacific train is stuck (unpaid workers chained Durant's car; rain hurt a bridge). The clock runs out.
 
 *What could you try differently? The date on the golden spike was the plan. Which day did it really happen?*
 
 ### e_wrong_place · p.45 · BAD: The Wrong Promontory · cause: Went to Promontory Point instead of Promontory Summit
 
-Salt water, birds, and rocks. No railroad. The band takes you home.
+Salt water, gulls, and rocks. No railroad.
 
 *What could you try differently? The railroad climbed up to the top. What's another word for the top of a climb?*
 
-### e_steam · p.46 · BAD: Lost in the Steam · cause: Stood by the engine's cylinder cocks
+### e_steam · p.46 · BAD: Lost in the Steam · cause: Got too close to an engine's steam valves
 
-The engineer opens the drain cocks; whoosh, a cloud of steam. The band's lens fogs and the crowd hides the moment.
+WHOOSH: the engineer opens the drain valves and the band's lens fogs. Reached from Jupiter's front wheels (s14) or by running up to Jupiter as it arrives (s12).
+
+Variant line (by route):
+- wheels: By the front wheels, just as the hammer goes up.
+- arrive: Running up to Jupiter as it hisses to a stop.
 
 *What could you try differently? Steam is very wet. Where could you watch from, away from the puffs?*
 
 ### e_time_up · p.47 · BAD: Time's Up · cause: Waited longer than the one-hour trip clock
 
-The trip clock reaches zero and the band brings you home before the big moment.
+Beep, beep, beep: zero. The band brings you home before the big moment.
 
 Variant line (by route):
-- camp: The fire was warm, and the camp was quiet. Then the clock ran out.
-- tenmile: The track kept growing. But the day had twelve hours, and your clock had one.
-- morning: The ceremony was six hours away. Your clock had one hour.
+- camp: Fell asleep by the fire.
+- tenmile: The day had twelve hours; the clock had one.
+- jupiter: Landed at 11 for Jupiter and stayed: the laurel tie is out and Shilling is at his table when the clock runs out, forty minutes before the spike.
 
 *What could you try differently? The band can only stay one hour. How could you get there closer to the moment?*
 
 ### e_too_early · p.48 · BAD: Too Early in Washington · cause: Went to Washington at 12:47 Washington time
 
-Washington's clocks say 12:47, but in Utah it's not even 11. Nothing will come for two hours. The clock runs out.
+Washington's clocks say 12:47, but in Utah it's not even 11. Nothing comes. The clock runs out.
 
-*What could you try differently? The Sun reaches the East first. Were Washington's clocks ahead or behind?*
+*What could you try differently? The sun reaches the East first. Were Washington's clocks ahead or behind?*
 
-### e_too_far · p.49 · BAD: Too Far Away · cause: Watched from the hill, too far away to hear
+### e_too_far · p.49 · BAD: Too Far Away · cause: Watched from the far hill, too far away to hear
 
 You see the hammer swing, but the sound is faint and the wind is loud. The recording is mostly wind.
 
 *What could you try differently? Sound gets quieter far away. How could you get closer?*
 
-### e_blast · p.50 · BAD: Stand Clear! · cause: Ran toward the blasting
+### e_blast · p.50 · BAD: Stand Clear! · cause: Ran toward the lit fuse
 
-'Blast! Stand clear!' The band's safety rule pulls you home before the boom.
+The fuse is getting shorter; 'STAND CLEAR!' The band's safety rule pulls you home before the boom.
 
-*What could you try differently? Blasting is for grown-ups who know the rules. Where else could you watch the workers?*
+*What could you try differently? Where else could you watch the workers, safely?*
+
+### e_too_soon · p.51 · BAD: Too Soon! · cause: Stopped recording at the three-dot start signal
+
+NEW in v2. You let go at three dots (the signal that the blows are STARTING). The recording is click, click, click, then nothing: no DONE. Reached from the telegraph table (s21) or the Washington bell (s28).
+
+Variant line (by route):
+- table: At Shilling's table.
+- bell: At the Washington bell.
+
+*What could you try differently? Three dots were the signal to start. Which word were you waiting for?*
 
 ## Choices that test a science or history idea
 
@@ -496,13 +514,16 @@ You see the hammer swing, but the sound is faint and the wind is loud. The recor
 - s22: running in front of a slow camera → In the Picture.
 - s25: sun time, Washington 12:47 vs 2:47 → Too Early in Washington.
 - s29: sound gets quieter with distance → Too Far Away.
-- s04/s09/s12: the one-hour trip clock → Time's Up.
+- s04/s09/s12: the one-hour trip clock → Time's Up (s12: landing at 11 for Jupiter and staying runs out with the ceremony setting up).
+- s21/s28: three dots meant START, not done → Too Soon!
+- s12/s14: steam from the engine's drain valves fogs the lens → Lost in the Steam.
+- s06: a lit fuse, 'Stand clear!' → Stand Clear!
 
 ## Counts
 
 - Story scenes: 30
-- Endings: 20 (10 GOOD, 10 BAD)
-- Choice branches: 81
-- Total pages: 50 (plus a 'You were really there' photo page after each GOOD ending)
+- Endings: 21 (10 GOOD, 11 BAD)
+- Choice branches: 85
+- Total pages: 51 (plus a 'You were really there' photo page after each GOOD ending)
 
 Flowcharts: `story_map.mmd` (full) and `story_map_compact.mmd` (short labels; thick arrows cost a charge). Facts and sources: `FACTS.md`.

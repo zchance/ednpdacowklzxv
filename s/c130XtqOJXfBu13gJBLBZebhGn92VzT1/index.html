@@ -216,7 +216,7 @@ var AUDIO_DATA = null;
   function showPhoto(i) {
     photoIdx = (i + photos.length) % photos.length;
     setPic(photos[photoIdx].src, photos[photoIdx].caption);
-    if (els.pcredit) { els.pcredit.textContent = photos[photoIdx].credit ? "\u00A9 " + photos[photoIdx].credit : ""; els.pcredit.style.display = photos[photoIdx].credit ? "block" : "none"; }
+    if (els.pcredit) { els.pcredit.textContent = photos[photoIdx].credit ? "Photo: " + photos[photoIdx].credit : ""; els.pcredit.style.display = photos[photoIdx].credit ? "block" : "none"; }
     var d = els.pdots.children; for (var k = 0; k < d.length; k++) d[k].classList.toggle("on", k === photoIdx);
   }
   $("pprev").onclick = function () { showPhoto(photoIdx - 1); };

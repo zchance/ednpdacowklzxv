@@ -22,6 +22,11 @@ body{display:flex;flex-direction:column;height:100vh;height:100dvh;overflow:hidd
 #oxy .bar{width:110px;height:18px;border-radius:9px;background:#2a3557;overflow:hidden;border:2px solid #9cc8ff}
 #oxy .fill{height:100%;background:linear-gradient(90deg,#5fb4ff,#9be1ff);transition:width .6s}
 #oxy .min{font-size:15px;min-width:52px}
+#bigplay{min-width:64px;width:64px;height:64px;border-radius:50%;font-size:26px;background:#2f8f5b;color:#fff;border:3px solid #fff;box-shadow:0 3px 0 rgba(0,0,0,.35);letter-spacing:-3px;line-height:1;padding:0}
+#bigplay[data-state=playing]{background:#e8a33d;color:#2a1b05}
+#bigplay:active{transform:translateY(2px)}
+#pcredit{position:absolute;right:6px;bottom:6px;max-width:70%;font-size:12px;line-height:1.3;color:#fff;background:rgba(0,0,0,.55);padding:3px 8px;border-radius:8px;display:none;text-align:right}
+#picwrap.multi #pcredit{bottom:28px}
 .iconbtn{background:#1d2a4f;color:#fff;border:0;border-radius:12px;font-size:22px;min-width:48px;height:48px;cursor:pointer}
 #picwrap{flex:none;position:relative;background:#000;height:min(46vh,calc(100vw*0.75));display:flex;justify-content:center;align-items:center;overflow:hidden}
 #picwrap img{max-width:100%;max-height:100%;object-fit:contain;display:block;transition:opacity .25s;position:relative}
@@ -78,17 +83,19 @@ h1{font-size:30px;margin:0 0 10px;line-height:1.2}
 #note{font-size:15px;color:var(--muted);min-height:1em}
 @media (orientation:landscape) and (max-height:700px){#picwrap{height:42vh}}
 @media (max-width:600px){#card ul{columns:1}}
+@media (max-width:560px){#charges .lbl,#oxy .lbl{display:none}#oxy .bar{width:56px}#oxy .min{min-width:44px;font-size:13px}#top{gap:6px;padding:6px 8px}#top .t{font-size:15px}#charges .c{width:16px;height:16px}#charges{gap:5px}}
 </style>
 </head>
 <body>
 <div id="top">
   <button class="iconbtn" id="backTop" title="Back to my last choice" aria-label="Back to my last choice">&#8630;</button>
   <div class="t" id="toptitle">Evelyn and the TimeBand</div>
-  <div id="oxy" aria-label="Oxygen"><span class="lbl">O&#8322;</span><div class="bar"><div class="fill" id="oxyfill"></div></div><span class="min" id="oxymin"></span></div>
+  <div id="oxy" aria-label="Oxygen"><span class="lbl" id="oxylbl">O&#8322;</span><div class="bar"><div class="fill" id="oxyfill"></div></div><span class="min" id="oxymin"></span></div>
   <div id="charges" aria-label="TimeBand charges"><span class="lbl">Charges</span><span class="c"></span><span class="c"></span><span class="c"></span></div>
+  <button class="iconbtn" id="bigplay" data-state="idle" title="Play (read to me)" aria-label="Play (read to me)">&#9654;</button>
   <button class="iconbtn" id="menuBtn" title="Grown-up menu" aria-label="Grown-up menu">&#9881;</button>
 </div>
-<div id="picwrap"><img id="picbg" alt="" aria-hidden="true"><img id="pic" alt=""><button class="nav" id="pprev" aria-label="Previous photo">&#8249;</button><button class="nav" id="pnext" aria-label="Next photo">&#8250;</button><div id="pdots"></div></div>
+<div id="picwrap"><img id="picbg" alt="" aria-hidden="true"><img id="pic" alt=""><button class="nav" id="pprev" aria-label="Previous photo">&#8249;</button><button class="nav" id="pnext" aria-label="Next photo">&#8250;</button><div id="pdots"></div><div id="pcredit"></div></div>
 <div id="scroller"><div id="page">
   <div id="where"></div>
   <h1 id="title"></h1>
@@ -124,10 +131,14 @@ var AUDIO_DATA = null;
   "use strict";
   var $ = function (id) { return document.getElementById(id); };
   var S = STORY, synth = window.speechSynthesis;
-  var KEY = "moonAdventure.v1.", FOUND = KEY + "found", SAVE = KEY + "state";
+  var KEY = S.storage_key || "moonAdventure.v1.", FOUND = KEY + "found", SAVE = KEY + "state";
   var els = { pic: $("pic"), picwrap: $("picwrap"), pdots: $("pdots"), where: $("where"), title: $("title"), banner: $("banner"),
     text: $("text"), choices: $("choices"), read: $("read"), note: $("note"), scroller: $("scroller"), oxy: $("oxy"),
-    oxyfill: $("oxyfill"), oxymin: $("oxymin"), backTop: $("backTop"), toptitle: $("toptitle") };
+    oxyfill: $("oxyfill"), oxymin: $("oxymin"), backTop: $("backTop"), toptitle: $("toptitle"), big: $("bigplay"), pcredit: $("pcredit"), oxylbl: $("oxylbl") };
+  var METER = S.meter || { short: "O\u2082", label: "Oxygen", max: 60, flag: "oxygen_min", field: "oxygen" };
+  if (els.oxylbl) els.oxylbl.textContent = METER.short;
+  if (els.oxy) els.oxy.setAttribute("aria-label", METER.label);
+  if (S.title) document.title = S.title;
 
   // ---------------- state ----------------
   function clone(o) { return JSON.parse(JSON.stringify(o)); }
@@ -147,7 +158,7 @@ var AUDIO_DATA = null;
       applySets(p.on_enter.set);
       (p.on_enter.gain || []).forEach(function (g) { st.flags[g] = true; });
     }
-    if (p && p.oxygen != null) st.flags.oxygen_min = p.oxygen;
+    if (p && p[METER.field] != null) st.flags[METER.flag] = p[METER.field];
     st.at = id;
   }
   function choose(c) {
@@ -205,6 +216,7 @@ var AUDIO_DATA = null;
   function showPhoto(i) {
     photoIdx = (i + photos.length) % photos.length;
     setPic(photos[photoIdx].src, photos[photoIdx].caption);
+    if (els.pcredit) { els.pcredit.textContent = photos[photoIdx].credit ? "\u00A9 " + photos[photoIdx].credit : ""; els.pcredit.style.display = photos[photoIdx].credit ? "block" : "none"; }
     var d = els.pdots.children; for (var k = 0; k < d.length; k++) d[k].classList.toggle("on", k === photoIdx);
   }
   $("pprev").onclick = function () { showPhoto(photoIdx - 1); };
@@ -225,11 +237,11 @@ var AUDIO_DATA = null;
     var page = isPhoto ? S.endings[id.slice(6)] : (S.scenes[id] || S.endings[id]);
     var isEnd = !isPhoto && !!S.endings[id];
     els.choices.innerHTML = ""; els.banner.className = ""; els.banner.textContent = "";
-    els.picwrap.classList.remove("multi"); els.pdots.innerHTML = ""; photos = [];
+    els.picwrap.classList.remove("multi"); els.pdots.innerHTML = ""; photos = []; if (els.pcredit) els.pcredit.style.display = "none";
     var list = [];
     if (isPhoto) {
       var rt = page.really_there;
-      els.where.textContent = "Real photos from NASA";
+      els.where.textContent = S.photo_where || "Real photos from NASA";
       els.title.textContent = rt.title;
       els.banner.className = "photo"; els.banner.textContent = "\uD83D\uDCF7 This really happened";
       list.push({ t: rt.text, k: id + ".s0" });
@@ -284,9 +296,9 @@ var AUDIO_DATA = null;
     // header
     var dots = document.querySelectorAll("#charges .c");
     for (var i = 0; i < dots.length; i++) dots[i].classList.toggle("on", i < (st.flags.charges || 0));
-    var showOxy = !isPhoto && !isEnd && page.oxygen != null;
+    var showOxy = !isPhoto && !isEnd && page[METER.field] != null;
     els.oxy.classList.toggle("show", showOxy);
-    if (showOxy) { var mins = st.flags.oxygen_min; els.oxyfill.style.width = Math.max(0, Math.min(100, mins / 60 * 100)) + "%"; els.oxymin.textContent = mins + " min"; }
+    if (showOxy) { var mins = st.flags[METER.flag]; els.oxyfill.style.width = Math.max(0, Math.min(100, mins / (METER.max || 60) * 100)) + "%"; els.oxymin.textContent = mins + " min"; }
     els.backTop.style.visibility = st.history.length ? "visible" : "hidden";
     els.toptitle.textContent = isPhoto ? "You were really there" : ("Page " + page.page);
     els.scroller.scrollTop = 0;
@@ -340,6 +352,12 @@ var AUDIO_DATA = null;
     els.read.textContent = state === "playing" ? "\u23F8 Pause" : state === "paused" ? "\u25B6 Keep reading" : "\u25B6 Read to me";
     els.read.setAttribute("aria-label", els.read.textContent.slice(2));
     els.read.dataset.state = state;
+    if (els.big) {
+      els.big.dataset.state = state;
+      els.big.innerHTML = state === "playing" ? "&#10074;&#10074;" : "&#9654;";
+      var lb = state === "playing" ? "Pause" : state === "paused" ? "Play (keep reading)" : "Play (read to me)";
+      els.big.setAttribute("aria-label", lb); els.big.title = lb;
+    }
   }
   function highlight(pi, wi) {
     if (hlEl) hlEl.classList.remove("cur"); hlEl = null;
@@ -486,7 +504,15 @@ var AUDIO_DATA = null;
     if (r.t != null && g && g.a && !g.failed) playAudioSeg(r.seg, 0, r.t);
     else { var sl = segOf(r.p, r.w); playSeg(sl[0], sl[1]); }
   }
-  els.read.onclick = function () { userTapped = true; if (rd.on) pauseReading(); else if (rd.paused) resumeReading(); else startReading(0, 0); };
+  function togglePlay() { userTapped = true; if (rd.on) pauseReading(); else if (rd.paused) resumeReading(); else startReading(0, 0); }
+  els.read.onclick = togglePlay;
+  if (els.big) els.big.onclick = togglePlay;
+  document.addEventListener("keydown", function (e) {
+    if (e.code !== "Space" && e.key !== " " && e.key !== "MediaPlayPause") return;
+    var tg = e.target && e.target.tagName; if (tg === "INPUT" || tg === "SELECT" || tg === "TEXTAREA" || tg === "BUTTON") return;
+    if ($("modal").classList.contains("show")) return;
+    e.preventDefault(); togglePlay();
+  });
   els.text.addEventListener("click", function (e) { var t = e.target; if (!t || !t.classList || !t.classList.contains("w")) return; userTapped = true; startReading(+t.dataset.p, +t.dataset.w); });
 
   // ---------------- menu ----------------
@@ -511,7 +537,7 @@ var AUDIO_DATA = null;
   document.addEventListener("visibilitychange", function () { if (document.hidden && rd.on) pauseReading(); });
 
   // test hooks
-  window.MoonAdventure = { state: function () { return clone(st); }, startOver: startOver, back: backToChoice,
+  window.MoonAdventure = window.ReadAlong = { togglePlay: function () { togglePlay(); }, state: function () { return clone(st); }, startOver: startOver, back: backToChoice,
     go: function (id, flags) { stopReading(); st.at = id; if (flags) for (var k in flags) st.flags[k] = flags[k]; render(); },
     segments: function () { return segs.map(function (g) { return { k: g.k, n: g.n, audio: !!g.a, paras: g.paras.slice() }; }); },
     reading: function () { return { on: rd.on, paused: rd.paused, seg: rd.seg, mode: rd.mode, t: audioEl ? audioEl.currentTime : null, src: audioEl ? audioEl.src : null, rate: audioEl ? audioEl.playbackRate : null, cur: hlEl ? +hlEl.dataset.i : -1, speed: rd.speed }; } };

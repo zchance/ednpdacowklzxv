@@ -1,6 +1,7 @@
 Evelyn and the TimeBand: Apollo 11
 Open moon-adventure.html in Chrome or Edge. Keep the img and audio folders next to it.
-Works offline. Tap "Read to me" to hear the story (tap again to pause). Tap any word to hear it from there.
+Works offline. Tap "Read to me" to hear the story. Tap any word to hear it from there.
+PAUSE: the big round button at the top (green ▶ / orange ❚❚) pauses and plays. It picks up again from the same word. The space bar does the same on a keyboard.
 The Speed slider changes how fast the narrator reads.
 Grown-up menu = gear button (endings found, read-each-page-aloud option, backup voice).
 If an Android tablet will not show pictures or play sound from this folder, use moon-adventure-single.html instead (everything is inside that one file).

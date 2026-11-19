@@ -1,0 +1,113 @@
+{
+ "title": "Gilbert the Goat Who Wanted to Be a Chicken",
+ "storage_key": "gilbertGoat.v1.",
+ "scenes": [
+  {
+   "id": "p01",
+   "title": "Gilbert Watches the Hens",
+   "place": "On the farm, every morning",
+   "image": "img/p01.jpg",
+   "paragraphs": [
+    "Once upon a time, there was a goat named Gilbert who wanted to be a chicken.",
+    "Every morning, Gilbert watched the hens on the farm. They flapped their wings. They said \"bawk bawk.\" And every morning, they laid an egg. Gilbert thought that was the best trick he had ever seen."
+   ]
+  },
+  {
+   "id": "p02",
+   "title": "Into the Hen House",
+   "place": "The hen house",
+   "image": "img/p02.jpg",
+   "paragraphs": [
+    "So one day, Gilbert climbed into the hen house. He squeezed into a nest that was much, much too small. His legs stuck out the front. His beard stuck out the back. The hens just stared at him."
+   ]
+  },
+  {
+   "id": "p03",
+   "title": "Penny Shows Him How",
+   "place": "The hen house",
+   "image": "img/p03.jpg",
+   "paragraphs": [
+    "\"Bawk,\" said Gilbert. \"Bawk bawk.\"",
+    "\"That's not how you say it,\" said a little red hen named Penny. \"You have to say it from your tummy. BAWK!\""
+   ]
+  },
+  {
+   "id": "p04",
+   "title": "BAAAAA-WK!",
+   "place": "The hen house and the barn",
+   "image": "img/p04.jpg",
+   "paragraphs": [
+    "\"BAAAAWK!\" said Gilbert. But because he was a goat, it came out \"BAAAAA-WK!\" And the cow next door was so surprised that she sneezed, and her sneeze blew all the hay right off the barn roof."
+   ]
+  },
+  {
+   "id": "p05",
+   "title": "Waiting",
+   "place": "The nest",
+   "image": "img/p05.jpg",
+   "paragraphs": [
+    "Now Gilbert was ready. He sat very still. He scrunched up his face. He waited, and waited, and waited.",
+    "Nothing happened."
+   ]
+  },
+  {
+   "id": "p06",
+   "title": "Flap!",
+   "place": "The farmyard",
+   "image": "img/p06.jpg",
+   "paragraphs": [
+    "\"Maybe you need to flap,\" said Penny. So Gilbert flapped his front legs. He flapped so hard that he fell right out of the nest, rolled across the yard, and landed upside down in the pig's mud puddle. *Splat!*"
+   ]
+  },
+  {
+   "id": "p07",
+   "title": "Are You a Chicken Now?",
+   "place": "The pig's mud puddle",
+   "image": "img/p07.jpg",
+   "paragraphs": [
+    "The pig looked at him. \"Are you a chicken now?\"",
+    "\"Not yet,\" said Gilbert, with mud on his nose."
+   ]
+  },
+  {
+   "id": "p08",
+   "title": "Plop!",
+   "place": "The nest",
+   "image": "img/p08.jpg",
+   "paragraphs": [
+    "He went back to the nest and tried again. He sat. He scrunched. He waited. And then he heard something go *plop!*",
+    "Gilbert jumped up. There, in the nest, was an egg! A real egg!",
+    "\"I did it!\" Gilbert yelled. \"I'm a chicken!\""
+   ]
+  },
+  {
+   "id": "p09",
+   "title": "That One's Mine",
+   "place": "The hen house",
+   "image": "img/p09.jpg",
+   "paragraphs": [
+    "Then Penny the hen stepped out from behind him, looking very proud of herself. \"Actually,\" she said, \"that one's mine. I sneaked it in there while you were scrunching.\"",
+    "Gilbert looked at the egg. He looked at Penny. And then he laughed so hard that his beard wiggled."
+   ]
+  },
+  {
+   "id": "p10",
+   "title": "What Gilbert Can Do",
+   "place": "The farmyard",
+   "image": "img/p10.jpg",
+   "paragraphs": [
+    "\"You know what?\" said Penny. \"You don't have to be a chicken. You're the only one on this farm who can climb all the way up to the top of the barn.\""
+   ]
+  },
+  {
+   "id": "p11",
+   "title": "Good Morning, Farm!",
+   "place": "The top of the barn",
+   "image": "img/p11.jpg",
+   "paragraphs": [
+    "So that's what Gilbert did. Every morning after that, he climbed to the very top of the barn and shouted \"Good morning!\" to the whole farm. The hens laid their eggs, and Penny always saved one special egg for him to look at. Just to look at, not to eat. Goats don't eat eggs.",
+    "**The end.**"
+   ]
+  }
+ ]
+}

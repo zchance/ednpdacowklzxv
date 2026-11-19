@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#3a2614">
+<title>Gilbert the Goat Who Wanted to Be a Chicken</title>
+<style>
+:root{--bg:#3a2614;--panel:#fbf6ec;--ink:#24211c;--accent:#e8a33d;--good:#2f8f5b;--muted:#7b7266;--hl:#ffe08a}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:"Atkinson Hyperlegible","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-text-size-adjust:100%}
+body{display:flex;flex-direction:column;height:100vh;height:100dvh;overflow:hidden}
+#top{flex:none;display:flex;align-items:center;gap:12px;padding:8px 14px;background:#2a1b0e;color:#fff;min-height:56px}
+#top .t{flex:1;font-size:18px;opacity:.85;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.iconbtn{background:#5a3d22;color:#fff;border:0;border-radius:12px;font-size:22px;min-width:48px;height:48px;cursor:pointer}
+.iconbtn:disabled{opacity:.35}
+#bigplay{min-width:64px;width:64px;height:64px;border-radius:50%;font-size:26px;background:#2f8f5b;color:#fff;border:3px solid #fff;box-shadow:0 3px 0 rgba(0,0,0,.35);letter-spacing:-3px;line-height:1;padding:0}
+#bigplay[data-state=playing]{background:#e8a33d;color:#2a1b05}
+#bigplay:active{transform:translateY(2px)}
+#picwrap{flex:none;position:relative;background:#000;height:min(46vh,calc(100vw*0.75));display:flex;justify-content:center;align-items:center;overflow:hidden}
+#picwrap img{max-width:100%;max-height:100%;object-fit:contain;display:block;transition:opacity .25s;position:relative}
+#picwrap #picbg{position:absolute;inset:-30px;width:calc(100% + 60px);height:calc(100% + 60px);max-width:none;max-height:none;object-fit:cover;filter:blur(22px) brightness(.55)}
+#picwrap img.fade{opacity:0}
+#pdots{position:absolute;bottom:8px;left:0;right:0;text-align:center}
+#pdots span{display:inline-block;width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.4);margin:0 3px;box-shadow:0 0 2px rgba(0,0,0,.6)}
+#pdots span.on{background:#fff}
+#scroller{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;background:var(--panel)}
+#page{max-width:900px;margin:0 auto;padding:18px 22px 40px}
+#where{font-size:16px;color:var(--muted);margin:2px 0 4px}
+h1{font-size:30px;margin:0 0 10px;line-height:1.2}
+#booktitle{display:none;font-size:clamp(28px,4vw,38px);color:#8a3b12;margin:0 0 6px}
+#text p{font-size:clamp(23px,3.1vw,30px);line-height:1.6;margin:0 0 .8em}
+#text em{font-style:italic}
+#text b{font-weight:800}
+.w{border-radius:6px;padding:0 1px;transition:background .12s;cursor:pointer}
+.w.cur{background:var(--hl);box-shadow:0 0 0 2px var(--hl)}
+#readbar{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 14px}
+.btn{font:inherit;font-size:22px;border:0;border-radius:16px;padding:14px 20px;cursor:pointer;min-height:60px}
+#read{background:#2f5f9f;color:#fff;min-width:210px}
+#read[data-state=playing]{background:#1f7a52}
+#speedbox{display:flex;flex-direction:column;justify-content:center;font-size:16px;color:var(--muted);min-width:180px;flex:1;max-width:320px}
+#speedbox input{width:100%;height:36px;accent-color:#2f5f9f}
+#nav{display:flex;gap:14px;margin-top:14px;flex-wrap:wrap}
+.choice{font:inherit;font-size:clamp(22px,3vw,28px);font-weight:700;border:0;border-radius:18px;padding:16px 22px;min-height:72px;cursor:pointer;background:var(--accent);color:#2a1b05;box-shadow:0 4px 0 #b97b1f;flex:1;min-width:200px}
+.choice:active{transform:translateY(3px);box-shadow:0 1px 0 #b97b1f}
+.choice.home{background:#e9e1d3;color:#2a2318;box-shadow:0 4px 0 #b8ab95}
+.choice[hidden]{display:none}
+#modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:10}
+#modal.show{display:flex}
+#card{background:#fff;border-radius:18px;max-width:640px;width:92vw;max-height:88vh;overflow:auto;padding:20px 22px}
+#card h2{margin:0 0 6px}
+#card label.chk{display:flex;gap:10px;align-items:center;font-size:17px;margin:12px 0}
+#card label.chk input{width:26px;height:26px}
+#card .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+#card .row .btn{font-size:18px;min-height:50px;padding:10px 16px;background:#eee}
+#card ol{padding-left:24px;font-size:17px;columns:2}
+#card ol li{padding:3px 0;cursor:pointer;color:#2f5f9f;break-inside:avoid}
+@media (orientation:landscape) and (max-height:700px){#picwrap{height:42vh}}
+@media (max-width:560px){#top{gap:6px;padding:6px 8px}#top .t{font-size:15px}#card ol{columns:1}}
+</style>
+</head>
+<body>
+<div id="top">
+  <button class="iconbtn" id="backTop" title="Previous page" aria-label="Previous page">&#8630;</button>
+  <div class="t" id="toptitle">Gilbert the Goat</div>
+  <button class="iconbtn" id="bigplay" data-state="idle" title="Play (read to me)" aria-label="Play (read to me)">&#9654;</button>
+  <button class="iconbtn" id="menuBtn" title="Grown-up menu" aria-label="Grown-up menu">&#9881;</button>
+</div>
+<div id="picwrap"><img id="picbg" alt="" aria-hidden="true"><img id="pic" alt=""><div id="pdots"></div></div>
+<div id="scroller"><div id="page">
+  <h1 id="booktitle"></h1>
+  <div id="where"></div>
+  <h1 id="title"></h1>
+  <div id="readbar"><button class="btn" id="read" data-state="idle">&#9654; Read to me</button>
+    <label id="speedbox" for="speed"><span>Speed <b id="speedVal"></b></span><input type="range" id="speed" min="0.6" max="1.4" step="0.05" value="1" aria-label="Reading speed"></label></div>
+  <div id="text"></div>
+  <div id="nav">
+    <button class="choice home" id="prevBtn" type="button">&#8592; Back a page</button>
+    <button class="choice" id="nextBtn" type="button">Next page &#8594;</button>
+    <button class="choice" id="againBtn" type="button" hidden>&#8634; Read it again</button>
+  </div>
+</div></div>
+<div id="modal"><div id="card">
+  <h2>Grown-up menu</h2>
+  <label class="chk"><input type="checkbox" id="auto" checked> Keep reading: turn the page and read the next one by itself</label>
+  <div>Go to a page:</div>
+  <ol id="pageList"></ol>
+  <div class="row">
+    <button class="btn" id="mStart">Start over</button>
+    <button class="btn" id="mClose">Close</button>
+  </div>
+</div></div>
+<script>
+var STORY = {"title": "Gilbert the Goat Who Wanted to Be a Chicken", "storage_key": "gilbertGoat.v1.", "scenes": [{"id": "p01", "title": "Gilbert Watches the Hens", "place": "On the farm, every morning", "image": "img/p01.jpg", "paragraphs": ["Once upon a time, there was a goat named Gilbert who wanted to be a chicken.", "Every morning, Gilbert watched the hens on the farm. They flapped their wings. They said \"bawk bawk.\" And every morning, they laid an egg. Gilbert thought that was the best trick he had ever seen."]}, {"id": "p02", "title": "Into the Hen House", "place": "The hen house", "image": "img/p02.jpg", "paragraphs": ["So one day, Gilbert climbed into the hen house. He squeezed into a nest that was much, much too small. His legs stuck out the front. His beard stuck out the back. The hens just stared at him."]}, {"id": "p03", "title": "Penny Shows Him How", "place": "The hen house", "image": "img/p03.jpg", "paragraphs": ["\"Bawk,\" said Gilbert. \"Bawk bawk.\"", "\"That's not how you say it,\" said a little red hen named Penny. \"You have to say it from your tummy. BAWK!\""]}, {"id": "p04", "title": "BAAAAA-WK!", "place": "The hen house and the barn", "image": "img/p04.jpg", "paragraphs": ["\"BAAAAWK!\" said Gilbert. But because he was a goat, it came out \"BAAAAA-WK!\" And the cow next door was so surprised that she sneezed, and her sneeze blew all the hay right off the barn roof."]}, {"id": "p05", "title": "Waiting", "place": "The nest", "image": "img/p05.jpg", "paragraphs": ["Now Gilbert was ready. He sat very still. He scrunched up his face. He waited, and waited, and waited.", "Nothing happened."]}, {"id": "p06", "title": "Flap!", "place": "The farmyard", "image": "img/p06.jpg", "paragraphs": ["\"Maybe you need to flap,\" said Penny. So Gilbert flapped his front legs. He flapped so hard that he fell right out of the nest, rolled across the yard, and landed upside down in the pig's mud puddle. *Splat!*"]}, {"id": "p07", "title": "Are You a Chicken Now?", "place": "The pig's mud puddle", "image": "img/p07.jpg", "paragraphs": ["The pig looked at him. \"Are you a chicken now?\"", "\"Not yet,\" said Gilbert, with mud on his nose."]}, {"id": "p08", "title": "Plop!", "place": "The nest", "image": "img/p08.jpg", "paragraphs": ["He went back to the nest and tried again. He sat. He scrunched. He waited. And then he heard something go *plop!*", "Gilbert jumped up. There, in the nest, was an egg! A real egg!", "\"I did it!\" Gilbert yelled. \"I'm a chicken!\""]}, {"id": "p09", "title": "That One's Mine", "place": "The hen house", "image": "img/p09.jpg", "paragraphs": ["Then Penny the hen stepped out from behind him, looking very proud of herself. \"Actually,\" she said, \"that one's mine. I sneaked it in there while you were scrunching.\"", "Gilbert looked at the egg. He looked at Penny. And then he laughed so hard that his beard wiggled."]}, {"id": "p10", "title": "What Gilbert Can Do", "place": "The farmyard", "image": "img/p10.jpg", "paragraphs": ["\"You know what?\" said Penny. \"You don't have to be a chicken. You're the only one on this farm who can climb all the way up to the top of the barn.\""]}, {"id": "p11", "title": "Good Morning, Farm!", "place": "The top of the barn", "image": "img/p11.jpg", "paragraphs": ["So that's what Gilbert did. Every morning after that, he climbed to the very top of the barn and shouted \"Good morning!\" to the whole farm. The hens laid their eggs, and Penny always saved one special egg for him to look at. Just to look at, not to eat. Goats don't eat eggs.", "**The end.**"]}]};
+var AUDIO = {"p01":{"src":"audio/p01.mp3","dur":19.905,"words":[[0.0,0.22],[0.22,0.5],[0.5,0.72],[0.72,1.06],[1.06,1.4],[1.4,1.52],[1.52,1.66],[1.66,1.88],[1.88,2.28],[2.28,2.72],[2.72,3.32],[3.32,3.56],[3.56,3.78],[3.78,3.88],[3.88,4.02],[4.02,4.34],[5.42,5.74],[5.74,6.18],[6.18,6.56],[6.56,6.92],[6.92,7.16],[7.16,7.48],[7.48,7.62],[7.62,7.74],[7.74,8.1],[8.82,8.98],[8.98,9.38],[9.38,9.58],[9.58,9.92],[10.58,10.72],[10.72,11.2],[11.2,12.0],[12.0,12.54],[13.36,13.5],[13.5,13.78],[13.78,14.2],[14.2,14.58],[14.58,14.8],[14.8,14.96],[14.96,15.28],[16.38,16.74],[16.74,17.12],[17.12,17.38],[17.38,17.5],[17.5,17.7],[17.7,17.94],[17.94,18.34],[18.34,18.56],[18.56,18.64],[18.64,18.9],[18.9,19.4]]},"p02":{"src":"audio/p02.mp3","dur":15.83,"words":[[0.0,0.38],[0.38,0.72],[0.72,1.16],[1.76,1.86],[1.86,2.32],[2.32,2.66],[2.66,2.8],[2.8,2.96],[2.96,3.36],[4.06,4.26],[4.26,4.7],[4.7,5.1],[5.1,5.28],[5.28,5.62],[5.62,5.84],[5.84,6.0],[6.0,6.46],[6.84,6.94],[6.94,7.34],[7.34,7.86],[8.68,8.8],[8.8,9.12],[9.12,9.48],[9.48,9.7],[9.7,9.86],[9.86,10.16],[10.88,11.0],[11.0,11.42],[11.42,11.84],[11.84,12.06],[12.06,12.2],[12.2,12.54],[13.48,13.66],[13.66,14.12],[14.12,14.46],[14.46,14.86],[14.86,15.1],[15.1,15.38]]},"p03":{"src":"audio/p03.mp3","dur":12.905,"words":[[0.0,0.62],[1.1,1.3],[1.3,1.72],[2.64,2.78],[2.78,3.3],[4.14,4.66],[4.66,4.84],[4.84,5.04],[5.04,5.26],[5.26,5.5],[5.5,5.88],[6.12,6.34],[6.34,6.48],[6.48,6.64],[6.64,6.92],[6.92,7.2],[7.2,7.6],[7.6,7.96],[8.94,9.1],[9.1,9.32],[9.32,9.46],[9.46,9.74],[9.74,9.9],[9.9,10.06],[10.06,10.24],[10.24,10.9],[11.48,11.66]]},"p04":{"src":"audio/p04.mp3","dur":14.472,"words":[[0.0,0.98],[1.36,1.64],[1.64,2.04],[2.98,3.12],[3.12,3.36],[3.36,3.52],[3.52,3.64],[3.64,3.78],[3.78,4.04],[4.24,4.24],[4.24,4.44],[4.44,4.74],[4.74,7.2],[7.46,7.66],[7.66,7.76],[7.76,8.02],[8.02,8.32],[8.32,8.5],[8.5,8.66],[8.66,8.9],[8.9,9.42],[9.42,9.7],[9.7,9.88],[9.88,10.8],[11.1,11.26],[11.26,11.4],[11.4,11.84],[11.84,12.18],[12.18,12.38],[12.38,12.54],[12.54,12.74],[12.74,13.02],[13.02,13.18],[13.18,13.34],[13.34,13.54],[13.54,13.86]]},"p05":{"src":"audio/p05.mp3","dur":13.087,"words":[[0.0,0.32],[0.32,0.68],[0.68,0.94],[0.94,1.34],[1.96,2.06],[2.06,2.34],[2.34,2.72],[2.72,3.18],[4.26,4.42],[4.42,5.04],[5.04,5.18],[5.18,5.36],[5.36,5.7],[6.68,6.9],[6.9,7.32],[7.32,8.4],[8.4,8.84],[8.84,9.98],[9.98,10.5],[11.62,11.96],[11.96,12.44]]},"p06":{"src":"audio/p06.mp3","dur":14.341,"words":[[0.0,0.44],[0.44,0.68],[0.68,0.86],[0.86,1.04],[1.04,1.5],[1.84,2.04],[2.04,2.34],[2.94,3.04],[3.04,3.3],[3.3,3.78],[3.78,3.96],[3.96,4.16],[4.16,4.48],[5.28,5.38],[5.38,5.7],[5.7,5.98],[5.98,6.32],[6.32,6.48],[6.48,6.62],[6.62,6.86],[6.86,7.14],[7.14,7.32],[7.32,7.44],[7.44,7.54],[7.54,7.96],[8.22,8.44],[8.44,8.74],[8.74,9.0],[9.0,9.28],[9.66,9.82],[9.82,10.16],[10.16,10.54],[10.54,10.98],[10.98,11.18],[11.18,11.3],[11.3,11.64],[11.64,11.78],[11.78,12.18],[13.32,13.68]]},"p07":{"src":"audio/p07.mp3","dur":7.288,"words":[[0.0,0.22],[0.22,0.44],[0.44,0.68],[0.68,0.88],[0.88,1.16],[1.84,1.94],[1.94,2.06],[2.06,2.2],[2.2,2.44],[2.44,2.82],[3.96,4.22],[4.22,4.68],[5.22,5.32],[5.32,5.64],[5.64,5.9],[5.9,6.1],[6.1,6.28],[6.28,6.44],[6.44,6.74]]},"p08":{"src":"audio/p08.mp3","dur":21.211,"words":[[0.0,0.2],[0.2,0.38],[0.38,0.66],[0.66,0.84],[0.84,0.98],[0.98,1.26],[1.26,1.48],[1.48,1.7],[1.7,2.12],[3.22,3.38],[3.38,3.78],[4.82,4.92],[4.92,5.66],[6.36,6.58],[6.58,7.0],[8.18,8.36],[8.36,8.54],[8.54,8.7],[8.7,8.92],[8.92,9.32],[9.32,9.66],[9.66,10.34],[11.78,11.78],[11.78,12.14],[12.14,12.5],[13.34,13.64],[13.64,13.88],[13.88,14.0],[14.0,14.32],[14.32,14.52],[14.52,14.68],[14.68,15.04],[15.8,15.94],[15.94,16.26],[16.26,16.68],[16.68,17.8],[17.8,18.14],[18.14,18.6],[18.98,19.14],[19.14,19.5],[20.1,20.2],[20.2,20.3],[20.3,20.6]]},"p09":{"src":"audio/p09.mp3","dur":18.834,"words":[[0.0,0.3],[0.3,0.66],[0.66,0.84],[0.84,1.06],[1.06,1.4],[1.4,1.66],[1.66,1.84],[1.84,2.2],[2.2,2.6],[2.96,3.16],[3.16,3.44],[3.44,3.8],[3.8,3.98],[3.98,4.36],[5.32,5.92],[6.38,6.58],[6.58,6.92],[7.32,7.58],[7.58,7.92],[7.92,8.24],[8.82,8.96],[8.96,9.36],[9.36,9.48],[9.48,9.62],[9.62,9.8],[9.8,9.96],[9.96,10.1],[10.1,10.22],[10.22,10.98],[12.12,12.34],[12.34,12.66],[12.66,12.84],[12.84,12.96],[12.96,13.26],[13.92,14.12],[14.12,14.28],[14.28,14.44],[14.44,14.8],[15.66,15.76],[15.76,15.92],[15.92,16.1],[16.1,16.4],[16.4,16.76],[16.76,17.16],[17.16,17.34],[17.34,17.5],[17.5,17.86],[17.86,18.4]]},"p10":{"src":"audio/p10.mp3","dur":9.221,"words":[[0.0,0.34],[0.34,0.48],[0.48,0.88],[1.42,1.52],[1.52,1.84],[2.46,2.54],[2.54,2.82],[2.82,3.0],[3.0,3.12],[3.12,3.22],[3.22,3.36],[3.36,3.58],[4.28,4.4],[4.4,4.52],[4.52,4.82],[4.82,5.12],[5.12,5.26],[5.26,5.42],[5.42,5.66],[5.66,5.82],[5.82,5.98],[5.98,6.28],[6.28,6.62],[6.62,6.74],[6.74,6.88],[6.88,7.06],[7.06,7.2],[7.2,7.32],[7.32,7.46],[7.46,7.62],[7.62,7.72],[7.72,7.98]]},"p11":{"src":"audio/p11.mp3","dur":21.969,"words":[[0.0,0.3],[0.4,0.7],[0.7,0.82],[0.82,1.08],[1.08,1.5],[2.68,2.92],[2.92,3.18],[3.18,3.5],[3.5,3.88],[4.34,4.38],[4.38,4.7],[4.7,4.9],[4.9,5.02],[5.02,5.28],[5.28,5.54],[5.54,5.68],[5.68,5.78],[5.78,6.08],[6.08,6.38],[6.38,6.8],[7.38,7.52],[7.52,7.96],[8.52,8.72],[8.72,8.84],[8.84,9.06],[9.06,9.52],[10.54,10.68],[10.68,11.02],[11.02,11.26],[11.26,11.48],[11.48,11.86],[12.44,12.56],[12.56,12.8],[12.8,13.24],[13.24,13.62],[13.62,13.86],[13.86,14.28],[14.28,14.5],[14.5,14.7],[14.7,14.8],[14.8,14.94],[14.94,15.1],[15.1,15.42],[16.14,16.36],[16.36,16.6],[16.6,16.8],[16.8,17.12],[17.46,17.7],[17.7,17.92],[17.92,18.24],[19.18,19.48],[19.48,19.8],[19.8,19.98],[19.98,20.52],[20.98,21.12],[21.12,21.44]]}};
+var AUDIO_DATA = null;
+</script>
+<script>
+(function () {
+  "use strict";
+  var $ = function (id) { return document.getElementById(id); };
+  var S = STORY, N = S.scenes.length, KEY = S.storage_key || "gilbert.v1.";
+  function ls(k, v) { try { if (v === undefined) return localStorage.getItem(KEY + k); localStorage.setItem(KEY + k, v); } catch (e) { return null; } }
+  var at = Math.min(N - 1, Math.max(0, parseInt(ls("page") || "0", 10) || 0));
+  var speed = parseFloat(ls("speed") || "1") || 1;
+  var auto = ls("auto") !== "0";
+  var audioEl = new Audio(); audioEl.preload = "auto";
+  var words = [], times = [], hl = null, playing = false, paused = false, raf = 0, wantPlayOnLoad = false;
+  var big = $("bigplay"), read = $("read"), pic = $("pic");
+
+  function srcOf(sc) { var a = AUDIO[sc.id]; if (!a) return null; return AUDIO_DATA && AUDIO_DATA[a.src] ? "data:audio/mpeg;base64," + AUDIO_DATA[a.src] : a.src; }
+  function esc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+  // paragraph markup: *italic* and **bold**; each whitespace-separated token is one highlighted word
+  function paraHTML(p, base) {
+    var out = [], n = 0, bold = false, ital = false;
+    p.split(/(\s+)/).forEach(function (tok) {
+      if (/^\s+$/.test(tok) || tok === "") { out.push(tok); return; }
+      var html = "", t = tok;
+      while (t.length) {
+        if (t.indexOf("**") === 0) { html += bold ? "</b>" : "<b>"; bold = !bold; t = t.slice(2); }
+        else if (t[0] === "*") { html += ital ? "</em>" : "<em>"; ital = !ital; t = t.slice(1); }
+        else { var m = t.match(/^[^*]+/)[0]; html += esc(m); t = t.slice(m.length); }
+      }
+      out.push('<span class="w" data-i="' + (base + n) + '">' + html + "</span>"); n++;
+    });
+    return { html: out.join(""), n: n };
+  }
+  function render() {
+    stop(true);
+    var sc = S.scenes[at];
+    $("booktitle").style.display = at === 0 ? "block" : "none"; $("booktitle").textContent = S.title;
+    $("where").textContent = sc.place || ""; $("title").textContent = sc.title;
+    $("toptitle").textContent = "Page " + (at + 1) + " of " + N;
+    pic.classList.add("fade");
+    var im = new Image(); im.onload = im.onerror = function () { pic.src = sc.image; $("picbg").src = sc.image; pic.alt = sc.title; pic.classList.remove("fade"); }; im.src = sc.image;
+    var dots = $("pdots"); dots.innerHTML = ""; for (var k = 0; k < N; k++) { var d = document.createElement("span"); if (k === at) d.className = "on"; dots.appendChild(d); }
+    var html = "", base = 0;
+    sc.paragraphs.forEach(function (p) { var r = paraHTML(p, base); html += "<p>" + r.html + "</p>"; base += r.n; });
+    $("text").innerHTML = html;
+    words = [].slice.call(document.querySelectorAll("#text .w"));
+    var a = AUDIO[sc.id]; times = a ? a.words : [];
+    var s = srcOf(sc); audioEl.src = s || ""; audioEl.playbackRate = speed;
+    $("prevBtn").hidden = at === 0; $("backTop").disabled = at === 0;
+    $("nextBtn").hidden = at === N - 1; $("againBtn").hidden = at !== N - 1;
+    $("scroller").scrollTop = 0;
+    ls("page", String(at));
+    setUI();
+  }
+  function setUI() {
+    var st = playing ? "playing" : "idle";
+    big.dataset.state = st; read.dataset.state = st;
+    big.innerHTML = playing ? "&#10074;&#10074;" : "&#9654;";
+    big.title = big.ariaLabel = playing ? "Pause" : "Play (read to me)";
+    read.innerHTML = playing ? "&#9208;&#65039; Pause" : (paused ? "&#9654; Keep reading" : "&#9654; Read to me");
+    $("speedVal").textContent = speed.toFixed(2).replace(/0$/, "") + "x";
+  }
+  function mark(i) {
+    if (hl && +hl.dataset.i === i) return;
+    if (hl) hl.classList.remove("cur");
+    hl = i >= 0 ? words[i] : null;
+    if (hl) {
+      hl.classList.add("cur");
+      var sr = $("scroller"), r = hl.getBoundingClientRect(), b = sr.getBoundingClientRect();
+      if (r.bottom > b.bottom - 40 || r.top < b.top + 10) sr.scrollTo({ top: sr.scrollTop + (r.top - b.top) - b.height * 0.3, behavior: "smooth" });
+    }
+  }
+  function tick() {
+    var t = audioEl.currentTime, idx = -1;
+    for (var i = 0; i < times.length; i++) { if (times[i][0] <= t + 0.03) idx = i; else break; }
+    mark(idx);
+    if (playing) raf = requestAnimationFrame(tick);
+  }
+  function play(fromWord) {
+    if (!audioEl.src) return;
+    if (fromWord != null && times[fromWord]) audioEl.currentTime = Math.max(0, times[fromWord][0] - 0.05);
+    audioEl.playbackRate = speed;
+    var pr = audioEl.play();
+    playing = true; paused = false; setUI(); cancelAnimationFrame(raf); raf = requestAnimationFrame(tick);
+    if (pr && pr.catch) pr.catch(function () { playing = false; setUI(); });
+  }
+  function pause() { audioEl.pause(); playing = false; paused = true; cancelAnimationFrame(raf); setUI(); }
+  function stop(silent) { audioEl.pause(); playing = false; paused = false; cancelAnimationFrame(raf); mark(-1); try { audioEl.currentTime = 0; } catch (e) {} if (!silent) setUI(); }
+  function toggle() { if (playing) pause(); else if (paused) play(); else play(0); }
+  audioEl.addEventListener("ended", function () {
+    playing = false; paused = false; cancelAnimationFrame(raf); mark(-1); setUI();
+    if (auto && at < N - 1) setTimeout(function () { go(at + 1, true); }, 900);
+  });
+  audioEl.addEventListener("canplay", function () { if (wantPlayOnLoad) { wantPlayOnLoad = false; play(0); } });
+  function go(i, andPlay) { at = Math.max(0, Math.min(N - 1, i)); render(); if (andPlay) { if (audioEl.readyState >= 3) play(0); else wantPlayOnLoad = true; } }
+  big.onclick = toggle; read.onclick = toggle;
+  $("text").addEventListener("click", function (e) { var t = e.target.closest ? e.target.closest(".w") : null; if (t) play(+t.dataset.i); });
+  $("nextBtn").onclick = function () { go(at + 1, playing || auto && (playing || paused)); };
+  $("prevBtn").onclick = $("backTop").onclick = function () { go(at - 1, false); };
+  $("againBtn").onclick = function () { go(0, false); };
+  $("speed").value = speed;
+  $("speed").oninput = function () { speed = parseFloat(this.value); audioEl.playbackRate = speed; ls("speed", String(speed)); setUI(); };
+  $("auto").checked = auto; $("auto").onchange = function () { auto = this.checked; ls("auto", auto ? "1" : "0"); };
+  function openMenu() {
+    var ol = $("pageList"); ol.innerHTML = "";
+    S.scenes.forEach(function (sc, i) { var li = document.createElement("li"); li.textContent = sc.title; li.onclick = function () { $("modal").classList.remove("show"); go(i, false); }; ol.appendChild(li); });
+    $("modal").classList.add("show");
+  }
+  $("menuBtn").onclick = openMenu;
+  $("mClose").onclick = function () { $("modal").classList.remove("show"); };
+  $("mStart").onclick = function () { $("modal").classList.remove("show"); go(0, false); };
+  $("modal").onclick = function (e) { if (e.target === this) this.classList.remove("show"); };
+  document.addEventListener("keydown", function (e) {
+    if ($("modal").classList.contains("show")) return;
+    var tg = e.target && e.target.tagName; if (tg === "INPUT" || tg === "SELECT") return;
+    if (e.code === "Space" || e.key === " " || e.key === "MediaPlayPause") { e.preventDefault(); toggle(); }
+    else if (e.key === "ArrowRight") go(at + 1, false); else if (e.key === "ArrowLeft") go(at - 1, false);
+  });
+  document.addEventListener("visibilitychange", function () { if (document.hidden && playing) pause(); });
+  window.ReadAlong = { toggle: toggle, go: go, state: function () { return { at: at, playing: playing, paused: paused, t: audioEl.currentTime, src: audioEl.currentSrc, cur: hl ? +hl.dataset.i : -1, ready: audioEl.readyState }; } };
+  render();
+})();
+
+</script>
+</body>
+</html>

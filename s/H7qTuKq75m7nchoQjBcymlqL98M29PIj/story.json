@@ -1,0 +1,1552 @@
+{
+ "title": "Evelyn and the TimeBand: The Golden Gate Bridge",
+ "version": "1.0",
+ "start": "s01",
+ "storage_key": "ggbAdventure.v1.",
+ "photo_where": "Real photos from 1935 to 1937",
+ "meter": {
+  "short": "⏱",
+  "label": "Trip clock",
+  "max": 60,
+  "flag": "clock_min",
+  "field": "clock"
+ },
+ "flags": {
+  "charges": 3,
+  "knows_fog": false,
+  "saw_cables": false,
+  "helped_dottie": false,
+  "clock_min": 60,
+  "via": null,
+  "recording_saved": false
+ },
+ "notes": "Mission 3. Choices with 'route' go to the first matching target by state (side-quest payoffs).",
+ "scenes": {
+  "s01": {
+   "id": "s01",
+   "page": 1,
+   "title": "The Third Mission",
+   "place": "Your kitchen, Saturday morning",
+   "image": "img/s01.jpg",
+   "paragraphs": [
+    "Knock, knock! It is Dr. Ada Finch. She has the TimeBand in her case.",
+    "\"Evelyn, I need you again,\" she says. She holds up a picture of a big orange bridge. \"This is the Golden Gate Bridge. It is in San Francisco.\"",
+    "\"On May 27, 1937, the new bridge opened. No cars came that day. Only people! They walked across. It was called Pedestrian Day. Pedestrian means a person who walks. The museum has old films. But no one recorded the sounds up close. Can you?\"",
+    "You grin. Three green dots light up on the band.",
+    "\"Same rules,\" says Dr. Finch. \"Each trip uses one dot. Coming home is free. Watch, and be kind, but don't change what happened. To record, press the red button and hold still.\"",
+    "\"And one more thing,\" she says. \"In 1937, kids dressed a little different.\""
+   ],
+   "choices": [
+    {
+     "label": "Try on 1937 clothes",
+     "prompt": "To try on the clothes from 1937, tap 'Try on 1937 clothes.'",
+     "target": "s02",
+     "icon": "👗",
+     "hop": false
+    },
+    {
+     "label": "Go right now",
+     "prompt": "To go to 1937 right now, just as you are, tap 'Go right now.'",
+     "target": "e_stand_out",
+     "icon": "⚡",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    }
+   ]
+  },
+  "s02": {
+   "id": "s02",
+   "page": 2,
+   "title": "Clothes from 1937",
+   "place": "Your kitchen",
+   "image": "img/s02.jpg",
+   "paragraphs": [
+    "Dr. Finch opens the case. Inside is a blue dress with a white collar. There is a yellow sweater, white socks, and brown shoes with a strap.",
+    "You put them on. You spin. The dress spins too.",
+    "Mom laughs. \"You look like a girl from long ago,\" she says. \"Yellow, like a sunflower.\"",
+    "Mom keeps bees. She holds up a piece of honeycomb. \"Bees build with wax,\" she says. \"Each little room has six sides. That shape is strong, and it does not use much wax.\"",
+    "\"Bridge builders think like bees,\" says Dr. Finch. \"Strong, but not too heavy.\""
+   ],
+   "choices": [
+    {
+     "label": "Open the map",
+     "prompt": "To see the mission map, tap 'Open the map.'",
+     "target": "s03",
+     "icon": "🗺️",
+     "hop": false
+    },
+    {
+     "label": "How does a bridge hold up?",
+     "prompt": "To learn how a bridge holds up, tap 'How does a bridge hold up?'",
+     "target": "s04",
+     "icon": "🌉",
+     "hop": false
+    }
+   ]
+  },
+  "s04": {
+   "id": "s04",
+   "page": 3,
+   "title": "A Bridge on the Table",
+   "place": "Your kitchen table",
+   "image": "img/s04.jpg",
+   "paragraphs": [
+    "Dr. Finch stacks two piles of books. \"These are the towers,\" she says.",
+    "She ties a string to a chair. She lays it over the books. She ties the other end to a chair, too. The string sags in the middle, like a smile.",
+    "Then she hangs a paper road from the string with little threads.",
+    "\"This is a suspension bridge,\" she says. \"Suspend means hang. The road hangs from the cables.\"",
+    "You press on the road. The string pulls tight. The books press down on the table.",
+    "\"The cables pull,\" says Dr. Finch. \"The towers push. That is how it holds up.\""
+   ],
+   "choices": [
+    {
+     "label": "Open the map",
+     "prompt": "To see the mission map, tap 'Open the map.'",
+     "target": "s03",
+     "icon": "🗺️",
+     "hop": false
+    }
+   ]
+  },
+  "s03": {
+   "id": "s03",
+   "page": 4,
+   "title": "The Mission Map",
+   "place": "The TimeBand screen, in your kitchen",
+   "image": "img/s03.jpg",
+   "paragraphs": [
+    "You tap the band. A map pops up. It shows blue water between two hills.",
+    "\"This water is the Golden Gate,\" says Dr. Finch. \"Ships sail in and out here. For a long time, there was no bridge. People rode boats across.\"",
+    "Four dots blink on the map.",
+    "1933. A ferry boat, before the bridge.",
+    "1936. Workers making the big cables.",
+    "May 27, 1937. Pedestrian Day! Picking a place is free.",
+    "May 28, 1937. The day after.",
+    "\"What you learn on one trip can help on another,\" says Dr. Finch. \"But you only have three dots.\""
+   ],
+   "choices": [
+    {
+     "label": "Ride the ferry, 1933",
+     "prompt": "To ride a ferry boat in 1933, tap 'Ride the ferry, 1933.'",
+     "target": "s05",
+     "icon": "⛴️",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    },
+    {
+     "label": "See the cables, 1936",
+     "prompt": "To see the workers make the cables in 1936, tap 'See the cables, 1936.'",
+     "target": "s08",
+     "icon": "🧵",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    },
+    {
+     "label": "May 27, 1937",
+     "prompt": "To pick a place on May 27, 1937, tap 'May 27, 1937.'",
+     "target": "s13",
+     "icon": "🚶",
+     "hop": false
+    },
+    {
+     "label": "May 28, 1937",
+     "prompt": "To go to May 28, 1937, tap 'May 28, 1937.'",
+     "target": "e_cars_day",
+     "icon": "🚗",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    }
+   ]
+  },
+  "s05": {
+   "id": "s05",
+   "page": 5,
+   "title": "The Ferry Boat",
+   "place": "On a ferry boat on the bay, 1933",
+   "image": "img/s05.jpg",
+   "paragraphs": [
+    "Zap! You are on a big white boat. The deck hums under your shoes.",
+    "Cars are parked inside the boat, in rows. Their owners stand by them. \"There is no bridge yet,\" a man says. \"So the cars ride the ferry.\"",
+    "You look out the window. There is the Golden Gate. It is just water and hills. No bridge at all.",
+    "\"Some days, cars wait in a line for hours,\" the man says.",
+    "The band shows a clock. You have one hour.",
+    "Then a cold, gray cloud rolls over the water. It is fog!"
+   ],
+   "choices": [
+    {
+     "label": "Go out on the deck",
+     "prompt": "To go outside and see the fog, tap 'Go out on the deck.'",
+     "target": "s06",
+     "icon": "🌫️",
+     "hop": false
+    },
+    {
+     "label": "Nap in a warm car",
+     "prompt": "To curl up in a warm car for a nap, tap 'Nap in a warm car.'",
+     "target": "e_time_up",
+     "icon": "😴",
+     "hop": false
+    }
+   ],
+   "clock": 60
+  },
+  "s06": {
+   "id": "s06",
+   "page": 6,
+   "title": "Into the Fog",
+   "place": "The deck of the ferry",
+   "image": "img/s06.jpg",
+   "paragraphs": [
+    "Outside, the air is wet and cold. You can't see the hills. You can't see the water.",
+    "\"Fog is a cloud that sits low, on the water,\" says a sailor. \"Wet air blows over the cold sea. It cools down and makes fog.\"",
+    "Then you hear it. BOOOOO! The sound is so deep, your tummy shakes.",
+    "\"That's a foghorn,\" says the sailor. \"When ships can't see, they listen. The horn tells them where the land is.\"",
+    "You count. BOOOOO. Then quiet. Then BOOOOO again. Now it's not scary. It is a helper."
+   ],
+   "choices": [
+    {
+     "label": "Climb the rail to see",
+     "prompt": "To climb up on the rail and look out, tap 'Climb the rail to see.'",
+     "target": "e_safety_return",
+     "icon": "🧗",
+     "hop": false
+    },
+    {
+     "label": "Ask about the bridge",
+     "prompt": "To ask the sailor about the bridge, tap 'Ask about the bridge.'",
+     "target": "s07",
+     "icon": "❓",
+     "hop": false
+    }
+   ],
+   "clock": 40,
+   "on_enter": {
+    "set": {
+     "knows_fog": true
+    }
+   }
+  },
+  "s07": {
+   "id": "s07",
+   "page": 7,
+   "title": "The Big Plan",
+   "place": "The ferry, 1933",
+   "image": "img/s07.jpg",
+   "paragraphs": [
+    "The sailor shows you a newspaper. It has a drawing of a bridge.",
+    "\"A man named Joseph Strauss is in charge,\" he says. \"He has wanted to build this bridge for years. Work just began.\"",
+    "\"And Irving Morrow is the architect,\" he says. \"He draws how it will look.\"",
+    "The band crackles. It is Dr. Finch! \"Lots of people helped,\" she says. \"A quiet man named Charles Ellis did much of the hard math. For a long time, hardly anyone knew.\"",
+    "\"Some people say it can't be built,\" the sailor says. \"The water is deep. The wind is strong. And look at this fog!\"",
+    "You smile. You know a secret. They will build it."
+   ],
+   "choices": [
+    {
+     "label": "Go home to the map",
+     "prompt": "To go home and look at the map again, tap 'Go home to the map.' Going home is free.",
+     "target": "s03",
+     "icon": "🏠",
+     "hop": false
+    },
+    {
+     "label": "Ride the ferry again",
+     "prompt": "To stay and ride the ferry back and forth, tap 'Ride the ferry again.'",
+     "target": "e_time_up",
+     "icon": "🔁",
+     "hop": false
+    }
+   ],
+   "clock": 20
+  },
+  "s08": {
+   "id": "s08",
+   "page": 8,
+   "title": "The Spinning Wheels",
+   "place": "A hill by the bridge, 1936",
+   "image": "img/s08.jpg",
+   "paragraphs": [
+    "Zap! You are on a windy hill. Below you, the two orange towers stand in the water. But there is no road yet!",
+    "Long wires run from the hill, up over the towers, and down to the other side.",
+    "A wheel zips along the wires, way up high. It carries a wire across. Then another wheel comes back.",
+    "\"They call it spinning,\" says a worker by you. \"Back and forth, back and forth, all day.\"",
+    "High up, there is a skinny walkway made of wire and wood. Workers walk on it."
+   ],
+   "choices": [
+    {
+     "label": "Walk out on the walkway",
+     "prompt": "To walk out on the high walkway, tap 'Walk out on the walkway.'",
+     "target": "e_safety_return",
+     "icon": "🧗",
+     "hop": false
+    },
+    {
+     "label": "Say hi to the worker",
+     "prompt": "To say hi to the worker next to you, tap 'Say hi to the worker.'",
+     "target": "s09",
+     "icon": "👋",
+     "hop": false
+    }
+   ],
+   "clock": 60
+  },
+  "s09": {
+   "id": "s09",
+   "page": 9,
+   "title": "Sam and His Hard Hat",
+   "place": "The hill, 1936",
+   "image": "img/s09.jpg",
+   "paragraphs": [
+    "The worker smiles. \"I'm Sam,\" he says. He knocks on his hat. Knock, knock! It is hard, like a shell.",
+    "\"This is a hard hat,\" says Sam. \"Mr. Strauss says we all must wear one. If a tool falls from up high, the hat keeps my head safe.\"",
+    "He puts a spare one on your head. It is too big. It slips over your eyes! You both laugh.",
+    "\"Not many jobs had hats like this before,\" says Sam. \"Now we do.\""
+   ],
+   "choices": [
+    {
+     "label": "See the wires",
+     "prompt": "To see the wires up close, tap 'See the wires.'",
+     "target": "s10",
+     "icon": "🧵",
+     "hop": false
+    },
+    {
+     "label": "See the net",
+     "prompt": "To see the big net under the bridge, tap 'See the net.'",
+     "target": "s11",
+     "icon": "🕸️",
+     "hop": false
+    }
+   ],
+   "clock": 50
+  },
+  "s10": {
+   "id": "s10",
+   "page": 10,
+   "title": "Thousands of Wires",
+   "place": "Where the cable comes down to the ground, 1936",
+   "image": "img/s10.jpg",
+   "paragraphs": [
+    "Sam shows you a wire. It is thin, a little thinner than a pencil.",
+    "\"One wire can't hold a bridge,\" says Sam. \"But we put thousands of them side by side. Over twenty-seven thousand wires, in one cable!\"",
+    "A big machine hugs the wires. It squeezes them into one round cable. It is so thick, you could not wrap your arms around it.",
+    "\"Lots of thin wires make one strong cable,\" Sam says. \"Like lots of hairs make one strong braid.\"",
+    "You think of your curls. Ha!"
+   ],
+   "choices": [
+    {
+     "label": "See the net",
+     "prompt": "To see the big net under the bridge, tap 'See the net.'",
+     "target": "s11",
+     "icon": "🕸️",
+     "hop": false
+    },
+    {
+     "label": "Go home to the map",
+     "prompt": "To go home and look at the map, tap 'Go home to the map.' Going home is free.",
+     "target": "s03",
+     "icon": "🏠",
+     "hop": false
+    }
+   ],
+   "clock": 40,
+   "on_enter": {
+    "set": {
+     "saw_cables": true
+    }
+   }
+  },
+  "s11": {
+   "id": "s11",
+   "page": 11,
+   "title": "The Safety Net",
+   "place": "Under the new road, 1936",
+   "image": "img/s11.jpg",
+   "paragraphs": [
+    "The band shows you a view under the bridge. There is a big rope net. It hangs under the workers, the whole way across.",
+    "\"Mr. Strauss put that net there,\" says Sam. \"If a worker falls, the net catches him.\"",
+    "\"Did it ever catch someone?\" you ask.",
+    "\"Yes!\" says Sam. \"It caught some of my friends. They started a club. Its name means they fell only halfway down, and the net saved them.\"",
+    "You look at the net. It is like a giant hammock."
+   ],
+   "choices": [
+    {
+     "label": "Jump in the net",
+     "prompt": "To jump in the net to try it, tap 'Jump in the net.'",
+     "target": "e_safety_return",
+     "icon": "🤸",
+     "hop": false
+    },
+    {
+     "label": "See the painters",
+     "prompt": "To see the painters, tap 'See the painters.'",
+     "target": "s12",
+     "icon": "🎨",
+     "hop": false
+    }
+   ],
+   "clock": 30
+  },
+  "s12": {
+   "id": "s12",
+   "page": 12,
+   "title": "Orange Paint",
+   "place": "Near the tower, 1936",
+   "image": "img/s12.jpg",
+   "paragraphs": [
+    "Painters are at work on the steel. Their brushes go swish, swish.",
+    "\"Why orange?\" you ask.",
+    "\"The steel came here painted red-orange, to stop rust,\" says Sam. \"Mr. Morrow, the architect, saw it. He liked it! So he picked a color like it. It's called International Orange.\"",
+    "\"Orange looks nice with the hills and the sky. And you can see it in the fog,\" Sam says. \"That helps ships and planes.\"",
+    "\"The Navy wanted black and yellow stripes,\" he says. \"Like a bee!\"",
+    "You giggle. Mom would like that. But orange is better."
+   ],
+   "choices": [
+    {
+     "label": "Paint a spot",
+     "prompt": "To grab a brush and paint a spot yourself, tap 'Paint a spot.'",
+     "target": "e_safety_return",
+     "icon": "🖌️",
+     "hop": false
+    },
+    {
+     "label": "Go home to the map",
+     "prompt": "To go home and look at the map, tap 'Go home to the map.' Going home is free.",
+     "target": "s03",
+     "icon": "🏠",
+     "hop": false
+    }
+   ],
+   "clock": 15
+  },
+  "s13": {
+   "id": "s13",
+   "page": 13,
+   "title": "Pick a Place",
+   "place": "The TimeBand screen: May 27, 1937",
+   "image": "img/s13.jpg",
+   "paragraphs": [
+    "You tap May 27, 1937. The map gets close.",
+    "\"This is Pedestrian Day,\" says Dr. Finch. \"No cars. Just people, walking across. Where do you want to land?\"",
+    "Three dots blink.",
+    "The gate on the city side, before six in the morning.",
+    "Fort Point, an old brick fort, right under the bridge.",
+    "Crissy Field, a big park, with a parade at ten.",
+    "\"Each place is a new trip,\" says Dr. Finch. \"So it uses a dot.\""
+   ],
+   "choices": [
+    {
+     "label": "The gate, before six",
+     "prompt": "To wait at the gate before it opens, tap 'The gate, before six.'",
+     "target": "s14",
+     "icon": "🚪",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    },
+    {
+     "label": "Fort Point, under it",
+     "prompt": "To go under the bridge to the old fort, tap 'Fort Point, under it.'",
+     "target": "s27",
+     "icon": "🏰",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    },
+    {
+     "label": "The parade at ten",
+     "prompt": "To see the parade at Crissy Field, tap 'The parade at ten.'",
+     "target": "s29",
+     "icon": "🥁",
+     "hop": true,
+     "mode": "trip",
+     "cost": {
+      "charges": 1
+     },
+     "if_no_charges": "e_out_of_charges"
+    },
+    {
+     "label": "Back to the map",
+     "prompt": "To go back to the map, tap 'Back to the map.' That is free.",
+     "target": "s03",
+     "icon": "🗺️",
+     "hop": false
+    }
+   ]
+  },
+  "s14": {
+   "id": "s14",
+   "page": 14,
+   "title": "Waiting at the Gate",
+   "place": "The gate on the city side, 5:50 a.m., May 27, 1937",
+   "image": "img/s14.jpg",
+   "paragraphs": [
+    "Zap! It is early. The sky is gray with fog. And there are people everywhere!",
+    "Moms, dads, and kids. Big kids from school. A man with a tuba. Two girls with roller skates. It is a huge crowd.",
+    "\"Thousands of people are here,\" says a lady. \"We all want to be first!\"",
+    "Each person pays a quarter to walk on the bridge.",
+    "A little girl in a red dress holds a puppy. She waves at you. \"I'm Dottie! This is Peanut!\" Peanut licks your hand. It tickles.",
+    "The crowd pushes and wiggles. The gate is still shut."
+   ],
+   "choices": [
+    {
+     "label": "Squeeze to the front",
+     "prompt": "To squeeze and push to the front, tap 'Squeeze to the front.'",
+     "target": "e_squeeze",
+     "icon": "🏃",
+     "hop": false
+    },
+    {
+     "label": "Wait your turn",
+     "prompt": "To wait for the gate with Dottie, tap 'Wait your turn.'",
+     "target": "s15",
+     "icon": "⏳",
+     "hop": false
+    }
+   ],
+   "clock": 60
+  },
+  "s15": {
+   "id": "s15",
+   "page": 15,
+   "title": "Six O'Clock!",
+   "place": "The gate, 6:00 a.m.",
+   "image": "img/s15.jpg",
+   "paragraphs": [
+    "It is six o'clock. BOOOOO! BOOOOO! The foghorns blast, loud and deep. The sound rolls over the fog and the water.",
+    "Clank! The gates open. The crowd cheers. People run, walk, and skip onto the new orange bridge.",
+    "This is it! This is the sound the museum wants. You lift the band. Your finger is on the red button.",
+    "The horns blast again. BOOOOO!"
+   ],
+   "choices": [
+    {
+     "label": "Record the foghorns",
+     "prompt": "To hold still and record the foghorns, tap 'Record the foghorns.'",
+     "target": "e_too_loud",
+     "icon": "📼",
+     "hop": false,
+     "route": [
+      {
+       "if": {
+        "knows_fog": true
+       },
+       "target": "g_foghorns"
+      }
+     ]
+    },
+    {
+     "label": "Walk onto the bridge",
+     "prompt": "To walk onto the bridge with the crowd, tap 'Walk onto the bridge.'",
+     "target": "s16",
+     "icon": "🌉",
+     "hop": false
+    }
+   ],
+   "clock": 50
+  },
+  "s16": {
+   "id": "s16",
+   "page": 16,
+   "title": "Onto the Bridge",
+   "place": "The bridge road, 6:05 a.m.",
+   "image": "img/s16.jpg",
+   "paragraphs": [
+    "You walk out onto the bridge. It is so wide! It is wide enough for six cars. But today, there are no cars. Just feet.",
+    "Tap, tap, tap. Thousands of feet. Clip, clop. Shoes on the road.",
+    "You look over the side. Way, way down is the water. The road is very high up. A ship looks like a toy.",
+    "The two orange towers rise into the fog. Cables sweep from tower to tower, like a long jump rope at rest.",
+    "Dottie holds your hand. Peanut trots along.",
+    "\"My dad helped build this bridge,\" says Dottie. \"He's here somewhere.\""
+   ],
+   "choices": [
+    {
+     "label": "Record the feet",
+     "prompt": "To hold still and record the sound of all the feet, tap 'Record the feet.'",
+     "target": "g_first_steps",
+     "icon": "👣",
+     "hop": false
+    },
+    {
+     "label": "Keep walking",
+     "prompt": "To keep walking with Dottie, tap 'Keep walking.'",
+     "target": "s17",
+     "icon": "➡️",
+     "hop": false
+    }
+   ],
+   "clock": 45
+  },
+  "s17": {
+   "id": "s17",
+   "page": 17,
+   "title": "Skates and Stilts",
+   "place": "The bridge road, 6:15 a.m.",
+   "image": "img/s17.jpg",
+   "paragraphs": [
+    "Zoom! Two sisters roll past on roller skates. Their wheels go whirrr on the road.",
+    "Then a man walks by on stilts. He is so tall! He tips his hat to you.",
+    "A boy runs past. \"I'm racing to the other side!\" he yells.",
+    "Everybody wants to be the first to do something. First to skate. First on stilts. First to play a tuba!",
+    "\"What can I be first at?\" you ask.",
+    "Dottie thinks. \"First to giggle?\" You both giggle."
+   ],
+   "choices": [
+    {
+     "label": "Record the skaters",
+     "prompt": "To hold still and record the skaters rolling by, tap 'Record the skaters.'",
+     "target": "g_skaters",
+     "icon": "🛼",
+     "hop": false
+    },
+    {
+     "label": "Walk to the tower",
+     "prompt": "To walk to the big tower, tap 'Walk to the tower.'",
+     "target": "s18",
+     "icon": "🗼",
+     "hop": false
+    }
+   ],
+   "clock": 40
+  },
+  "s18": {
+   "id": "s18",
+   "page": 18,
+   "title": "The South Tower",
+   "place": "At the foot of the south tower",
+   "image": "img/s18.jpg",
+   "paragraphs": [
+    "Now the tower is right next to you. You tip your head back. Way, way back. It goes up into the fog!",
+    "The tower is orange. It has steps near the top, where it gets thinner, like a wedding cake. It has long lines that run up and down. That makes it look even taller.",
+    "The band crackles. It is Dr. Finch! \"Today, we call that style Art Deco,\" she says. \"Irving Morrow, the architect, drew it that way.\"",
+    "You put your hand on the steel. It is cold. The tower pushes down, deep under the water. The cables pull on it from up high."
+   ],
+   "choices": [
+    {
+     "label": "Walk to the middle",
+     "prompt": "To walk on to the middle of the bridge, tap 'Walk to the middle.'",
+     "target": "s24",
+     "icon": "➡️",
+     "hop": false
+    },
+    {
+     "label": "Smell the hot dogs",
+     "prompt": "To follow the smell of hot dogs, tap 'Smell the hot dogs.'",
+     "target": "s19",
+     "icon": "🌭",
+     "hop": false
+    }
+   ],
+   "clock": 35
+  },
+  "s19": {
+   "id": "s19",
+   "page": 19,
+   "title": "Hot Dogs!",
+   "place": "A hot dog stand on the bridge",
+   "image": "img/s19.jpg",
+   "paragraphs": [
+    "Mmm! There are hot dog stands right on the bridge! People eat and walk and talk.",
+    "A man sells hot dogs as fast as he can. \"Thousands today!\" he says.",
+    "Then you hear crying. It is Dottie. Her leash is empty!",
+    "\"Peanut ran off!\" she sobs. \"He saw a hot dog, and he ran!\"",
+    "Dottie's mom looks this way and that way. There are so many legs and shoes. Where is Peanut?"
+   ],
+   "choices": [
+    {
+     "label": "Help find Peanut",
+     "prompt": "To help Dottie find Peanut, tap 'Help find Peanut.'",
+     "target": "s20",
+     "icon": "🐶",
+     "hop": false
+    },
+    {
+     "label": "Walk to the middle",
+     "prompt": "To keep going to the middle of the bridge, tap 'Walk to the middle.'",
+     "target": "s24",
+     "icon": "➡️",
+     "hop": false
+    }
+   ],
+   "clock": 30
+  },
+  "s20": {
+   "id": "s20",
+   "page": 20,
+   "title": "Where Is Peanut?",
+   "place": "The crowded bridge",
+   "image": "img/s20.jpg",
+   "paragraphs": [
+    "\"Don't worry, Dottie. I'll help,\" you say.",
+    "You look under a bench. No Peanut. You look by the hot dog stand. Just a dropped bun.",
+    "The crowd is tall. You are small. It's hard to see over all the coats and hats.",
+    "The rail is right there. If you stood on it, you could see far. But the water is a long way down.",
+    "Or you could stop, close your eyes, and listen. Puppies make noise."
+   ],
+   "choices": [
+    {
+     "label": "Stand on the rail",
+     "prompt": "To climb up and stand on the rail, tap 'Stand on the rail.'",
+     "target": "e_safety_return",
+     "icon": "🧗",
+     "hop": false
+    },
+    {
+     "label": "Close your eyes and listen",
+     "prompt": "To close your eyes and listen for Peanut, tap 'Close your eyes and listen.'",
+     "target": "s21",
+     "icon": "👂",
+     "hop": false
+    }
+   ],
+   "clock": 25
+  },
+  "s21": {
+   "id": "s21",
+   "page": 21,
+   "title": "Found Him!",
+   "place": "By the stilts man",
+   "image": "img/s21.jpg",
+   "paragraphs": [
+    "You close your eyes. You hear feet. You hear the wind. You hear a tuba.",
+    "Then you hear it. Yip! Yip, yip!",
+    "You open your eyes. Peanut is by the man on stilts! He is chewing a bun.",
+    "You scoop him up. You run back. \"Peanut!\" yells Dottie. She hugs him, and he licks her nose.",
+    "Dottie gives you a paper sunflower from her pocket. \"For you,\" she says. \"So I can always find you in a crowd.\"",
+    "A tall man runs up. He has a cap and a big smile. \"Thank you!\" he says. \"I'm Dottie's dad. I'm Gus.\""
+   ],
+   "choices": [
+    {
+     "label": "Record the happy hug",
+     "prompt": "To hold still and record Dottie and Peanut, tap 'Record the happy hug.'",
+     "target": "g_peanut",
+     "icon": "📼",
+     "hop": false
+    },
+    {
+     "label": "Talk with Gus",
+     "prompt": "To talk with Dottie's dad, tap 'Talk with Gus.'",
+     "target": "s22",
+     "icon": "💬",
+     "hop": false
+    }
+   ],
+   "clock": 20,
+   "on_enter": {
+    "set": {
+     "helped_dottie": true
+    }
+   }
+  },
+  "s22": {
+   "id": "s22",
+   "page": 22,
+   "title": "Gus's Story",
+   "place": "On the bridge with Dottie's family",
+   "image": "img/s22.jpg",
+   "paragraphs": [
+    "\"I helped build this bridge,\" says Gus. \"I worked way up high, on the cables.\"",
+    "\"I wore a hard hat every day,\" he says. \"And under us was a big net, in case we fell.\"",
+    "He pats the rail. \"I'm proud of it. Lots of us worked hard. And now everybody gets to walk on it.\"",
+    "Dottie holds Peanut tight. \"Come to the middle with us, Evelyn!\"",
+    "This would be a good story to record. Or you could go to the middle, where the two crowds meet."
+   ],
+   "choices": [
+    {
+     "label": "Record Gus's story",
+     "prompt": "To hold still and record Gus telling his story, tap 'Record Gus's story.'",
+     "target": "g_gus",
+     "icon": "📼",
+     "hop": false
+    },
+    {
+     "label": "Go to the middle",
+     "prompt": "To walk to the middle with Dottie and Gus, tap 'Go to the middle.'",
+     "target": "s24",
+     "icon": "➡️",
+     "hop": false
+    }
+   ],
+   "clock": 15
+  },
+  "s23": {
+   "id": "s23",
+   "page": 23,
+   "title": "The Big Cable",
+   "place": "Next to the main cable",
+   "image": "img/s23.jpg",
+   "paragraphs": [
+    "In the middle, the giant cable comes way down low. It runs right by the path. It is as thick as a little kid is tall!",
+    "Kids touch it. They pat it. \"What's inside?\" a boy asks. \"Is it just one big piece?\"",
+    "Nobody knows. They all look at you.",
+    "The cable feels smooth and tight. It runs up and up, over the tower, and down to the far hill.",
+    "You could climb up on it. Or you could tell them what is inside."
+   ],
+   "choices": [
+    {
+     "label": "Climb on the cable",
+     "prompt": "To climb up on the cable, tap 'Climb on the cable.'",
+     "target": "e_safety_return",
+     "icon": "🧗",
+     "hop": false
+    },
+    {
+     "label": "Tell what's inside",
+     "prompt": "To tell the kids what is inside the cable, tap 'Tell what's inside.'",
+     "target": "e_count",
+     "icon": "🗣️",
+     "hop": false,
+     "route": [
+      {
+       "if": {
+        "saw_cables": true
+       },
+       "target": "g_cable"
+      }
+     ]
+    }
+   ],
+   "clock": 8
+  },
+  "s24": {
+   "id": "s24",
+   "page": 24,
+   "title": "The Middle",
+   "place": "The middle of the bridge",
+   "image": "img/s24.jpg",
+   "paragraphs": [
+    "You get to the middle. People from the city side meet people from the other side. Everybody cheers and waves hats!",
+    "But the crowd is so big. You are so small. All you can see are coats and backs.",
+    "The wind blows. It is cold up here. Your curls fly in your face.",
+    "Under your feet, the road feels strong and a little bouncy. Two crowds have made one big party.",
+    "You want to record the big cheer. But you need a spot where you can see."
+   ],
+   "choices": [
+    {
+     "label": "Find a spot to see",
+     "prompt": "To find a spot where you can see the crowd, tap 'Find a spot to see.'",
+     "target": "e_crowd",
+     "icon": "👀",
+     "hop": false,
+     "route": [
+      {
+       "if": {
+        "helped_dottie": true
+       },
+       "target": "s25"
+      }
+     ]
+    },
+    {
+     "label": "Look at the cable",
+     "prompt": "To look at the giant cable, tap 'Look at the cable.'",
+     "target": "s23",
+     "icon": "🧵",
+     "hop": false
+    },
+    {
+     "label": "Feel the wind",
+     "prompt": "To go to the rail and feel the wind, tap 'Feel the wind.'",
+     "target": "s26",
+     "icon": "💨",
+     "hop": false
+    }
+   ],
+   "clock": 10
+  },
+  "s25": {
+   "id": "s25",
+   "page": 25,
+   "title": "Up on Gus's Shoulders",
+   "place": "The middle of the bridge",
+   "image": "img/s25.jpg",
+   "paragraphs": [
+    "\"Evelyn! Over here!\" It's Dottie. She saw your paper sunflower in the crowd!",
+    "\"Up you go,\" says Gus. He lifts you up on his shoulders. Dottie gets on her mom's shoulders.",
+    "Now you can see everything! A sea of hats. Two orange towers. Ships far below. And people from both sides, waving and cheering.",
+    "You hold up the band. You hold very still. Your finger is on the red button."
+   ],
+   "choices": [
+    {
+     "label": "Record the cheer",
+     "prompt": "To hold still and record the big cheer, tap 'Record the cheer.'",
+     "target": "g_middle",
+     "icon": "📼",
+     "hop": false
+    },
+    {
+     "label": "Feel the wind",
+     "prompt": "To climb down and feel the wind at the rail, tap 'Feel the wind.'",
+     "target": "s26",
+     "icon": "💨",
+     "hop": false
+    }
+   ],
+   "clock": 5
+  },
+  "s26": {
+   "id": "s26",
+   "page": 26,
+   "title": "The Bridge Sways",
+   "place": "The rail in the middle of the bridge",
+   "image": "img/s26.jpg",
+   "paragraphs": [
+    "You hold the rail. Whoosh! The wind pushes hard.",
+    "The road under your feet moves, just a tiny bit. You feel it in your shoes.",
+    "\"Is it falling?\" asks a boy.",
+    "\"No,\" says a man in a hard hat. \"It is made to sway in the wind. If it was stiff, the wind could hurt it. It bends a little, so it does not break.\"",
+    "You think of a tall tree. It bends in the wind, but it stays up."
+   ],
+   "choices": [
+    {
+     "label": "Record the wind",
+     "prompt": "To hold still and record the wind on the bridge, tap 'Record the wind.'",
+     "target": "g_wind",
+     "icon": "📼",
+     "hop": false
+    },
+    {
+     "label": "Stay till dark",
+     "prompt": "To stay and play on the bridge till dark, tap 'Stay till dark.'",
+     "target": "e_time_up",
+     "icon": "🌙",
+     "hop": false
+    }
+   ],
+   "clock": 5
+  },
+  "s27": {
+   "id": "s27",
+   "page": 27,
+   "title": "Fort Point",
+   "place": "Fort Point, under the bridge, 5:45 a.m.",
+   "image": "img/s27.jpg",
+   "paragraphs": [
+    "Zap! You are next to an old brick fort. It is very old. It is older than the bridge by many, many years.",
+    "You look up. The bridge goes right over the fort! A big steel arch jumps over it, like a rainbow.",
+    "\"They planned to tear the fort down,\" says a soldier. \"But Mr. Strauss said no. He made the bridge jump over it instead.\"",
+    "But you can hardly see the bridge. The fog is so thick. It is gray, gray, gray.",
+    "You want to record the bridge from down here."
+   ],
+   "choices": [
+    {
+     "label": "Record it now",
+     "prompt": "To hold still and record the bridge right now, tap 'Record it now.'",
+     "target": "e_fog",
+     "icon": "📼",
+     "hop": false,
+     "route": [
+      {
+       "if": {
+        "knows_fog": true
+       },
+       "target": "s28"
+      }
+     ]
+    },
+    {
+     "label": "Go home to the map",
+     "prompt": "To go home to the map, tap 'Go home to the map.' Going home is free.",
+     "target": "s03",
+     "icon": "🏠",
+     "hop": false
+    }
+   ],
+   "clock": 60
+  },
+  "s28": {
+   "id": "s28",
+   "page": 28,
+   "title": "Wait for the Fog",
+   "place": "Fort Point",
+   "image": "img/s28.jpg",
+   "paragraphs": [
+    "You remember the ferry. Fog is a cloud that sits low. And clouds move.",
+    "So you wait. You listen. BOOOOO! Far up high, the foghorns blast. It is six o'clock! The gates are open.",
+    "Then the wind blows. The fog starts to slide away, like a blanket pulled off a bed.",
+    "First you see the orange tower. Then the big cables. Then the road, with tiny people walking on it!",
+    "The sun comes out. The bridge glows orange."
+   ],
+   "choices": [
+    {
+     "label": "Record it now",
+     "prompt": "To hold still and record the bridge now, tap 'Record it now.'",
+     "target": "g_fort",
+     "icon": "📼",
+     "hop": false
+    },
+    {
+     "label": "Wait some more",
+     "prompt": "To wait for an even better view, tap 'Wait some more.'",
+     "target": "e_time_up",
+     "icon": "⏳",
+     "hop": false
+    }
+   ],
+   "clock": 30
+  },
+  "s29": {
+   "id": "s29",
+   "page": 29,
+   "title": "The Parade",
+   "place": "Crissy Field, 10:00 a.m.",
+   "image": "img/s29.jpg",
+   "paragraphs": [
+    "Zap! You are in a big, flat park by the water. Bands play. Drums go boom, boom, boom!",
+    "Floats roll by, with flowers and flags. People cheer. Behind it all is the bridge, big and orange.",
+    "There is a big stand with chairs for important people. A sign says Span of Gold.",
+    "\"Mr. Strauss is coming,\" someone says. \"He's the chief engineer. He made the bridge happen.\"",
+    "You could follow the parade. Or you could get close to the stand."
+   ],
+   "choices": [
+    {
+     "label": "March in the parade",
+     "prompt": "To march in the parade with the band, tap 'March in the parade.'",
+     "target": "e_safety_return",
+     "icon": "🥁",
+     "hop": false
+    },
+    {
+     "label": "Go to the stand",
+     "prompt": "To go close to the big stand, tap 'Go to the stand.'",
+     "target": "s30",
+     "icon": "🎤",
+     "hop": false
+    }
+   ],
+   "clock": 60
+  },
+  "s30": {
+   "id": "s30",
+   "page": 30,
+   "title": "Mr. Strauss",
+   "place": "The Span of Gold stand",
+   "image": "img/s30.jpg",
+   "paragraphs": [
+    "A short man in a dark suit steps up. It is Joseph Strauss.",
+    "He does not give a long speech. He reads a poem. He wrote it about the bridge.",
+    "\"At last the mighty task is done,\" he reads. \"Its towers pierce the sky.\"",
+    "People clap. You look at the orange towers. Then you think of the workers, the net, and the thousands of wires. It was a mighty task. Lots of people did it together.",
+    "Your finger is on the red button."
+   ],
+   "choices": [
+    {
+     "label": "Record the poem",
+     "prompt": "To hold still and record Mr. Strauss and the clapping, tap 'Record the poem.'",
+     "target": "g_strauss",
+     "icon": "📼",
+     "hop": false
+    },
+    {
+     "label": "Run up and say hi",
+     "prompt": "To run up on the stand and say hi to Mr. Strauss, tap 'Run up and say hi.'",
+     "target": "e_safety_return",
+     "icon": "🏃",
+     "hop": false
+    }
+   ],
+   "clock": 40
+  }
+ },
+ "endings": {
+  "g_foghorns": {
+   "id": "g_foghorns",
+   "page": 31,
+   "type": "GOOD",
+   "title": "The Six O'Clock Horns",
+   "image": "img/g_foghorns.jpg",
+   "paragraphs": [
+    "You are not scared. You know what a foghorn is for. It helps ships find their way.",
+    "So you hold still. Very still. BOOOOO! BOOOOO! Then the clank of the gates, and a huge cheer.",
+    "Beep, beep! Recording saved. Zap! You are home.",
+    "Dr. Finch plays it. The kitchen fills with the deep horns of 1937. Mom covers her ears and laughs.",
+    "\"Evelyn,\" says Dr. Finch, \"that is the start of Pedestrian Day!\""
+   ],
+   "on_enter": {
+    "set": {
+     "recording_saved": true
+    }
+   },
+   "really_there": {
+    "title": "You were really there",
+    "text": "On May 27, 1937, about 18,000 people were waiting by six in the morning. When six o'clock came, foghorns blasted and the gates opened.",
+    "photos": [
+     {
+      "src": "img/photos/planes_may1937.jpg",
+      "caption": "Navy planes fly over the finished bridge in May 1937, the same month it opened.",
+      "credit": "U.S. Navy"
+     },
+     {
+      "src": "img/photos/opening_euler.jpg",
+      "caption": "A visitor at the Golden Gate Bridge around opening day, May 1937, standing by the rail and the wrapped cables.",
+      "credit": "Mr. Euler (CC BY-SA 3.0), via Karen McCutcheon / Wikimedia Commons"
+     }
+    ]
+   }
+  },
+  "g_first_steps": {
+   "id": "g_first_steps",
+   "page": 32,
+   "type": "GOOD",
+   "title": "Thousands of Feet",
+   "image": "img/g_first_steps.jpg",
+   "paragraphs": [
+    "You stand by the rail. You hold the band out. You hold still.",
+    "Tap, tap, tap. Clip, clop. Thousands of feet, on a brand new bridge. Kids laugh. A baby coos. Someone sings.",
+    "Beep, beep! Recording saved. Zap! You are home.",
+    "Dr. Finch closes her eyes and listens. \"It sounds like a whole city going for a walk,\" she says.",
+    "That is just what it was."
+   ],
+   "on_enter": {
+    "set": {
+     "recording_saved": true
+    }
+   },
+   "really_there": {
+    "title": "You were really there",
+    "text": "About 200,000 people walked across the bridge on Pedestrian Day. It was the only day the bridge was just for people. Cars came the next day.",
+    "photos": [
+     {
+      "src": "img/photos/opening_euler.jpg",
+      "caption": "A visitor at the Golden Gate Bridge around opening day, May 1937, standing by the rail and the wrapped cables.",
+      "credit": "Mr. Euler (CC BY-SA 3.0), via Karen McCutcheon / Wikimedia Commons"
+     },
+     {
+      "src": "img/photos/planes_may1937.jpg",
+      "caption": "Navy planes fly over the finished bridge in May 1937, the same month it opened.",
+      "credit": "U.S. Navy"
+     }
+    ]
+   }
+  },
+  "g_skaters": {
+   "id": "g_skaters",
+   "page": 33,
+   "type": "GOOD",
+   "title": "Whirrr!",
+   "image": "img/g_skaters.jpg",
+   "paragraphs": [
+    "The sisters skate past again. Whirrr! Then the stilts man. Clomp, clomp!",
+    "You hold still and record it all. The wheels, the stilts, and a tuba going oom-pah-pah.",
+    "Beep, beep! Recording saved. Zap! You are home.",
+    "You play it for Mom. She dances around the kitchen to the tuba. Dr. Finch dances too.",
+    "\"So many firsts in one day,\" says Dr. Finch."
+   ],
+   "on_enter": {
+    "set": {
+     "recording_saved": true
+    }
+   },
+   "really_there": {
+    "title": "You were really there",
+    "text": "Two sisters, Carmen and Minnie Perez, were the first to roller-skate across. A man named Florentine Calegari crossed on stilts, and back again. People also ran, tap-danced, and played a tuba on the bridge.",
+    "photos": [
+     {
+      "src": "img/photos/opening_euler.jpg",
+      "caption": "A visitor at the Golden Gate Bridge around opening day, May 1937, standing by the rail and the wrapped cables.",
+      "credit": "Mr. Euler (CC BY-SA 3.0), via Karen McCutcheon / Wikimedia Commons"
+     }
+    ]
+   }
+  },
+  "g_cable": {
+   "id": "g_cable",
+   "page": 34,
+   "type": "GOOD",
+   "title": "What's Inside",
+   "image": "img/g_cable.jpg",
+   "paragraphs": [
+    "\"It's not one big piece,\" you say. \"It's lots and lots of thin wires. Over twenty-seven thousand! A machine squeezed them tight.\"",
+    "\"Like a braid,\" says a girl.",
+    "\"Yes!\" you say. \"Lots of thin wires make one strong cable.\"",
+    "The kids pat the cable. You hold still and record them all saying, \"Wow!\"",
+    "Beep, beep! Recording saved. Zap! You are home.",
+    "\"You were a teacher in 1937,\" says Dr. Finch."
+   ],
+   "on_enter": {
+    "set": {
+     "recording_saved": true
+    }
+   },
+   "really_there": {
+    "title": "You were really there",
+    "text": "Each of the two main cables has 27,572 wires inside. Workers spun the wires across in 1935 and 1936. Then machines squeezed them into round cables, each about three feet thick.",
+    "photos": [
+     {
+      "src": "img/photos/carriers_1936.jpg",
+      "caption": "Navy ships pass under the almost-finished bridge, November 12, 1936. The road was not on yet, but the cables were up.",
+      "credit": "U.S. Navy"
+     },
+     {
+      "src": "img/photos/opening_euler.jpg",
+      "caption": "A visitor stands by the rail and the big wrapped cables around opening day, May 1937.",
+      "credit": "Mr. Euler (CC BY-SA 3.0), via Karen McCutcheon / Wikimedia Commons"
+     }
+    ]
+   }
+  },
+  "g_middle": {
+   "id": "g_middle",
+   "page": 35,
+   "type": "GOOD",
+   "title": "The Big Cheer",
+   "image": "img/g_middle.jpg",
+   "paragraphs": [
+    "You hold very still on Gus's shoulders. The crowd cheers. Hats fly up. Peanut barks. Dottie waves her arms.",
+    "Beep, beep! Recording saved.",
+    "\"Bye, Dottie! Bye, Gus!\" you call. You wave the paper sunflower. Zap! You are home.",
+    "Dr. Finch plays the cheer. It is loud and happy. \"Evelyn, this is perfect,\" she says.",
+    "You put the paper sunflower on the fridge. Wait! Can it come home? Dr. Finch smiles. \"It's paper, and it was a gift. I think it's okay.\""
+   ],
+   "on_enter": {
+    "set": {
+     "recording_saved": true
+    }
+   },
+   "really_there": {
+    "title": "You were really there",
+    "text": "On Pedestrian Day, people walked from both ends and met in the middle. The middle of the bridge is 4,200 feet from tower to tower. In 1937, that was the longest span of any suspension bridge in the world.",
+    "photos": [
+     {
+      "src": "img/photos/opening_euler.jpg",
+      "caption": "A visitor at the Golden Gate Bridge around opening day, May 1937, standing by the rail and the wrapped cables.",
+      "credit": "Mr. Euler (CC BY-SA 3.0), via Karen McCutcheon / Wikimedia Commons"
+     },
+     {
+      "src": "img/photos/bridge_sep1937.jpg",
+      "caption": "The finished Golden Gate Bridge from the southwest, September 3, 1937.",
+      "credit": "Library of Congress (no known restrictions)"
+     }
+    ]
+   }
+  },
+  "g_wind": {
+   "id": "g_wind",
+   "page": 36,
+   "type": "GOOD",
+   "title": "The Wind Song",
+   "image": "img/g_wind.jpg",
+   "paragraphs": [
+    "You hold the rail. You hold still. You record the wind. Whoosh! You record the road creak, just a tiny bit.",
+    "Beep, beep! Recording saved. Zap! You are home.",
+    "Dr. Finch listens. \"The bridge bends so it won't break,\" you say. \"Like a tree.\"",
+    "\"That's right,\" says Dr. Finch. \"Good engineers plan for the wind.\"",
+    "Mom says, \"Like my bees. They build strong, but not stiff.\""
+   ],
+   "on_enter": {
+    "set": {
+     "recording_saved": true
+    }
+   },
+   "really_there": {
+    "title": "You were really there",
+    "text": "The Golden Gate Bridge was built to move. In strong winds, the middle of the road can swing side to side. Moving a little keeps it safe.",
+    "photos": [
+     {
+      "src": "img/photos/bridge_sep1937.jpg",
+      "caption": "The finished Golden Gate Bridge from the southwest, September 3, 1937.",
+      "credit": "Library of Congress (no known restrictions)"
+     },
+     {
+      "src": "img/photos/construction_1934.jpg",
+      "caption": "The Golden Gate Bridge under construction, July 16, 1934.",
+      "credit": "Chas. M. Hiller / Library of Congress (no known restrictions)"
+     }
+    ]
+   }
+  },
+  "g_fort": {
+   "id": "g_fort",
+   "page": 37,
+   "type": "GOOD",
+   "title": "The Bridge Wakes Up",
+   "image": "img/g_fort.jpg",
+   "paragraphs": [
+    "You hold still. You record the foghorns, and the waves, and the cheer far up high.",
+    "The band takes a picture, too. The fort, the arch, and the orange bridge, coming out of the fog.",
+    "Beep, beep! Recording saved. Zap! You are home.",
+    "\"You waited for the fog to move,\" says Dr. Finch. \"That was smart.\"",
+    "\"I learned it on a ferry,\" you say."
+   ],
+   "on_enter": {
+    "set": {
+     "recording_saved": true
+    }
+   },
+   "really_there": {
+    "title": "You were really there",
+    "text": "Fort Point is a brick fort. It was built about the time of the Civil War. The bridge builders saved it. They built a steel arch so the bridge could pass right over it.",
+    "photos": [
+     {
+      "src": "img/photos/fort_point_1934.jpg",
+      "caption": "Fort Point, the old brick fort, with the new bridge going up over it, 1934.",
+      "credit": "Roger Sturtevant / Historic American Buildings Survey / Library of Congress"
+     },
+     {
+      "src": "img/photos/bridge_sep1937.jpg",
+      "caption": "The finished Golden Gate Bridge from the southwest, September 3, 1937.",
+      "credit": "Library of Congress (no known restrictions)"
+     }
+    ]
+   }
+  },
+  "g_gus": {
+   "id": "g_gus",
+   "page": 38,
+   "type": "GOOD",
+   "title": "Gus's Story",
+   "image": "img/g_gus.jpg",
+   "paragraphs": [
+    "You hold up the band. \"Tell it again, please,\" you say.",
+    "Gus tells all about the hard hats, the net, and the cables. Dottie adds, \"And Evelyn found Peanut!\" Peanut yips.",
+    "Beep, beep! Recording saved.",
+    "\"Bye!\" you call. Dottie waves. Zap! You are home.",
+    "Dr. Finch plays it at the museum. Now, every day, people hear a real worker tell how he built the bridge."
+   ],
+   "on_enter": {
+    "set": {
+     "recording_saved": true
+    }
+   },
+   "really_there": {
+    "title": "You were really there",
+    "text": "Workers on the bridge wore hard hats. A big safety net hung under them. The net caught 19 men who fell. Sadly, not everyone was saved. Eleven workers died building the bridge. People still remember their names.",
+    "photos": [
+     {
+      "src": "img/photos/pylon_1934.jpg",
+      "caption": "A pylon on the San Francisco side, early in the work, 1934.",
+      "credit": "Library of Congress (no known restrictions)"
+     },
+     {
+      "src": "img/photos/fort_early.jpg",
+      "caption": "Early work on the bridge over Fort Point.",
+      "credit": "U.S. Army / U.S. National Park Service"
+     }
+    ]
+   }
+  },
+  "g_strauss": {
+   "id": "g_strauss",
+   "page": 39,
+   "type": "GOOD",
+   "title": "The Mighty Task",
+   "image": "img/g_strauss.jpg",
+   "paragraphs": [
+    "You hold still. Mr. Strauss reads. The crowd claps. A band plays.",
+    "Beep, beep! Recording saved. Zap! You are home.",
+    "Dr. Finch plays it. \"At last the mighty task is done.\"",
+    "\"He didn't do it by himself,\" you say. \"Lots of workers helped. And Mr. Ellis did the math. And Mr. Morrow drew the towers.\"",
+    "\"That's right,\" says Dr. Finch. \"Big things take lots of people.\""
+   ],
+   "on_enter": {
+    "set": {
+     "recording_saved": true
+    }
+   },
+   "really_there": {
+    "title": "You were really there",
+    "text": "Joseph Strauss was the chief engineer. On May 27, 1937, he read his poem at Crissy Field. Many people helped him. Charles Ellis did much of the math, and Irving Morrow designed how the bridge looks.",
+    "photos": [
+     {
+      "src": "img/photos/tower_1934.jpg",
+      "caption": "A Golden Gate Bridge tower going up, 1934.",
+      "credit": "Chas. M. Hiller / Library of Congress (no known restrictions)"
+     },
+     {
+      "src": "img/photos/bridge_sep1937.jpg",
+      "caption": "The finished Golden Gate Bridge from the southwest, September 3, 1937.",
+      "credit": "Library of Congress (no known restrictions)"
+     }
+    ]
+   }
+  },
+  "g_peanut": {
+   "id": "g_peanut",
+   "page": 40,
+   "type": "GOOD",
+   "title": "Yip, Yip, Hooray!",
+   "image": "img/g_peanut.jpg",
+   "paragraphs": [
+    "You hold still. Peanut yips. Dottie laughs. \"Good boy, Peanut!\" Gus laughs too, a big, deep laugh.",
+    "Beep, beep! Recording saved.",
+    "\"Bye, Dottie!\" you call. You hold your paper sunflower tight. Zap! You are home.",
+    "Dr. Finch plays it. Yip, yip! Mom laughs so hard, she has to sit down.",
+    "\"You did not just record the day,\" says Dr. Finch. \"You helped make it happy.\""
+   ],
+   "on_enter": {
+    "set": {
+     "recording_saved": true
+    }
+   },
+   "really_there": {
+    "title": "You were really there",
+    "text": "On Pedestrian Day, people brought their pets. Some walked dogs across. One person even walked a cat on a leash! A newspaper said the first lost girl on the bridge was found, too.",
+    "photos": [
+     {
+      "src": "img/photos/opening_euler.jpg",
+      "caption": "A visitor at the Golden Gate Bridge around opening day, May 1937, standing by the rail and the wrapped cables.",
+      "credit": "Mr. Euler (CC BY-SA 3.0), via Karen McCutcheon / Wikimedia Commons"
+     },
+     {
+      "src": "img/photos/planes_may1937.jpg",
+      "caption": "Navy planes fly over the finished bridge in May 1937, the same month it opened.",
+      "credit": "U.S. Navy"
+     }
+    ]
+   }
+  },
+  "e_stand_out": {
+   "id": "e_stand_out",
+   "page": 41,
+   "type": "BAD",
+   "title": "Everyone Stares",
+   "image": "img/e_stand_out.jpg",
+   "paragraphs": [
+    "Zap! You land at the bridge in 1937. But you have on your sparkly sneakers and your shirt from today.",
+    "People stare. \"What funny shoes!\" says a lady. A policeman bends down. \"Where is your mother, little girl?\"",
+    "You don't want to change what happened. Beep! The band brings you home.",
+    "What could you try differently? Next time, try on the 1937 clothes first."
+   ]
+  },
+  "e_out_of_charges": {
+   "id": "e_out_of_charges",
+   "page": 42,
+   "type": "BAD",
+   "title": "Out of Dots",
+   "image": "img/e_out_of_charges.jpg",
+   "paragraphs": [
+    "You tap the band. It goes blip. Then, nothing. All three dots are dark.",
+    "\"Oh no,\" says Dr. Finch. \"You used all your trips.\"",
+    "The band needs to charge all night. The bridge will have to wait.",
+    "What could you try differently? You only have three dots. Pick your trips with care."
+   ]
+  },
+  "e_safety_return": {
+   "id": "e_safety_return",
+   "page": 43,
+   "type": "BAD",
+   "title": "Safety Return",
+   "image": "img/e_safety_return.jpg",
+   "paragraphs": [
+    "Beep, beep, beep! The band flashes red. Zap!",
+    "You are back in the kitchen. \"The band brought you home,\" says Dr. Finch. \"It does that if something is not safe. And it does that if you might change what happened.\"",
+    "She gives you a big hug. \"You are safe. That's what matters most.\"",
+    "What could you try differently? Watch and be kind. Don't climb, jump, or touch the work."
+   ]
+  },
+  "e_time_up": {
+   "id": "e_time_up",
+   "page": 44,
+   "type": "BAD",
+   "title": "Time's Up",
+   "image": "img/e_time_up.jpg",
+   "paragraphs": [
+    "Tick, tock. The band beeps. The clock says zero.",
+    "Zap! You are home. You did not record anything.",
+    "\"Each trip only lasts one hour,\" says Dr. Finch. \"Then the band brings you back.\"",
+    "What could you try differently? Watch the clock on the band. Don't wait too long."
+   ]
+  },
+  "e_cars_day": {
+   "id": "e_cars_day",
+   "page": 45,
+   "type": "BAD",
+   "title": "The Day for Cars",
+   "image": "img/e_cars_day.jpg",
+   "paragraphs": [
+    "Zap! You land by the bridge. Honk, honk! Cars zoom past. No one is walking on the road.",
+    "It is May 28, the day after Pedestrian Day. At noon, President Roosevelt pressed a special key far away in Washington. That told everyone the bridge was open to cars.",
+    "It is fun to see. But there is no walk to record today. Beep! The band brings you home.",
+    "What could you try differently? Pedestrian Day was May 27."
+   ]
+  },
+  "e_too_loud": {
+   "id": "e_too_loud",
+   "page": 46,
+   "type": "BAD",
+   "title": "Too Loud!",
+   "image": "img/e_too_loud.jpg",
+   "paragraphs": [
+    "BOOOOO! The horn is so loud and deep! You jump. You cover your ears.",
+    "The band falls off your wrist. Clunk! The recording stops.",
+    "You pick it up. Beep! The band brings you home.",
+    "\"What was that sound?\" you ask. \"A foghorn,\" says Dr. Finch. \"It is loud, but it is a helper.\"",
+    "What could you try differently? Learn about foghorns first. A ferry ride in 1933 might help."
+   ]
+  },
+  "e_crowd": {
+   "id": "e_crowd",
+   "page": 47,
+   "type": "BAD",
+   "title": "Lost in the Crowd",
+   "image": "img/e_crowd.jpg",
+   "paragraphs": [
+    "You go this way. Coats. You go that way. Backs. You jump. All you see are hats.",
+    "The crowd is so big, you can't find a spot. You get squished. You feel very small.",
+    "Beep! The band brings you home.",
+    "\"Big crowds are hard,\" says Dr. Finch. \"A friend can help.\"",
+    "What could you try differently? Maybe help someone on the bridge. Then they can help you."
+   ]
+  },
+  "e_squeeze": {
+   "id": "e_squeeze",
+   "page": 48,
+   "type": "BAD",
+   "title": "Stuck at the Gate",
+   "image": "img/e_squeeze.jpg",
+   "paragraphs": [
+    "You squeeze. You wiggle. \"Hey, no pushing!\" says a big boy.",
+    "The crowd gets tight. You get stuck between two grown-ups. You can't move.",
+    "Beep! The band brings you home. You are safe, but you missed the opening.",
+    "What could you try differently? Wait your turn. Being kind is the best way."
+   ]
+  },
+  "e_fog": {
+   "id": "e_fog",
+   "page": 49,
+   "type": "BAD",
+   "title": "Gray, Gray, Gray",
+   "image": "img/e_fog.jpg",
+   "paragraphs": [
+    "You hold still. You record. Beep, beep! Recording saved. Zap! You are home.",
+    "Dr. Finch looks at it. Gray. Just gray fog. You can hear the waves. But you can't see the bridge at all.",
+    "\"Fog likes to hide things,\" she says.",
+    "What could you try differently? Learn about fog first. A ferry ride in 1933 might help."
+   ]
+  },
+  "e_count": {
+   "id": "e_count",
+   "page": 50,
+   "type": "BAD",
+   "title": "Too Many Wires",
+   "image": "img/e_count.jpg",
+   "paragraphs": [
+    "\"I know!\" you say. \"There are wires in there! Let me count them.\"",
+    "One, two, three... You count and count. Ten, eleven, twelve...",
+    "But you don't know how many there are! The kids walk away. Beep! The band brings you home.",
+    "\"There are over twenty-seven thousand,\" says Dr. Finch. \"You can't count that in one hour!\"",
+    "What could you try differently? Watch the workers make the cables in 1936."
+   ]
+  }
+ }
+}

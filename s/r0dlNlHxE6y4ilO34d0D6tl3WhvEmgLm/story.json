@@ -1,0 +1,110 @@
+{
+ "title": "Ollie the Octopus and the Eighth Sock",
+ "storage_key": "ollieOctopus.v1.",
+ "scenes": [
+  {
+   "id": "p01",
+   "title": "Ollie at the Bottom of the Sea",
+   "place": "The bottom of the sea",
+   "image": "img/p01.jpg",
+   "paragraphs": [
+    "Once upon a time, there was an octopus named Ollie who lived at the bottom of the sea.",
+    "One day, a sock floated down from a boat. It was red with white dots. Ollie had never seen a sock before. He put it on one of his arms, and it fit just right."
+   ]
+  },
+  {
+   "id": "p02",
+   "title": "Eight Socks",
+   "place": "The bottom of the sea",
+   "image": "img/p02.jpg",
+   "paragraphs": [
+    "\"I love it!\" said Ollie. \"But I have eight arms. I need eight socks.\""
+   ]
+  },
+  {
+   "id": "p03",
+   "title": "Seven Socks",
+   "place": "The bottom of the sea",
+   "image": "img/p03.jpg",
+   "paragraphs": [
+    "So Ollie went looking. A crab found him a green sock under a rock. A turtle found him a blue one stuck on some seaweed. A fish swam up with a striped sock in her mouth. One by one, Ollie put them on. One, two, three, four, five, six, seven socks!"
+   ]
+  },
+  {
+   "id": "p04",
+   "title": "The Grumpy Shrimp",
+   "place": "A shell and a sunken boot",
+   "image": "img/p04.jpg",
+   "paragraphs": [
+    "But he could not find the eighth one.",
+    "He looked in a shell. Nothing. He looked in a sunken boot. Just a very grumpy shrimp, who said, \"Do you MIND?\""
+   ]
+  },
+  {
+   "id": "p05",
+   "title": "A Giggle",
+   "place": "Behind a big rock",
+   "image": "img/p05.jpg",
+   "paragraphs": [
+    "Then Ollie heard a giggle. It was coming from behind a big rock.",
+    "\"Who's there?\" asked Ollie."
+   ]
+  },
+  {
+   "id": "p06",
+   "title": "Pip's Hat",
+   "place": "Behind a big rock",
+   "image": "img/p06.jpg",
+   "paragraphs": [
+    "Out swam a little seal named Pip. And on her nose, she was wearing the eighth sock, like a hat.",
+    "\"I found it first,\" said Pip. \"It's my hat.\""
+   ]
+  },
+  {
+   "id": "p07",
+   "title": "It Looks Good on You",
+   "place": "The bottom of the sea",
+   "image": "img/p07.jpg",
+   "paragraphs": [
+    "Ollie looked at his seven socks. He looked at Pip's sock hat. \"Hmm,\" he said. \"It does look good on you.\""
+   ]
+  },
+  {
+   "id": "p08",
+   "title": "The Tickle Arm",
+   "place": "The bottom of the sea",
+   "image": "img/p08.jpg",
+   "paragraphs": [
+    "So Ollie had an idea. He took his eighth arm and he wiggled it. He wiggled it up. He wiggled it down. \"This one can be my tickle arm,\" he said. \"It doesn't need a sock.\""
+   ]
+  },
+  {
+   "id": "p09",
+   "title": "Bubbles!",
+   "place": "The bottom of the sea",
+   "image": "img/p09.jpg",
+   "paragraphs": [
+    "And he tickled Pip right on the tummy. Pip laughed so hard that she blew bubbles out of her nose, and the sock hat popped right off her head and landed on the grumpy shrimp."
+   ]
+  },
+  {
+   "id": "p10",
+   "title": "Actually, I Like It",
+   "place": "The sunken boot",
+   "image": "img/p10.jpg",
+   "paragraphs": [
+    "The shrimp looked at the sock. He looked at Ollie. Then he said, \"Actually, I like it,\" and he went back into his boot to take a nap, all snuggled up."
+   ]
+  },
+  {
+   "id": "p11",
+   "title": "Seven Socks Every Day",
+   "place": "The bottom of the sea",
+   "image": "img/p11.jpg",
+   "paragraphs": [
+    "From then on, Ollie wore seven socks every day. Pip came by every morning to get tickled. And if you ever go to the bottom of the sea and see a sunken boot, be very quiet, because there's a shrimp in there napping in a sock.",
+    "**The end.**"
+   ]
+  }
+ ]
+}

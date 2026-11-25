@@ -84,10 +84,12 @@ h1{font-size:30px;margin:0 0 10px;line-height:1.2}
 @media (orientation:landscape) and (max-height:700px){#picwrap{height:42vh}}
 @media (max-width:600px){#card ul{columns:1}}
 @media (max-width:560px){#charges .lbl,#oxy .lbl{display:none}#oxy .bar{width:56px}#oxy .min{min-width:44px;font-size:13px}#top{gap:6px;padding:6px 8px}#top .t{font-size:15px}#charges .c{width:16px;height:16px}#charges{gap:5px}}
+/*booklink*/#homeBtn{display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;font-size:19px;font-weight:700;min-width:52px;height:52px;padding:0 14px 0 10px;border-radius:26px;background:#f4c542;color:#2a1b05;border:3px solid #fff;box-shadow:0 3px 0 rgba(0,0,0,.35);white-space:nowrap;flex:none;font-family:inherit}#homeBtn .hi{font-size:25px;line-height:1}#homeBtn:active{transform:translateY(2px)}a.choice{text-decoration:none;display:flex;align-items:center;justify-content:center;text-align:center}a.choice[hidden]{display:none}@media (max-width:600px){#homeBtn .hl{display:none}#homeBtn{padding:0;width:52px}}
 </style>
 </head>
 <body>
 <div id="top">
+  <a class="iconbtn" id="homeBtn" href="../A3BAM2Ki5G3gwtSLgdv4FzKtEKiQoc4X/" title="My Books" aria-label="My Books"><span class="hi" aria-hidden="true">&#128218;</span><span class="hl">My Books</span></a>
   <button class="iconbtn" id="backTop" title="Back to my last choice" aria-label="Back to my last choice">&#8630;</button>
   <div class="t" id="toptitle">Evelyn and the TimeBand</div>
   <div id="oxy" aria-label="Oxygen"><span class="lbl" id="oxylbl">O&#8322;</span><div class="bar"><div class="fill" id="oxyfill"></div></div><span class="min" id="oxymin"></span></div>
@@ -279,7 +281,7 @@ var AUDIO_DATA = null;
     } else {
       if (isEnd && page.type === "GOOD" && page.really_there) button("You were really there \u27A1", "photo", function () { userTapped = true; stopReading(); st.at = "photo:" + id; render(); });
       button("\u21B6 Back to my last choice", "home", function () { userTapped = true; backToChoice(); });
-      button("\u27F2 Start over", "home", function () { userTapped = true; startOver(); });
+      button("\u27F2 Start over", "home", function () { userTapped = true; startOver(); }); button("\uD83D\uDCDA Back to my books", "home", function () { userTapped = true; try { stopReading(); } catch (e) {} location.href = "../A3BAM2Ki5G3gwtSLgdv4FzKtEKiQoc4X/"; });
     }
     // words
     paras = list; words = [];

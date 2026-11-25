@@ -58,10 +58,12 @@ h1{font-size:30px;margin:0 0 10px;line-height:1.2}
 #card ol li{padding:3px 0;cursor:pointer;color:#2f5f9f;break-inside:avoid}
 @media (orientation:landscape) and (max-height:700px){#picwrap{height:42vh}}
 @media (max-width:560px){#top{gap:6px;padding:6px 8px}#top .t{font-size:15px}#card ol{columns:1}}
+/*booklink*/#homeBtn{display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;font-size:19px;font-weight:700;min-width:52px;height:52px;padding:0 14px 0 10px;border-radius:26px;background:#f4c542;color:#2a1b05;border:3px solid #fff;box-shadow:0 3px 0 rgba(0,0,0,.35);white-space:nowrap;flex:none;font-family:inherit}#homeBtn .hi{font-size:25px;line-height:1}#homeBtn:active{transform:translateY(2px)}a.choice{text-decoration:none;display:flex;align-items:center;justify-content:center;text-align:center}a.choice[hidden]{display:none}@media (max-width:600px){#homeBtn .hl{display:none}#homeBtn{padding:0;width:52px}}
 </style>
 </head>
 <body>
 <div id="top">
+  <a class="iconbtn" id="homeBtn" href="../A3BAM2Ki5G3gwtSLgdv4FzKtEKiQoc4X/" title="My Books" aria-label="My Books"><span class="hi" aria-hidden="true">&#128218;</span><span class="hl">My Books</span></a>
   <button class="iconbtn" id="backTop" title="Previous page" aria-label="Previous page">&#8630;</button>
   <div class="t" id="toptitle">Goats don't eat eggs!</div>
   <button class="iconbtn" id="bigplay" data-state="idle" title="Play (read to me)" aria-label="Play (read to me)">&#9654;</button>
@@ -79,6 +81,7 @@ h1{font-size:30px;margin:0 0 10px;line-height:1.2}
     <button class="choice home" id="prevBtn" type="button">&#8592; Back a page</button>
     <button class="choice" id="nextBtn" type="button">Next page &#8594;</button>
     <button class="choice" id="againBtn" type="button" hidden>&#8634; Read it again</button>
+    <a class="choice home" id="booksBtn" href="../A3BAM2Ki5G3gwtSLgdv4FzKtEKiQoc4X/" hidden>&#128218; Back to my books</a>
   </div>
 </div></div>
 <div id="modal"><div id="card">
@@ -142,7 +145,7 @@ var AUDIO_DATA = null;
     var a = AUDIO[sc.id]; times = a ? a.words : [];
     var s = srcOf(sc); audioEl.src = s || ""; audioEl.playbackRate = speed;
     $("prevBtn").hidden = at === 0; $("backTop").disabled = at === 0;
-    $("nextBtn").hidden = at === N - 1; $("againBtn").hidden = at !== N - 1;
+    $("nextBtn").hidden = at === N - 1; $("againBtn").hidden = at !== N - 1; if ($("booksBtn")) $("booksBtn").hidden = at !== N - 1;
     $("scroller").scrollTop = 0;
     ls("page", String(at));
     setUI();

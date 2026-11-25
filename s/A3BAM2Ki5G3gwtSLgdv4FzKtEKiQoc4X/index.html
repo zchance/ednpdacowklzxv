@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f4ead8">
+<title>Evelyn's Books</title>
+<style>
+  :root {
+    --bg: #f4ead8;
+    --paper: #fffaf2;
+    --ink: #2a1b10;
+    --mute: #6b4a32;
+    --wood: #8b5a32;
+    --wood-dark: #6a3f20;
+    --gold: #d4921a;
+    --shadow: rgba(72, 38, 10, 0.28);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    min-height: 100vh;
+    color: var(--ink);
+    font-family: "Avenir Next", "Segoe UI", "Trebuchet MS", "Gill Sans", "Comic Sans MS", system-ui, sans-serif;
+    background:
+      radial-gradient(circle at 12% 0%, #fff6e4 0, transparent 42%),
+      radial-gradient(circle at 90% 8%, #f7ddb0 0, transparent 36%),
+      linear-gradient(180deg, #f8f0de 0%, var(--bg) 30%, #ead7b6 100%);
+    line-height: 1.3;
+  }
+
+  header {
+    text-align: center;
+    padding: 1.6rem 1.2rem 0.6rem;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(2.1rem, 8vw, 3.2rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+  }
+
+  .hint {
+    margin: 0.45rem 0 0;
+    font-size: clamp(1.15rem, 4.2vw, 1.45rem);
+    color: var(--mute);
+    font-weight: 600;
+  }
+
+  main {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 1rem 3rem;
+  }
+
+  section {
+    margin-top: 1.6rem;
+  }
+
+  h2 {
+    margin: 0 0 0.85rem;
+    font-size: clamp(1.35rem, 5vw, 1.85rem);
+    font-weight: 800;
+    text-align: center;
+    color: var(--wood-dark);
+  }
+
+  .shelf {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.35rem 1.2rem;
+    padding: 1rem 0.85rem 1.35rem;
+    background: linear-gradient(180deg, rgba(255,250,242,0.55), rgba(255,250,242,0.2));
+    border-radius: 18px 18px 10px 10px;
+    position: relative;
+  }
+
+  .shelf::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    height: 18px;
+    border-radius: 4px 4px 8px 8px;
+    background:
+      linear-gradient(180deg, #c4884a 0%, var(--wood) 42%, var(--wood-dark) 100%);
+    box-shadow: 0 8px 14px var(--shadow);
+  }
+
+  .book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    min-width: 0;
+    -webkit-tap-highlight-color: rgba(212, 146, 26, 0.28);
+    padding: 0.15rem;
+    border-radius: 16px;
+  }
+
+  .cover {
+    display: block;
+    width: 100%;
+    border-radius: 8px 12px 12px 8px;
+    overflow: hidden;
+    background: #ddd;
+    box-shadow:
+      inset 6px 0 0 rgba(0, 0, 0, 0.12),
+      0 2px 0 rgba(255, 255, 255, 0.35),
+      0 10px 22px var(--shadow);
+    transform: translateY(0);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .cover img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    vertical-align: middle;
+  }
+
+  .title {
+    display: block;
+    margin-top: 0.7rem;
+    font-size: clamp(1.28rem, 4.8vw, 1.65rem);
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.2;
+    max-width: 22ch;
+  }
+
+  .book:hover .cover,
+  .book:focus-visible .cover {
+    transform: translateY(-6px);
+    box-shadow:
+      inset 6px 0 0 rgba(0, 0, 0, 0.12),
+      0 16px 28px var(--shadow);
+  }
+
+  .book:active .cover {
+    transform: translateY(-1px);
+  }
+
+  .book:focus-visible {
+    outline: 4px solid var(--gold);
+    outline-offset: 4px;
+  }
+
+  @media (min-width: 640px) {
+    .shelf {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem 1.4rem;
+      padding: 1.15rem 1.1rem 1.5rem;
+    }
+    main { padding: 0 1.4rem 3.5rem; }
+    .more .book:last-child {
+      grid-column: 1 / -1;
+      width: calc((100% - 1.4rem) / 2);
+      justify-self: center;
+    }
+  }
+
+  section:last-child {
+    padding-bottom: 0.6rem;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Evelyn's Books</h1>
+    <p class="hint">Tap a book to read it.</p>
+  </header>
+  <main>
+    <section>
+      <h2>Evelyn and the TimeBand</h2>
+      <div class="shelf">
+        <a class="book" href="../c130XtqOJXfBu13gJBLBZebhGn92VzT1/">
+          <span class="cover"><img src="img/apollo11.jpg" alt="" width="600" height="450"></span>
+          <span class="title">Apollo 11</span>
+        </a>
+        <a class="book" href="../45RwxGKC5EGkoSUB0WpNJX8qhbkioXz6/">
+          <span class="cover"><img src="img/golden-spike.jpg" alt="" width="600" height="450"></span>
+          <span class="title">The Golden Spike</span>
+        </a>
+        <a class="book" href="../BnedAIuaKDjovCf89dJ49HxHxsxqs9uW/">
+          <span class="cover"><img src="img/first-flight.jpg" alt="" width="600" height="450"></span>
+          <span class="title">The First Flight</span>
+        </a>
+        <a class="book" href="../H7qTuKq75m7nchoQjBcymlqL98M29PIj/">
+          <span class="cover"><img src="img/golden-gate.jpg" alt="" width="600" height="450"></span>
+          <span class="title">The Golden Gate Bridge</span>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>More Stories</h2>
+      <div class="shelf more">
+        <a class="book" href="../6mmkOTowusSwckcGCD74DrAl70TKDyry/">
+          <span class="cover"><img src="img/gilbert.jpg" alt="" width="600" height="450"></span>
+          <span class="title">Gilbert the Goat Who Wanted to Be a Chicken</span>
+        </a>
+        <a class="book" href="../r0dlNlHxE6y4ilO34d0D6tl3WhvEmgLm/">
+          <span class="cover"><img src="img/ollie.jpg" alt="" width="600" height="450"></span>
+          <span class="title">Ollie the Octopus and the Eighth Sock</span>
+        </a>
+        <a class="book" href="../38MrfrXvuQSpiIDDRmbK4jyf3JfYovbB/">
+          <span class="cover"><img src="img/pork-chop.jpg" alt="" width="600" height="450"></span>
+          <span class="title">Pork Chop Wants to Fly</span>
+        </a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

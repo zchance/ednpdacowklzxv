@@ -1,5 +1,5 @@
 {
- "title": "Pork Chop Wants to Fly",
+ "title": "Flying Pork Chops",
  "storage_key": "porkChop.v1.",
  "scenes": [
   {
@@ -19,7 +19,7 @@
    "place": "Across the farm",
    "image": "img/p02.jpg",
    "paragraphs": [
-    "So he trotted across the farm to see Olive. Olive was an ostrich. She was the biggest bird on the farm, with long legs and a long neck and a very serious face.",
+    "So he trotted across the farm to see Olive. Olive was an ostrich. She was the biggest bird on the farm, maybe the biggest bird anywhere!",
     "\"Olive,\" said Pork Chop, \"you are the biggest bird I know. Please teach me to fly!\""
    ]
   },
@@ -103,7 +103,7 @@
    "image": "img/p10.jpg",
    "paragraphs": [
     "\"I flew a little bit!\" said Pork Chop. \"A very little bit counts!\"",
-    "That night, Pork Chop could not sleep. He lay in his pen and thought and thought. Then he had an idea. A big one."
+    "That night, Pork Chop could not sleep. He lay in his pen and thought and thought. Then he had an idea. It was a BIG idea!"
    ]
   },
   {
@@ -163,7 +163,7 @@
    "image": "img/p16.jpg",
    "paragraphs": [
     "\"Tomorrow,\" he said, \"I am getting a bigger sheet.\"",
-    "Olive laughed so hard she put her head in the sand.",
+    "Olive laughed so hard she had to put her head in the sand to stop giggling.",
     "**The End**"
    ]
   }
